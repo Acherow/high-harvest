@@ -1,18 +1,31 @@
-[gd_scene load_steps=16 format=4 uid="uid://lkw605adn76h"]
+[gd_scene load_steps=17 format=4 uid="uid://lkw605adn76h"]
 
 [ext_resource type="Script" path="res://scripts/mailbox.gd" id="1_sihdd"]
 [ext_resource type="Script" path="res://scripts/quest.gd" id="2_wwbyw"]
 
 [sub_resource type="Resource" id="Resource_vnk4q"]
 script = ExtResource("2_wwbyw")
-progress = 0.0
-goal = 4.0
-title = "COCK"
-desc = "SUCKER!!"
+title = "Market Distribution"
+desc = "Wealth redistribution is at an all time high! Get your share by selling now!"
 itemtype = ""
+checkamount = false
+repeatable = true
+progress = 0.0
+goal = 100.0
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_o0xvr"]
+script = ExtResource("2_wwbyw")
+title = "Carrot Famine!"
+desc = "We have fallen on hard times as carrot stocks are at an all time low. Sales of carrots are to be handsomely rewarded!"
+itemtype = "carrot"
 checkamount = true
-unlockreward = ["scythe", 100.0]
-cashreward = 1.0
+repeatable = true
+progress = 0.0
+goal = 10.0
+unlockreward = []
+cashreward = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvgho"]
 diffuse_mode = 3
@@ -157,7 +170,7 @@ size = Vector3(2, 2, 2)
 
 [node name="mailbox" type="Node3D"]
 script = ExtResource("1_sihdd")
-allquests = Array[ExtResource("2_wwbyw")]([SubResource("Resource_vnk4q")])
+allquests = Array[ExtResource("2_wwbyw")]([SubResource("Resource_vnk4q"), SubResource("Resource_o0xvr")])
 
 [node name="flag" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.194325, 1.0317, -0.215075)

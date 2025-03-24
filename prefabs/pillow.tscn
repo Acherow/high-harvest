@@ -4,6 +4,8 @@
 [ext_resource type="Resource" uid="uid://tvp3hye6uxd5" path="res://invobjs/pillow.tres" id="1_xi75n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpvg"]
+diffuse_mode = 3
+specular_mode = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_151lt"]
 resource_name = "bed_Cube_004"

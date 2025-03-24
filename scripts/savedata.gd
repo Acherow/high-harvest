@@ -114,6 +114,9 @@ func load_data():
 			},
 			"curquests": [
 				#[0,0]
+			],
+			"completedquests": [
+				
 			]
 		}
 	cansave = 0

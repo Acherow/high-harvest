@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://ks7cknofd1u4"]
+[gd_scene load_steps=60 format=4 uid="uid://ks7cknofd1u4"]
 
 [ext_resource type="Script" path="res://scripts/truckseat.gd" id="1_0bds0"]
 [ext_resource type="Script" path="res://scripts/truck.gd" id="1_mpxah"]
@@ -357,8 +357,12 @@ size = Vector3(3.8125, 0.352539, 7.74365)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmea4"]
 size = Vector3(0.420166, 0.367188, 1.21179)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n2nbd"]
+height = 4.0
+radius = 0.725
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdcfl"]
-size = Vector3(0.992432, 3.8, 1.5)
+size = Vector3(0.992432, 0.440039, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3d5j"]
 size = Vector3(3.07227, 2.4474, 0.316238)
@@ -733,7 +737,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f12df")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhk1k"]
-size = Vector3(2.5, 2, 2.6375)
+size = Vector3(2.5, 2.32568, 4.90859)
 
 [node name="farm truck" type="RigidBody3D" groups=["heavy", "metal", "pickup", "serialize", "tooheavy"]]
 mass = 1000.0
@@ -799,7 +803,7 @@ skeleton = NodePath("")
 
 [node name="beddoorhinge" type="JoltHingeJoint3D" parent="."]
 limit_enabled = true
-limit_upper = 1.5708
+limit_upper = 3.14159
 limit_spring_enabled = true
 limit_spring_frequency = 100.0
 node_a = NodePath("..")
@@ -862,10 +866,14 @@ shape = SubResource("BoxShape3D_tmea4")
 
 [node name="frontwheelthing" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.804351, -2.42163)
-shape = SubResource("BoxShape3D_sdcfl")
+shape = SubResource("CylinderShape3D_n2nbd")
 
 [node name="backwheelthing" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.804351, 2.42603)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.67998, 0.804351, 2.42603)
+shape = SubResource("BoxShape3D_sdcfl")
+
+[node name="backwheelthing2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.68, 0.804, 2.426)
 shape = SubResource("BoxShape3D_sdcfl")
 
 [node name="backwall" type="CollisionShape3D" parent="."]
@@ -1002,7 +1010,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 2.2)
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="loadarea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.162842, -0.954297)
 shape = SubResource("BoxShape3D_mhk1k")
 
 [connection signal="body_entered" from="loadarea" to="." method="_on_load_body_entered"]

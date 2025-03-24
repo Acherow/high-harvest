@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=4 uid="uid://1x2qqvrpl61i"]
+[gd_scene load_steps=145 format=4 uid="uid://1x2qqvrpl61i"]
 
 [ext_resource type="PackedScene" uid="uid://b4jtleag6oj6" path="res://prefabs/house.tscn" id="1_0f5v3"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="1_jqp18"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://d3x0ay88gqq7o" path="res://rain.tscn" id="24_230u1"]
 [ext_resource type="Texture2D" uid="uid://c71nlgr4htpc" path="res://models/textures/bush.png" id="25_kt1r8"]
 [ext_resource type="Texture2D" uid="uid://bhsrb7wqgfmfq" path="res://models/textures/stone.png" id="27_pf1fq"]
-[ext_resource type="PackedScene" uid="uid://bkdtgcbc7jorn" path="res://prefabs/carrot.tscn" id="27_t004u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwhdr"]
 size = Vector3(0.1, 0.1, 1)
@@ -1606,9 +1605,6 @@ multimesh = SubResource("MultiMesh_x1u8n")
 [node name="rockspawner" type="MultiMeshInstance3D" parent="multimeshes/instance15"]
 custom_aabb = AABB(-50, -4, -50, 100, 8, 100)
 multimesh = SubResource("MultiMesh_jbh3p")
-
-[node name="carrot" parent="." instance=ExtResource("27_t004u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2946, 2.20294, -19.1638)
 
 [connection signal="curve_changed" from="fence/path" to="fence/path" method="_on_curve_changed"]
 [connection signal="curve_changed" from="fence/path2" to="fence/path2" method="_on_curve_changed"]

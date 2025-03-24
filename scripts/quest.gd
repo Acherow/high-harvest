@@ -1,13 +1,15 @@
 extends Resource
 class_name Quest
 
-@export var progress : float
-@export var goal : float
 
 @export var title : String
 @export var desc : String
 @export var itemtype : String
 @export var checkamount : bool
+
+@export var repeatable : bool
+@export var progress : float
+@export var goal : float
 
 @export var unlockreward : Array
 @export var cashreward : float
@@ -23,7 +25,7 @@ func check(item, value):
 
 func reward():
 	var str = "You've completed a listing"
-	if(unlockreward != null):
+	if(unlockreward != null && !Savedata.gamedata.unlocks.has(unlockreward[0])):
 		str += ". A new item is on sale"
 		Savedata.gamedata.unlocks[unlockreward[0]] = unlockreward[1]
 	if(cashreward != 0):
