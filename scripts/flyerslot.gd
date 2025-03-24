@@ -12,7 +12,10 @@ func setup(obj):
 	itemobj = obj
 	numb(0)
 	nametxt.text = itemobj.name
-	pricetxt.text = "$ " + str(Library.purchasables[itemobj.objaddress])
+	if(Library.purchasables.has(itemobj.objaddress)):
+		pricetxt.text = "$ " + str(Library.purchasables[itemobj.objaddress])
+	elif Savedata.gamedata["unlocks"].has(itemobj.objaddress):
+		pricetxt.text = "$ " + str(Savedata.gamedata["unlocks"][itemobj.objaddress])
 	icon.texture = itemobj.icon
 
 func numb(amt : int):

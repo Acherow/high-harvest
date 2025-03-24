@@ -12,6 +12,8 @@ class_name Quest
 @export var unlockreward : Array
 @export var cashreward : float
 
+var index : int = 0
+
 func check(item, value):
 	if(itemtype == item || itemtype == ""):
 		if(checkamount):
@@ -25,7 +27,7 @@ func reward():
 		str += ". A new item is on sale"
 		Savedata.gamedata.unlocks[unlockreward[0]] = unlockreward[1]
 	if(cashreward != 0):
-		str += " and you've received %.2f" % cashreward
+		str += " and you've received $%.2f" % cashreward
 		Savedata.gamedata["money"] += cashreward
 	str += "."
 	return str

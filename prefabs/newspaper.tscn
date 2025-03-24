@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://kmr1vj048qm3"]
+[gd_scene load_steps=12 format=4 uid="uid://kmr1vj048qm3"]
 
 [ext_resource type="Resource" uid="uid://bekkby1n5uwkg" path="res://invobjs/newspaper.tres" id="1_22fec"]
 [ext_resource type="Script" path="res://scripts/newspaper.gd" id="1_g60no"]
@@ -46,10 +46,22 @@ shadow_mesh = SubResource("ArrayMesh_goqyg")
 [sub_resource type="BoxShape3D" id="BoxShape3D_b36o6"]
 size = Vector3(0.545898, 0.374878, 0.0986328)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ljtu1"]
+font_size = 56
+font_color = Color(0.404511, 0.404511, 0.404511, 1)
+outline_size = 9
+outline_color = Color(0.266575, 0.266575, 0.266575, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_vl7jl"]
 font_size = 76
 font_color = Color(0.404511, 0.404511, 0.404511, 1)
 outline_size = 15
+outline_color = Color(0.266575, 0.266575, 0.266575, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rirw5"]
+font_size = 24
+font_color = Color(0.404511, 0.404511, 0.404511, 1)
+outline_size = 9
 outline_color = Color(0.266575, 0.266575, 0.266575, 1)
 
 [node name="newspaper" type="RigidBody3D" groups=["pickup"]]
@@ -89,21 +101,57 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.556953, 0.556953, 0.556953, 1)
 
-[node name="Label" type="Label" parent="textstuff/ColorRect/ColorRect"]
+[node name="listings" type="Label" parent="textstuff/ColorRect/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.137
-anchor_top = 0.017149
-anchor_right = 0.863
-anchor_bottom = 0.163149
+anchor_left = 0.136517
+anchor_top = 0.168274
+anchor_right = 0.862079
+anchor_bottom = 0.2806
 offset_left = -0.200005
 offset_right = 0.199951
 offset_bottom = 0.199982
 grow_horizontal = 2
 grow_vertical = 2
 text = "LISTINGS"
+label_settings = SubResource("LabelSettings_ljtu1")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0129213
+anchor_top = 0.0353698
+anchor_right = 0.738483
+anchor_bottom = 0.147696
+offset_left = -0.200005
+offset_right = 0.199951
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEWS TIMES"
 label_settings = SubResource("LabelSettings_vl7jl")
 horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="date" type="Label" parent="textstuff/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75309
+anchor_top = 0.096463
+anchor_right = 0.914045
+anchor_bottom = 0.13269
+offset_left = -0.200005
+offset_right = 0.199951
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 6"
+label_settings = SubResource("LabelSettings_rirw5")
+horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -115,7 +163,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -311.0
-offset_top = -239.5
+offset_top = -194.5
 offset_right = 311.0
 offset_bottom = 400.5
 grow_horizontal = 2
@@ -125,7 +173,7 @@ theme_override_constants/v_separation = 20
 columns = 2
 
 [node name="newspaperlisting" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -197,7 +245,7 @@ text = "10.00/100.00"
 horizontal_alignment = 2
 
 [node name="newspaperlisting2" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -269,7 +317,7 @@ text = "10.00/100.00"
 horizontal_alignment = 2
 
 [node name="newspaperlisting3" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -341,7 +389,7 @@ text = "10.00/100.00"
 horizontal_alignment = 2
 
 [node name="newspaperlisting4" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -413,7 +461,7 @@ text = "10.00/100.00"
 horizontal_alignment = 2
 
 [node name="newspaperlisting5" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -485,7 +533,7 @@ text = "10.00/100.00"
 horizontal_alignment = 2
 
 [node name="newspaperlisting6" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 175)
 layout_mode = 2
 color = Color(0.470076, 0.470076, 0.470076, 1)
 script = ExtResource("4_bcj47")
@@ -555,3 +603,19 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "10.00/100.00"
 horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect"]
+custom_minimum_size = Vector2(600, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.079
+anchor_top = 0.140846
+anchor_right = 0.921
+anchor_bottom = 0.150846
+offset_left = -0.248001
+offset_top = -0.409012
+offset_right = 0.247925
+offset_bottom = 0.260986
+grow_horizontal = 2
+color = Color(0.470588, 0.470588, 0.470588, 1)
+metadata/_edit_use_anchors_ = true

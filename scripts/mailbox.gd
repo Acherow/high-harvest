@@ -17,6 +17,7 @@ func _ready():
 		var i = allquests[n[0]]
 		var q = i.duplicate()
 		q.progress = n[1]
+		q.index = n[0]
 		curquests.append(q)
 	#spawnnewspaper()
 
@@ -74,11 +75,16 @@ func spawnletter(solditems : Array):
 	var str = "Thank you for your contribution.\n\n\n"
 	for n in itemamounts:
 		var amt : float = Library.sell(n)
+		var erases = []
 		for q in curquests:
 			for p in itemamounts[n]:
 				q.check(n,amt)
 			if(q.progress >= q.goal):
 				str += q.reward()
+				erases.append(q)
+				#print(Savedata.gamedata.unlocks)
+		for p in erases:
+			curquests.erase(p)
 		if(Savedata.gamedata.daysales.has(n)):
 			Savedata.gamedata.daysales[n] += itemamounts[n]
 		for b in itemamounts[n]:
@@ -133,3 +139,9 @@ func spawnnewspaper():
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	ignore.erase(body)
+
+func serializequests():
+	var qs = []
+	for n in curquests:
+		qs.append([n.index,n.progress])
+	Savedata.gamedata["curquests"] = qs

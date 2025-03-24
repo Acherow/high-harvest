@@ -1,6 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://lkw605adn76h"]
+[gd_scene load_steps=16 format=4 uid="uid://lkw605adn76h"]
 
 [ext_resource type="Script" path="res://scripts/mailbox.gd" id="1_sihdd"]
+[ext_resource type="Script" path="res://scripts/quest.gd" id="2_wwbyw"]
+
+[sub_resource type="Resource" id="Resource_vnk4q"]
+script = ExtResource("2_wwbyw")
+progress = 0.0
+goal = 4.0
+title = "COCK"
+desc = "SUCKER!!"
+itemtype = ""
+checkamount = true
+unlockreward = ["scythe", 100.0]
+cashreward = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvgho"]
 diffuse_mode = 3
@@ -145,6 +157,7 @@ size = Vector3(2, 2, 2)
 
 [node name="mailbox" type="Node3D"]
 script = ExtResource("1_sihdd")
+allquests = Array[ExtResource("2_wwbyw")]([SubResource("Resource_vnk4q")])
 
 [node name="flag" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.194325, 1.0317, -0.215075)

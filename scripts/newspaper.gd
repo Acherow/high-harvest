@@ -3,6 +3,7 @@ class_name newspaper
 
 @onready var textstuff = $textstuff
 @onready var listcont: GridContainer = $textstuff/ColorRect/ColorRect/GridContainer
+@onready var date: Label = $textstuff/ColorRect/ColorRect/date
 
 var plref
 var data : InventoryObject
@@ -15,8 +16,11 @@ func _ready():
 	data = get_meta("obj").duplicate()
 	if(data.customproperties.has("writtenquests")):
 		writtenquests = data.customproperties["writtenquests"]
+		date.text = "day " + data.customproperties["day"]
 	else:
 		data.customproperties["writtenquests"] = writtenquests
+		data.customproperties["day"] = Savedata.gamedata["day"]
+		date.text = "day %d" % data.customproperties["day"]
 	set_meta("obj", data)
 	
 	var objs = listcont.get_children()

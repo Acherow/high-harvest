@@ -340,7 +340,7 @@ shadow_mesh = SubResource("ArrayMesh_ya7t4")
 size = Vector3(2.96973, 1.5957, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0hmg"]
-size = Vector3(2.96973, 0.758911, 0.516113)
+size = Vector3(2.83789, 0.558655, 0.516113)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oeer3"]
 size = Vector3(3.06055, 0.0565186, 1.38086)
@@ -349,7 +349,7 @@ size = Vector3(3.06055, 0.0565186, 1.38086)
 size = Vector3(3.06055, 0.0667725, 1.32336)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvuh8"]
-size = Vector3(3.07227, 0.424805, 2.93658)
+size = Vector3(3.07227, 0.424805, 3.04689)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldkwi"]
 size = Vector3(3.8125, 0.352539, 7.74365)
@@ -361,7 +361,7 @@ size = Vector3(0.420166, 0.367188, 1.21179)
 size = Vector3(0.992432, 3.8, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3d5j"]
-size = Vector3(3.07227, 1.81668, 0.265289)
+size = Vector3(3.07227, 2.4474, 0.316238)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lw25j"]
 size = Vector3(0.23645, 0.6875, 2.93658)
@@ -609,7 +609,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jk1m0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mewoe"]
-size = Vector3(1, 0.714355, 0.890625)
+size = Vector3(1.09985, 0.711548, 0.908203)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cod4t"]
 resource_name = "seats"
@@ -733,7 +733,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f12df")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhk1k"]
-size = Vector3(2.5, 2, 4.9)
+size = Vector3(2.5, 2, 2.6375)
 
 [node name="farm truck" type="RigidBody3D" groups=["heavy", "metal", "pickup", "serialize", "tooheavy"]]
 mass = 1000.0
@@ -837,7 +837,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20215, -2.375)
 shape = SubResource("BoxShape3D_ivuqc")
 
 [node name="panel" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56989, -1.13257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67002, -1.13257)
 shape = SubResource("BoxShape3D_k0hmg")
 
 [node name="frontwindow" type="CollisionShape3D" parent="."]
@@ -849,7 +849,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08875, 0.15916)
 shape = SubResource("BoxShape3D_2s8xb")
 
 [node name="back" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616699, 2.28281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616699, 2.22766)
 shape = SubResource("BoxShape3D_cvuh8")
 
 [node name="floor" type="CollisionShape3D" parent="."]
@@ -869,7 +869,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.8
 shape = SubResource("BoxShape3D_sdcfl")
 
 [node name="backwall" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21483, 0.87888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89947, 0.853405)
 shape = SubResource("BoxShape3D_h3d5j")
 
 [node name="back2" type="CollisionShape3D" parent="."]
@@ -963,7 +963,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1, 0.25)
 script = ExtResource("1_0bds0")
 
 [node name="leftseat" type="CollisionShape3D" parent="leftseat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0939941, -0.195312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0953977, -0.204101)
 shape = SubResource("BoxShape3D_mewoe")
 
 [node name="left seat" type="MeshInstance3D" parent="leftseat"]
@@ -1002,7 +1002,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 2.2)
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="loadarea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.95)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18125)
 shape = SubResource("BoxShape3D_mhk1k")
 
 [connection signal="body_entered" from="loadarea" to="." method="_on_load_body_entered"]

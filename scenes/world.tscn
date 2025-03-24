@@ -215,8 +215,8 @@ volumetric_fog_density = 0.0
 volumetric_fog_sky_affect = 0.909
 
 [sub_resource type="Curve" id="Curve_7srpq"]
-_data = [Vector2(0.29805, 0), 0.0, 4.90136, 0, 1, Vector2(0.502075, 1), 0.0, 0.0, 0, 0, Vector2(0.780083, 0), -3.59701, 0.0, 1, 0]
-point_count = 3
+_data = [Vector2(0.245791, 0), 0.0, 41.0015, 0, 1, Vector2(0.26936, 0.966365), 0.0, 0.0, 0, 0, Vector2(0.502075, 1), 0.0, 0.0, 0, 0, Vector2(0.713805, 0.717775), -2.54928, -2.54928, 0, 0, Vector2(0.76431, 0), -14.2119, 0.0, 1, 0]
+point_count = 5
 
 [sub_resource type="Curve" id="Curve_txfu1"]
 min_value = -1.0
