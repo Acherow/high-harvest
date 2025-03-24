@@ -1017,7 +1017,7 @@ buffer = PackedFloat32Array(1, 0, 0, 20, 0, 1, 0, 0, 0, 0, 1, 9, 1, 0, 0, -41, 0
 
 [node name="Node3D" type="Node3D"]
 
-[node name="house" parent="." instance=ExtResource("1_0f5v3")]
+[node name="house" parent="." groups=["wood"] instance=ExtResource("1_0f5v3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2, 0.5, -25.3)
 metadata/material = "wood"
 
@@ -1030,7 +1030,7 @@ shape = SubResource("BoxShape3D_kwhdr")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="house/lanternholder"]
 mesh = SubResource("BoxMesh_s2lke")
 
-[node name="fence" type="StaticBody3D" parent="."]
+[node name="fence" type="StaticBody3D" parent="." groups=["wood"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0)
 
 [node name="path" type="Path3D" parent="fence"]

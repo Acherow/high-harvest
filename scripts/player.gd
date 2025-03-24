@@ -16,7 +16,9 @@ class_name Player
 @onready var waterfilter: ColorRect = $cam/CanvasLayer/waterfilter
 
 @onready var footstep: AudioStreamPlayer = $groundcheck/footstep
+@onready var steptimer = $groundcheck/steptimer
 
+@export var stepsounds : Dictionary
 
 var curspeed
 const SPEED = 180
@@ -103,6 +105,11 @@ func _physics_process(delta):
 		
 		#movement and acceleration biz
 		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		if(input_dir != Vector2.ZERO && steptimer.is_stopped()):
+			steptimer.start()
+		elif(input_dir == Vector2.ZERO && !steptimer.is_stopped()):
+			steptimer.stop()
+		
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			if(curspeed < (SPEED if !Input.is_action_pressed("shift") else SPEED * 2)):
@@ -216,3 +223,13 @@ func reload():
 
 func isonfloor():
 	return groundcheck.is_colliding() && (cam.grabbed == null || groundcheck.get_collider(0) != cam.grabbed)
+
+func _on_steptimer_timeout():
+	if(!groundcheck.is_colliding()):
+		return
+	var ground = groundcheck.get_collider(0)
+	footstep.stream = stepsounds["dirt"].pick_random()
+	for n in stepsounds.keys():
+		if(ground.is_in_group(n)):
+			footstep.stream = stepsounds[n].pick_random()
+	footstep.play()

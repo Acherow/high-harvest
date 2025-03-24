@@ -37,6 +37,7 @@ func load_data():
 			"timeofday": 500,
 			"money": 50,
 			"totalmoney":0,
+			"curincentivegoal":100,
 			"playerscene":0,
 			"player": [Vector3(-45,0.5,180), Vector3(0,0,0), 50,50,[], [],[]],
 			"objects0": [
@@ -106,6 +107,10 @@ func load_data():
 				},
 			"seenevents": {
 				
+			},
+			"unlocks": {
+				#"scythe" = 100.0,
+				#"hoe" = 100.0,
 			}
 		}
 	cansave = 0

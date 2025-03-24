@@ -1,11 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwi170efjq44q"]
+[gd_scene load_steps=20 format=3 uid="uid://cwi170efjq44q"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uppgx"]
+[ext_resource type="AudioStream" uid="uid://rsygbcngeuhg" path="res://sounds/footstep.mp3" id="2_mkyug"]
 [ext_resource type="Script" path="res://scripts/playercam.gd" id="2_vgmbu"]
+[ext_resource type="AudioStream" uid="uid://eedlybspvuvu" path="res://sounds/stonestep/Passos Concreto 1.mp3" id="3_urjac"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="3_w0mcb"]
 [ext_resource type="PackedScene" uid="uid://bvy82pls5kkcr" path="res://scenes/pause.tscn" id="4_1tgxg"]
 [ext_resource type="Theme" uid="uid://cbj0gkm83nlep" path="res://ui.tres" id="4_0876b"]
+[ext_resource type="AudioStream" uid="uid://cj7xbhxt3qmb6" path="res://sounds/stonestep/Passos Concreto 2.mp3" id="4_eqwma"]
+[ext_resource type="AudioStream" uid="uid://caxtsvg4jwdd7" path="res://sounds/stonestep/Passos Concreto 3.mp3" id="5_0lhup"]
+[ext_resource type="AudioStream" uid="uid://cawjvjfy0dqi3" path="res://sounds/woodstep/Wood Footstep 1.mp3" id="6_7b785"]
 [ext_resource type="AudioStream" uid="uid://d18tkipd6ud8b" path="res://sounds/munch.mp3" id="6_ekwjv"]
+[ext_resource type="AudioStream" uid="uid://srsmpfu0f6ct" path="res://sounds/woodstep/Wood Footstep 2.mp3" id="7_tg0hi"]
+[ext_resource type="AudioStream" uid="uid://k12q26j54d3x" path="res://sounds/woodstep/Wood Footstep 3.mp3" id="8_u0xwc"]
+[ext_resource type="AudioStream" uid="uid://c0okwql2d5onq" path="res://sounds/metalstep/metalstep1.mp3" id="9_wyome"]
+[ext_resource type="AudioStream" uid="uid://s4myjatqdrtl" path="res://sounds/metalstep/metalstep2.mp3" id="10_esf2u"]
+[ext_resource type="AudioStream" uid="uid://bpbypmpb8f072" path="res://sounds/metalstep/metalstep3.mp3" id="11_sqtju"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i14eu"]
 radius = 0.45
@@ -21,6 +31,12 @@ radius = 0.3
 [node name="player" type="CharacterBody3D" groups=["player"]]
 collision_mask = 17
 script = ExtResource("1_uppgx")
+stepsounds = {
+"dirt": [ExtResource("2_mkyug")],
+"metal": [ExtResource("9_wyome"), ExtResource("10_esf2u"), ExtResource("11_sqtju")],
+"stone": [ExtResource("3_urjac"), ExtResource("4_eqwma"), ExtResource("5_0lhup")],
+"wood": [ExtResource("6_7b785"), ExtResource("7_tg0hi"), ExtResource("8_u0xwc")]
+}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -426,6 +442,10 @@ target_position = Vector3(0, -0.05, 0)
 
 [node name="footstep" type="AudioStreamPlayer" parent="groundcheck"]
 
+[node name="steptimer" type="Timer" parent="groundcheck"]
+wait_time = 0.4
+
 [connection signal="pressed" from="cam/CanvasLayer/injury/gameover/VBoxContainer/quickloadbutton" to="." method="reload"]
 [connection signal="pressed" from="cam/CanvasLayer/injury/gameover/VBoxContainer/quitbutton" to="." method="quittomenu"]
 [connection signal="timeout" from="ragdolltime" to="." method="_on_ragdolltime_timeout"]
+[connection signal="timeout" from="groundcheck/steptimer" to="." method="_on_steptimer_timeout"]

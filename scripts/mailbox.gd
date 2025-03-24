@@ -69,6 +69,12 @@ func spawnletter(solditems : Array):
 		for b in itemamounts[n]:
 			str += "\n%s : $%.2f" % [n, amt]
 	str += "\n\nYour new total balance is: $%.2f\n" % Savedata.gamedata["money"]
+	if(Savedata.gamedata["curdebtgoal"] > 0):
+		str += "Your current incentive goal is $%.2f\n" % Savedata.gamedata["curdebtgoal"]
+	else:
+		str += "You have met your current incentive goal and have been rewarded with a small gift of $%.0f. A new incentive goal of $%.0f" % [Library.incentivereward, Library.incentivegoal]
+		Savedata.gamedata["money"] += Library.incentivereward
+		Savedata.gamedata["curincentivegoal"] = Library.incentivegoal
 	if(!Savedata.gamedata["debtpaid"] && Savedata.gamedata["money"] >= Library.debt):
 		Savedata.gamedata["debtpaid"] = true
 		Savedata.gamedata["money"] -= Library.debt
@@ -85,7 +91,7 @@ func spawnletter(solditems : Array):
 		bx.global_position = boxspawn.global_position
 		bx.global_rotation = boxspawn.global_rotation
 	if(!Savedata.gamedata["debtpaid"]):
-		str += ("Your total debt is %f. " % Library.debt)
+		str += ("Your total debt is %.2f. " % Library.debt)
 	
 	var letter : bankstatement = Library.objs["bankstatement"].instantiate()
 	get_tree().current_scene.add_child(letter)

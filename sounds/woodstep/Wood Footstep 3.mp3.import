@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k12q26j54d3x"
+path="res://.godot/imported/Wood Footstep 3.mp3-9877bb49976d7e1644cbb6ebed12aa15.mp3str"
+
+[deps]
+
+source_file="res://sounds/woodstep/Wood Footstep 3.mp3"
+dest_files=["res://.godot/imported/Wood Footstep 3.mp3-9877bb49976d7e1644cbb6ebed12aa15.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

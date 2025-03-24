@@ -541,7 +541,7 @@ rateoftime = 0.05
 
 [node name="room1" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="room1" groups=["stone"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -747,7 +747,7 @@ targetrotation = Vector3(0, 90, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="exit"]
 shape = SubResource("BoxShape3D_mioh7")
 
-[node name="mazecol" type="StaticBody3D" parent="."]
+[node name="mazecol" type="StaticBody3D" parent="." groups=["stone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -52)
 metadata/material = "stone"
 

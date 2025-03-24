@@ -1,6 +1,8 @@
 extends Node
 
 var debt : int = 5000
+var incentivegoal : int = 100
+var incentivereward : int = 50
 
 var objs : Dictionary = {
 	"farmersguide":load("res://prefabs/farmers guide.tscn"),
@@ -184,8 +186,6 @@ var purchasables : Dictionary = {
 	"dice" = 1.0,
 	"lantern" = 40.0,
 	"oilbottle" = 10.0,
-	"scythe" = 100.0,
-	"hoe" = 100.0,
 	"bouncyball" = 1.0,
 	"key" = 50.0,
 	"knife" = 15.0,
@@ -193,6 +193,7 @@ var purchasables : Dictionary = {
 	"sixpack" = 20.0,
 	"veggiemanbox" = 10.0,
 	"lawngnome" = 5.0,
+	"candle" = 5.0,
 }
 
 var sellvalues : Dictionary = {
@@ -262,6 +263,7 @@ func sell(item : String) -> float:
 		var returnvalue = Library.sellvalues[item]
 		Savedata.gamedata["money"] += returnvalue
 		Savedata.gamedata["totalmoney"] += returnvalue
+		Savedata.gamedata["curincentivegoal"] -= returnvalue
 		return Library.purchasables[item]
 	else:
 		return 0

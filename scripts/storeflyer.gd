@@ -17,7 +17,8 @@ func _ready():
 	data = get_meta("obj").duplicate()
 	set_meta("obj", data)
 	
-	var curpurs = Library.purchasables.duplicate()
+	var curpurs : Dictionary = Library.purchasables.duplicate()
+	curpurs.merge(Savedata.gamedata["unlocks"])
 	
 	for n in slots:
 		var pur = curpurs.keys().pick_random()
