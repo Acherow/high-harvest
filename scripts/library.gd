@@ -1,8 +1,8 @@
 extends Node
 
 var debt : int = 5000
-var incentivegoal : int = 100
-var incentivereward : int = 50
+#var incentivegoal : int = 100
+#var incentivereward : int = 50
 
 var objs : Dictionary = {
 	"farmersguide":load("res://prefabs/farmers guide.tscn"),
@@ -79,6 +79,7 @@ var objs : Dictionary = {
 	"lawngnome":load("res://prefabs/lawngnome.tscn"),
 	"plaque":load("res://prefabs/plaque.tscn"),
 	"candle":load("res://prefabs/candle.tscn"),
+	"newspaper":load("res://prefabs/newspaper.tscn"),
 	"fishingrod":load("res://prefabs/fishingrod.tscn"),
 	"vinyl1":load("res://prefabs/vinyl1.tscn"),
 	"vinyl2":load("res://prefabs/vinyl2.tscn"),
@@ -159,6 +160,7 @@ var invobjs : Dictionary = {
 	"lawngnome":load("res://invobjs/lawngnome.tres"),
 	"plaque":load("res://invobjs/plaque.tres"),
 	"candle":load("res://invobjs/candle.tres"),
+	"newspaper":load("res://invobjs/newspaper.tres"),
 	"fishingrod":load("res://invobjs/fishingrod.tres"),
 	"vinyl1":load("res://invobjs/vinyl1.tres"),
 	"vinyl2":load("res://invobjs/vinyl2.tres"),
@@ -246,24 +248,28 @@ const scenes : Array = [
 	"res://scenes/cellar.tscn", #1
 ]
 
+signal sold(item, value)
 func sell(item : String) -> float:
 	if(Library.sellvalues.has(item)):
 		if(Savedata.gamedata["stocks"].has(item)):
 			var returnvalue = Library.sellvalues[item] * Savedata.gamedata["stocks"][item]
 			returnvalue = snapped(returnvalue,.01)
 			Savedata.gamedata["money"] += returnvalue
+			sold.emit(item,returnvalue)
 			#Savedata.gamedata["stocks"][item] = clamp(Savedata.gamedata["stocks"][item] - (0.01),0.5,2)
 			return returnvalue
 		else:
 			var returnvalue = Library.sellvalues[item]
 			Savedata.gamedata["money"] += returnvalue
 			Savedata.gamedata["totalmoney"] += returnvalue
+			sold.emit(item,returnvalue)
 			return Library.sellvalues[item]
 	elif(Library.purchasables.has(item)):
 		var returnvalue = Library.sellvalues[item]
 		Savedata.gamedata["money"] += returnvalue
 		Savedata.gamedata["totalmoney"] += returnvalue
 		Savedata.gamedata["curincentivegoal"] -= returnvalue
+		sold.emit(item,returnvalue)
 		return Library.purchasables[item]
 	else:
 		return 0

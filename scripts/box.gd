@@ -20,10 +20,10 @@ func _ready():
 	data = get_meta("obj").duplicate()
 	if(data.customproperties.has("inventory") && inventory.is_empty()):
 		inventory = deserializeinventory(data.customproperties["inventory"])
-	if((data.customproperties.has("lid") && data.customproperties["lid"] == true) || !data.customproperties.has("lid")):
-		var l = Library.objs["boxlid"].instantiate()
-		get_tree().current_scene.add_child(l)
-		_on_lidcheck_body_entered(l)
+	#if((data.customproperties.has("lid") && data.customproperties["lid"] == true) || !data.customproperties.has("lid")):
+	#	var l = Library.objs["boxlid"].instantiate()
+	#	get_tree().current_scene.add_child(l)
+	#	_on_lidcheck_body_entered(l)
 	set_meta("obj", data)
 
 func _on_insidebox_body_entered(body):
@@ -39,7 +39,8 @@ func _on_lidcheck_body_entered(body):
 		lid = body
 		lid.unlid.connect(unlidded)
 		lid.freeze = true
-		lid.reparent(self)
+		lid.call_deferred("reparent",self)
+		await get_tree().process_frame
 		add_collision_exception_with(lid)
 		lid.global_position = lidcheck.global_position
 
@@ -59,8 +60,10 @@ func _physics_process(delta):
 var lidtime : float = 0
 func unlidded():
 	if(lid):
-		lidtime = .2
-		lid.reparent(get_tree().current_scene)
+		lidtime = .4
+		#lid.reparent(get_tree().current_scene)
+		lid.call_deferred("reparent",get_tree().current_scene)
+		await get_tree().process_frame
 		remove_collision_exception_with(lid)
 		lid.unlid.disconnect(unlidded)
 		lid.freeze = false

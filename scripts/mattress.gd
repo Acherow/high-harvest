@@ -12,7 +12,7 @@ func _ready():
 	man = get_tree().get_first_node_in_group("daymanager")
 
 func _input(event):
-	if(event.is_action_pressed("leftclick") && colorfilter.visible == true):
+	if((event.is_action_pressed("pause")||event.is_action_pressed("leftclick")||event.is_action_pressed("grab")||event.is_action_pressed("jump")) && colorfilter.visible == true):
 		player.frozen = false
 		colorfilter.visible = false
 		player = null

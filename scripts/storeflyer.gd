@@ -40,7 +40,7 @@ func trigger(pl):
 		plref = null
 
 func _input(event):
-	if(plref && textstuff.visible && (event.is_action_pressed("inventory") || event.is_action_pressed("grab") || event.is_action_pressed("hold"))):
+	if(plref && textstuff.visible && (event.is_action_pressed("pause")||event.is_action_pressed("inventory") || event.is_action_pressed("grab") || event.is_action_pressed("hold"))):
 		plref.camfrozen = false
 		textstuff.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

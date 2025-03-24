@@ -1,0 +1,557 @@
+[gd_scene load_steps=10 format=4 uid="uid://kmr1vj048qm3"]
+
+[ext_resource type="Resource" uid="uid://bekkby1n5uwkg" path="res://invobjs/newspaper.tres" id="1_22fec"]
+[ext_resource type="Script" path="res://scripts/newspaper.gd" id="1_g60no"]
+[ext_resource type="Texture2D" uid="uid://bu5f1dglgo3vi" path="res://models/textures/newspaper.png" id="1_v3r82"]
+[ext_resource type="Script" path="res://scripts/newspaperlisting.gd" id="4_bcj47"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02xug"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_v3r82")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_goqyg"]
+_surfaces = [{
+"aabb": AABB(-0.272605, -0.165099, -0.0468971, 0.54521, 0.373017, 0.0937943),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("BAAJAAYABAALAAkAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAACgAJAAsACgAIAAkAAgAKAAAAAgAIAAoAAAALAAQAAAAKAAsABgAIAAIABgAJAAgA"),
+"lods": [0.028968, PackedByteArray("AwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIAAAACAAYABQAAAAQABQABAAAAAAAGAAQA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AACc4gAAAAAAAAAAAAAAAP//nOIAAAAA//8AAAAAAAAAAJzi//8AAAAAAAD//wAA//+c4v7/AAD//wAA/v8AAP////9lQwAA/////5m8AAAAAP//ZUMAAAAA//+ZvAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c7lwh"]
+resource_name = "newspaper_Cube"
+_surfaces = [{
+"aabb": AABB(-0.272605, -0.165099, -0.0468971, 0.54521, 0.373017, 0.0937943),
+"attribute_data": PackedByteArray("p63Olq/LzpanrfT/msv0/6/L9P8KAM6WjenOlgoA9P+ay1dSjen0/6etMGmN6c6Wp60KALyt9P+N6fT/CgAwaa/LzpYKAAoAvK1XUq/L9P8KABGHsOEsiQoA7XiL0yyJp60Rh4vTLImnre14sOEsiaetzpanrc6WCgDOlqetMGkKADBpCgAwaQ=="),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("CgAWAA8ACgAaABYACQAQAAYACQATABAAEQAKAA8AEQAMAAoADQAIAAMADQASAAgAAgAFAAAAAgAHAAUADgABAAsADgAEAAEAGAAWABoAGAAUABYABQAYAAAABQAUABgAAQAbAAsAAQAZABsAEAAVAAYAEAAXABUA"),
+"lods": [0.028968, PackedByteArray("CQAQAAYACQATABAAEQAKAA8AEQAMAAoADQAIAAMADQASAAgAAgAFABwAAgAHAAUAHAAeACEADgABAAsADgAEAAEAHQAgAB8A")],
+"material": SubResource("StandardMaterial3D_02xug"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("AACc4gAA//8AAJziAAD/vwAAAAAAAP//AAAAAAAAVNUAAAAAAAD/v///nOIAAP////+c4gAA/7///wAAAAD/////AAAAAFTV//8AAAAA/78AAJzi/////wAAnOL///+/AAAAAP////8AAAAA//9U1QAAAAD///+///+c4v7//////5zi/v//v///AAD+//////8AAP7/VNX//wAA/v//v/////9lQ////////2VD/7//////mbz///////+ZvP+/AAD//2VD//8AAP//ZUP/vwAA//+ZvP//AAD//5m8/78AAJziAAD//wAAnOIAAP////+c4gAA//8AAJzi////////nOL+//////+c4v7/////fx3x/3////9///9UVVRV/3////9/HfH/fwAA/3///1RVVFX/fwAA/3/gjv9/////f/9/VFVUVf9/////f+CO/38AAP9//39UVVRV/38AAP9/J9H/fwAA/3/Xrv9/AAD/fyfR/3////9/167/f////39k5f9/BLb/fzTW/3/9qf9/5Kr/f4PP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_goqyg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b36o6"]
+size = Vector3(0.545898, 0.374878, 0.0986328)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl7jl"]
+font_size = 76
+font_color = Color(0.404511, 0.404511, 0.404511, 1)
+outline_size = 15
+outline_color = Color(0.266575, 0.266575, 0.266575, 1)
+
+[node name="newspaper" type="RigidBody3D" groups=["pickup"]]
+script = ExtResource("1_g60no")
+metadata/obj = ExtResource("1_22fec")
+
+[node name="model" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_c7lwh")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0214233, 0)
+shape = SubResource("BoxShape3D_b36o6")
+
+[node name="textstuff" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="textstuff"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -466.0
+offset_right = 356.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556953, 0.556953, 0.556953, 1)
+
+[node name="Label" type="Label" parent="textstuff/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.017149
+anchor_right = 0.863
+anchor_bottom = 0.163149
+offset_left = -0.200005
+offset_right = 0.199951
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 2
+text = "LISTINGS"
+label_settings = SubResource("LabelSettings_vl7jl")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="textstuff/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -239.5
+offset_right = 311.0
+offset_bottom = 400.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="newspaperlisting" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2
+
+[node name="newspaperlisting2" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2
+
+[node name="newspaperlisting3" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2
+
+[node name="newspaperlisting4" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2
+
+[node name="newspaperlisting5" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2
+
+[node name="newspaperlisting6" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+color = Color(0.470076, 0.470076, 0.470076, 1)
+script = ExtResource("4_bcj47")
+
+[node name="ColorRect" type="ColorRect" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="title" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.051
+anchor_right = 0.923
+anchor_bottom = 0.224
+offset_left = 0.0529976
+offset_top = 0.0459995
+offset_right = -0.053009
+offset_bottom = 0.104
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_top = 0.236
+anchor_right = 0.923
+anchor_bottom = 0.819
+offset_left = 0.0529976
+offset_top = 0.0559959
+offset_right = -0.053009
+offset_bottom = -0.0260162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "DESC"
+horizontal_alignment = 1
+
+[node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.846
+anchor_right = 0.949
+anchor_bottom = 0.945
+offset_left = 0.0499878
+offset_top = 0.115997
+offset_right = -0.139008
+offset_bottom = -0.030014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
+text = "10.00/100.00"
+horizontal_alignment = 2

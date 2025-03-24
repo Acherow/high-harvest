@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctpt5fe5juopq"
-path="res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"
+uid="uid://d1m1amqns4ju2"
+path="res://.godot/imported/newspaper.glb-f56d51f518c93c41d95e6ca331fa08c4.scn"
 
 [deps]
 
-source_file="res://models/Potato.glb"
-dest_files=["res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"]
+source_file="res://models/newspaper.glb"
+dest_files=["res://.godot/imported/newspaper.glb-f56d51f518c93c41d95e6ca331fa08c4.scn"]
 
 [params]
 

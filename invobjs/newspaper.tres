@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://bekkby1n5uwkg"]
+
+[ext_resource type="Texture2D" uid="uid://ddj7nnfm87ijr" path="res://sprites/itemicons/newspaper.png" id="1_p3el0"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_bxac6"]
+
+[resource]
+script = ExtResource("2_bxac6")
+name = "Newspaper"
+weight = 0.5
+icon = ExtResource("1_p3el0")
+description = "Contains information about recent listings."
+objaddress = "newspaper"
+customproperties = {}
