@@ -42,4 +42,4 @@ func _input(event):
 
 
 func info():
-	return "Just hold [E] and press [Q] then press [LMB]! So easy even a donkey could do it!"
+	return "Press [LMB] to read."

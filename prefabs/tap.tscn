@@ -73,7 +73,8 @@ shadow_mesh = SubResource("ArrayMesh_a5hk7")
 size = Vector3(0.1, 0.5, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cuvr"]
-shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(1.2899e-05, 0.600519, 0.917973, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oribu"]

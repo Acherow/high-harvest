@@ -11,6 +11,8 @@ size = Vector3(0.114258, 0.349854, 0.340942)
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("2_x8cha")
 texture_filter = 2
 
@@ -19,6 +21,8 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("2_x8cha")
 texture_filter = 2
 

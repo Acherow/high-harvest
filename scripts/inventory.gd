@@ -33,24 +33,26 @@ func _input(event):
 			display(null)
 			UpdateList()
 			hideInv()
-		if(event.is_action_pressed("inventory")):
-			hideInv()
+			body.camfrozen = false
 		if(listheight > 250):
 			if(event.is_action_pressed("MWD")):
 				listcont.position.y = clamp(listcont.position.y-10, -(listheight-350),0)
 			if(event.is_action_pressed("MWU")):
 				listcont.position.y = clamp(listcont.position.y+10, -(listheight-350),0)
 
+var extfrozen : bool = false
 func showInv():
 	visible = true
+	extfrozen = body.frozen
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	UpdateList()
 
 func hideInv():
 	await get_tree().process_frame
 	visible = false
+	if(!extfrozen):
+		body.frozen = false
 	body.cam.camfrozen = false
-	body.frozen = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func UpdateList():

@@ -96,9 +96,13 @@ func _input(event):
 					held.queue_free()
 					held = null
 	if(event.is_action_pressed("inventory")):
-		inventory.showInv()
-		body.frozen = true
-		camfrozen = true
+		if(!inventory.visible):
+			inventory.showInv()
+			body.frozen = true
+			camfrozen = true
+		else:
+			inventory.hideInv()
+			camfrozen = false
 	if(event.is_action_pressed("leftclick")):
 		if(held != null && held.has_method("trigger") && !camfrozen && !inventory.visible):
 			held.trigger(self)
