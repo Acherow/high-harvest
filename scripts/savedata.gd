@@ -39,6 +39,8 @@ func load_data():
 			"totalmoney":0,
 			#"curincentivegoal":100,
 			"playerscene":0,
+			"raintime":1400,
+			"israining":false,
 			"player": [Vector3(-45,0.5,180), Vector3(0,0,0), 50,50,[["note",{ "text":"DEED OF LAND AGREEMENT\n\nThrough this document we pronounce ██████████ the owner of ██████ farm, located on ████████, ████████, in exchange for $%.2f to be paid in labor at the farm." % Library.debt }]], ["farmersguide", {}],[]],
 			"objects0": [
 				["pickup",Vector3(-28.1, 2.5, -25.3), Vector3(0, deg_to_rad(90), 0), "calendar", {  }], 

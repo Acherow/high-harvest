@@ -117,7 +117,7 @@ scale_curve = SubResource("CurveTexture_vo226")
 color_ramp = SubResource("GradientTexture1D_4k6je")
 
 [sub_resource type="QuadMesh" id="QuadMesh_r7snn"]
-size = Vector2(0.1, 0.1)
+size = Vector2(0.06, 0.06)
 
 [node name="stove" type="RigidBody3D" groups=["heavy", "pickup", "serialize"]]
 mass = 5.0
@@ -219,6 +219,13 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_8gfie")
 draw_pass_1 = SubResource("QuadMesh_r7snn")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="fire1"]
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+omni_range = 1.0
+omni_attenuation = 0.4
+
 [node name="fire2" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.55, 0.29)
 material_override = SubResource("StandardMaterial3D_vvr3v")
@@ -227,6 +234,13 @@ amount = 32
 lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_8gfie")
 draw_pass_1 = SubResource("QuadMesh_r7snn")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="fire2"]
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+omni_range = 1.0
+omni_attenuation = 0.4
 
 [node name="fire3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.55, -0.21)
@@ -237,6 +251,13 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_8gfie")
 draw_pass_1 = SubResource("QuadMesh_r7snn")
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="fire3"]
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+omni_range = 1.0
+omni_attenuation = 0.4
+
 [node name="fire4" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.55, 0.29)
 material_override = SubResource("StandardMaterial3D_vvr3v")
@@ -245,6 +266,13 @@ amount = 32
 lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_8gfie")
 draw_pass_1 = SubResource("QuadMesh_r7snn")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="fire4"]
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+omni_range = 1.0
+omni_attenuation = 0.4
 
 [connection signal="body_entered" from="Area1" to="." method="_on_area_entered" binds= [0]]
 [connection signal="body_exited" from="Area1" to="." method="_on_area_exited" binds= [0]]

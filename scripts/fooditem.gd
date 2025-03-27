@@ -1,7 +1,7 @@
 extends basepickup
 class_name fooditem
 
-@onready var model = $model
+@export var model : MeshInstance3D
 
 var data : InventoryObject
 
@@ -26,6 +26,8 @@ func grabbed(p):
 	pl = p
 
 func _ready():
+	if(model == null):
+		model = $model
 	super()
 	await get_tree().process_frame
 	data = get_meta("obj").duplicate()

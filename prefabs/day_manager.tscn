@@ -86,3 +86,8 @@ light_color = Color(2.31028e-06, 0.373134, 0.505084, 1)
 light_energy = 0.1
 light_indirect_energy = 0.1
 shadow_enabled = true
+
+[node name="raintimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="raintimer" to="." method="_on_raintimer_timeout"]

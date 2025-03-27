@@ -25,8 +25,13 @@ var curtick = 0
 var sunenergy
 var moonenergy
 
+
+@onready var raintimer: Timer = $raintimer
+
 func _ready() -> void:
 	timeofday = Savedata.gamedata["timeofday"]
+	israining = Savedata.gamedata["israining"]
+	raintimer.start(Savedata.gamedata["raintime"])
 	if(rainobj != null):
 		rainobj.call_deferred("reparent",get_tree().get_first_node_in_group("player"))
 		await get_tree().process_frame
@@ -39,17 +44,18 @@ func _process(delta):
 		passday()
 	Savedata.gamedata["timeofday"] = timeofday
 	Savedata.gamedata["playtime"] += delta
-	
+	Savedata.gamedata["israining"] = israining
+	Savedata.gamedata["raintime"] = raintimer.time_left
 	if(rainobj != null):
 		rainobj.amount_ratio = snapped(currain, .1)
 		environment.sky.sky_material.set_shader_parameter("day_top_color",topgradient.sample(currain))
 		environment.sky.sky_material.set_shader_parameter("day_bottom_color",bottomgradient.sample(currain))
 		environment.sky.sky_material.set_shader_parameter("clouds_cutoff",lerp(cloudlerp.x,cloudlerp.y,currain))
 	if(israining):
-		currain = lerp(currain,1.0,delta*.3)
+		currain = lerp(currain,1.0,delta*.1)
 		#currain = clamp(currain+(delta*.1), 0,1)
 	else:
-		currain = lerp(currain,0.0,delta*.3)
+		currain = lerp(currain,0.0,delta*.1)
 		#currain = clamp(currain-(delta*.1), 0,1)
 	
 	if(sun != null):
@@ -78,3 +84,8 @@ func timetransition(t : float) -> String:
 	var seconds = str(fmod(t, 60)).pad_zeros(2).pad_decimals(0)
 	
 	return minutes + ":" + seconds
+
+
+func _on_raintimer_timeout() -> void:
+	israining = !israining
+	raintimer.start(randi_range(100,1500))

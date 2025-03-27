@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://c8gvor3ucaxdx"]
+[gd_scene load_steps=17 format=4 uid="uid://c8gvor3ucaxdx"]
 
+[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_o4n0j"]
 [ext_resource type="Resource" uid="uid://dftywjhjwqky4" path="res://invobjs/fish1.tres" id="1_y3r4f"]
 [ext_resource type="Texture2D" uid="uid://5d0p6mhq14yu" path="res://models/textures/fish1.png" id="2_x8cha"]
 [ext_resource type="Script" path="res://scripts/pickupproxy.gd" id="3_7p4ts"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3ufjc"]
-size = Vector3(0.114258, 0.349854, 0.340942)
+[ext_resource type="Texture2D" uid="uid://3ecq4ywp402d" path="res://models/textures/rottenfish1.png" id="3_hmvor"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u55mu"]
 transparency = 2
@@ -25,6 +24,70 @@ diffuse_mode = 3
 specular_mode = 2
 albedo_texture = ExtResource("2_x8cha")
 texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv7cn"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("3_hmvor")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxan5"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("3_hmvor")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf3sc"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.85, 0.136, 0.136, 1)
+albedo_texture = ExtResource("2_x8cha")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcs45"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.85, 0.136, 0.136, 1)
+albedo_texture = ExtResource("2_x8cha")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skgqs"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_x8cha")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mms4"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_x8cha")
+texture_filter = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ufjc"]
+size = Vector3(0.114258, 0.349854, 0.340942)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cmron"]
 resource_name = "fishing_Cube_004"
@@ -68,8 +131,22 @@ bind/1/name = &"Bone.001"
 bind/1/bone = -1
 bind/1/pose = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1.86265e-09, 0)
 
-[node name="fish" type="RigidBody3D" groups=["pickup"]]
+[node name="fish" type="RigidBody3D" node_paths=PackedStringArray("model") groups=["fish", "pickup"]]
+script = ExtResource("1_o4n0j")
+model = NodePath("Skeleton3D/model")
+mats = Array[Material]([SubResource("StandardMaterial3D_u55mu"), SubResource("StandardMaterial3D_a8s01")])
+rotmats = Array[Material]([SubResource("StandardMaterial3D_dv7cn"), SubResource("StandardMaterial3D_nxan5")])
+cookedmats = Array[Material]([SubResource("StandardMaterial3D_uf3sc"), SubResource("StandardMaterial3D_qcs45")])
+burntmats = Array[Material]([SubResource("StandardMaterial3D_skgqs"), SubResource("StandardMaterial3D_3mms4")])
+fillamount = 18.0
+cookedfillamount = 25.0
+maxage = 45.0
+maxcooktime = 17.0
+burntime = 30.0
 metadata/obj = ExtResource("1_y3r4f")
+metadata/diced = {
+"dicedfish1": 5
+}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170471)

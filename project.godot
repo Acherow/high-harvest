@@ -164,6 +164,7 @@ pause={
 3d_render/layer_2="floorings"
 3d_physics/layer_4="bloodsplatters"
 3d_physics/layer_5="edgecircle"
+3d_physics/layer_9="water"
 
 [physics]
 

@@ -33,7 +33,7 @@ func _input(event):
 			display(null)
 			UpdateList()
 			hideInv()
-			body.camfrozen = false
+			body.cam.camfrozen = false
 		if(listheight > 250):
 			if(event.is_action_pressed("MWD")):
 				listcont.position.y = clamp(listcont.position.y-10, -(listheight-350),0)

@@ -84,6 +84,9 @@ var objs : Dictionary = {
 	"vinyl1":load("res://prefabs/vinyl1.tscn"),
 	"vinyl2":load("res://prefabs/vinyl2.tscn"),
 	"fish1":load("res://prefabs/fish1.tscn"),
+	"fish2":load("res://prefabs/fish2.tscn"),
+	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
+	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
 }
 
 var invobjs : Dictionary = {
@@ -165,6 +168,9 @@ var invobjs : Dictionary = {
 	"vinyl1":load("res://invobjs/vinyl1.tres"),
 	"vinyl2":load("res://invobjs/vinyl2.tres"),
 	"fish1":load("res://invobjs/fish1.tres"),
+	"fish2":load("res://invobjs/fish2.tres"),
+	"dicedfish1":load("res://invobjs/dicedfish1.tres"),
+	"dicedfish2":load("res://invobjs/dicedfish2.tres"),
 }
 
 var purchasables : Dictionary = {
@@ -229,6 +235,11 @@ const crops : Dictionary = {
 	"turnipseed":preload("res://prefabs/crops/turnipcrop.tscn"),
 	"cabbageseed":preload("res://prefabs/crops/cabbagecrop.tscn"),
 	"dicedpotato":preload("res://prefabs/crops/potatocrop.tscn"),
+}
+
+const fish : Dictionary = {
+	"fish1":1,
+	"fish2":1,
 }
 
 const others : Dictionary = {

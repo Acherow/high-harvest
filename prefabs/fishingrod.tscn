@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cu0mgfedl1ed6"]
+[gd_scene load_steps=20 format=4 uid="uid://cu0mgfedl1ed6"]
 
 [ext_resource type="Resource" uid="uid://dff82fu5e586d" path="res://invobjs/fishingrod.tres" id="1_3t0vu"]
 [ext_resource type="Script" path="res://scripts/fishingrod.gd" id="1_5x0dm"]
@@ -115,6 +115,45 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fk3ro")
 
+[sub_resource type="Animation" id="Animation_u5ljn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bobber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4vohp"]
+resource_name = "caught"
+length = 0.25
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bobber:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.00345939, -0.00143588, 0), Vector3(0.00845796, 0.0118903, -0.00202492), Vector3(-0.00649273, 0.00524557, -0.00202492), Vector3(-0.00649273, -0.00472164, 0.0195706)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6616"]
+_data = {
+"RESET": SubResource("Animation_u5ljn"),
+"caught": SubResource("Animation_4vohp")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vnwb"]
 size = Vector3(0.0664063, 1.37097, 0.0742188)
 
@@ -124,6 +163,8 @@ size = Vector3(0.0849609, 0.12207, 0.121216)
 [node name="fishing rod" type="RigidBody3D" groups=["pickup"]]
 max_contacts_reported = 12
 script = ExtResource("1_5x0dm")
+waittime = Vector2(5, 20)
+escapetime = Vector2(2, 5)
 metadata/obj = ExtResource("1_3t0vu")
 
 [node name="linerender" type="MeshInstance3D" parent="."]
@@ -139,8 +180,15 @@ skeleton = NodePath("")
 
 [node name="bobber" type="RigidBody3D" parent="rod" groups=["disableimmune"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -0.1)
+collision_layer = 257
+collision_mask = 257
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 mass = 0.1
 freeze = true
+contact_monitor = true
+max_contacts_reported = 8
 linear_damp = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rod/bobber"]
@@ -149,6 +197,12 @@ shape = SubResource("BoxShape3D_f4ve5")
 [node name="bobber" type="MeshInstance3D" parent="rod/bobber"]
 mesh = SubResource("ArrayMesh_jar8v")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rod/bobber"]
+libraries = {
+"": SubResource("AnimationLibrary_t6616")
+}
+autoplay = "RESET"
 
 [node name="rendpoint" type="Node3D" parent="rod"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13775, 0)
@@ -160,3 +214,13 @@ shape = SubResource("BoxShape3D_8vnwb")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013, -0.097)
 shape = SubResource("BoxShape3D_aw4fa")
+
+[node name="throwcooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="fishtime" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="rod/bobber" to="." method="_on_bobber_body_entered"]
+[connection signal="timeout" from="fishtime" to="." method="_on_fishtime_timeout"]

@@ -44,3 +44,7 @@ func updatesh():
 	shape.shape = shap
 	candle.scale.y = height
 	wickpos.position.y = 0.25 * height
+
+func heat(bo):
+	if(bo):
+		on = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwi170efjq44q"]
+[gd_scene load_steps=21 format=3 uid="uid://cwi170efjq44q"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uppgx"]
 [ext_resource type="AudioStream" uid="uid://rsygbcngeuhg" path="res://sounds/footstep.mp3" id="2_mkyug"]
@@ -19,6 +19,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i14eu"]
 radius = 0.45
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vnlbs"]
+auto_exposure_enabled = true
+auto_exposure_scale = 0.1
+auto_exposure_speed = 0.6
+dof_blur_far_distance = 40.0
+dof_blur_far_transition = 10.0
+auto_exposure_max_sensitivity = 200.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7etg"]
 font_size = 128
@@ -44,6 +52,7 @@ shape = SubResource("CapsuleShape3D_i14eu")
 
 [node name="cam" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+attributes = SubResource("CameraAttributesPractical_vnlbs")
 far = 10000.0
 script = ExtResource("2_vgmbu")
 

@@ -40,7 +40,7 @@ func _on_area_exited(body,ar):
 
 func togglefire(body,id : int):
 	fires[id].emitting = !fires[id].emitting
-	print(id)
+	#print(id)
 	for n in heated[id]:
 		if(n.has_method("heat")):
 			n.heat(fires[id].emitting)
@@ -54,6 +54,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	for n in fires:
+		n.visible = n.emitting
 		if(n.emitting):
 			fuel -= delta * .01
 
