@@ -740,6 +740,7 @@ shadow_mesh = SubResource("ArrayMesh_f12df")
 size = Vector3(2.5, 2.32568, 4.90859)
 
 [node name="farm truck" type="RigidBody3D" groups=["heavy", "metal", "pickup", "serialize", "tooheavy"]]
+collision_mask = 17
 mass = 1000.0
 physics_material_override = SubResource("PhysicsMaterial_ckj7o")
 center_of_mass_mode = 1

@@ -79,7 +79,7 @@ func look_follow(state: PhysicsDirectBodyState3D, target_dir: Vector3) -> void:
 		#state.angular_velocity = local_speed * forward_dir.cross(target_dir) / state.step
 
 func _integrate_forces(state):
-	if(rotationdirection != Vector3.ZERO):
+	if(!rotationdirection.is_zero_approx()):
 		look_follow(state, rotationdirection)
 
 func jump(node = null):
