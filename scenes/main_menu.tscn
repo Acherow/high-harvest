@@ -1,8 +1,6 @@
-[gd_scene load_steps=51 format=4 uid="uid://xihg4pj7a381"]
+[gd_scene load_steps=49 format=4 uid="uid://xihg4pj7a381"]
 
-[ext_resource type="Theme" uid="uid://cbj0gkm83nlep" path="res://ui.tres" id="1_543x5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ld3qd"]
-[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_uqd6q"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
 [ext_resource type="Shader" path="res://water.gdshader" id="5_x6x2f"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="7_j5j42"]
@@ -216,6 +214,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_daknj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_do0oc"]
+resource_local_to_scene = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xcb4m"]
 viewport_path = NodePath("mainmenu/viewportcont/SubViewport")
@@ -311,6 +310,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nkyv0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_el26y"]
+resource_local_to_scene = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rujbh"]
 viewport_path = NodePath("saves/viewportcont2/SubViewport")
@@ -404,6 +404,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qbiuq")
 
 [sub_resource type="QuadMesh" id="QuadMesh_igdtx"]
+resource_local_to_scene = true
 size = Vector2(0.4, 0.2)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_r7g1u"]
@@ -446,101 +447,6 @@ transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965925, 0, -0.965925, 0.258819, 
 light_energy = 2.0
 light_indirect_energy = 2.0
 shadow_enabled = true
-
-[node name="main menu" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("1_uqd6q")
-
-[node name="mainscreen" type="Control" parent="main menu"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="main menu/mainscreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -170.0
-offset_right = 150.0
-offset_bottom = 170.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="start" type="Button" parent="main menu/mainscreen/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
-theme = ExtResource("1_543x5")
-text = "START"
-
-[node name="options" type="Button" parent="main menu/mainscreen/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
-theme = ExtResource("1_543x5")
-disabled = true
-text = "OPTIONS"
-
-[node name="quit" type="Button" parent="main menu/mainscreen/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
-theme = ExtResource("1_543x5")
-text = "QUIT"
-
-[node name="saves" type="Control" parent="main menu"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="back" type="Button" parent="main menu/saves"]
-custom_minimum_size = Vector2(150, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.863
-anchor_right = 0.098
-anchor_bottom = 0.956
-offset_left = -0.400002
-offset_top = -0.0400391
-offset_right = -0.160004
-offset_bottom = -0.47998
-theme = ExtResource("1_543x5")
-text = "BACK"
-
-[node name="ColorRect" type="ColorRect" parent="main menu/saves"]
-clip_children = 1
-custom_minimum_size = Vector2(1500, 700)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -750.0
-offset_top = -350.0
-offset_right = 750.0
-offset_bottom = 350.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="main menu/saves/ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
 
 [node name="floor" type="Node3D" parent="."]
 metadata/material = "dirt"
@@ -642,7 +548,7 @@ mesh = SubResource("ArrayMesh_f1ss0")
 skeleton = NodePath("")
 
 [node name="viewportcont2" type="MeshInstance3D" parent="saves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.0187866)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_el26y")
 skeleton = NodePath("../../mainmenu")
@@ -651,9 +557,34 @@ script = ExtResource("10_gcorl")
 
 [node name="SubViewport" type="SubViewport" parent="saves/viewportcont2"]
 transparent_bg = true
-handle_input_locally = false
-size = Vector2i(128, 128)
+canvas_item_default_texture_filter = 0
+size = Vector2i(1024, 1024)
 render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="saves/viewportcont2/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -432.0
+offset_right = 348.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="saves/viewportcont2/SubViewport/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
 
 [node name="Area3D" type="Area3D" parent="saves/viewportcont2"]
 
@@ -749,10 +680,6 @@ script = ExtResource("11_jsdpj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="back2/viewportcont3/Area3D"]
 shape = SubResource("BoxShape3D_h04m6")
 
-[connection signal="pressed" from="main menu/mainscreen/VBoxContainer/start" to="main menu" method="startbutton"]
-[connection signal="pressed" from="main menu/mainscreen/VBoxContainer/options" to="main menu" method="optionsbutton"]
-[connection signal="pressed" from="main menu/mainscreen/VBoxContainer/quit" to="main menu" method="quitbutton"]
-[connection signal="pressed" from="main menu/saves/back" to="main menu" method="backtomain"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/startbtn" to="." method="lookatsaves"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/optionsbtn" to="." method="lookatoptions"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/quitbtn" to="." method="quit"]

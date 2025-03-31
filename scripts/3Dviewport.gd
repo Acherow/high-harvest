@@ -11,6 +11,13 @@ var last_event_time: float = -1.0
 @onready var node_area = $Area3D
 
 func _ready():
+	#var mat : StandardMaterial3D = StandardMaterial3D.new()
+	#mat.transparency = mat.TRANSPARENCY_ALPHA_SCISSOR
+	#mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	#var tex : ViewportTexture = node_viewport.get_texture()
+	#tex.viewport_path = node_viewport.get_path()
+	#mat.albedo_texture = tex
+	#set_surface_override_material(0,mat)
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)

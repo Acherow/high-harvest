@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://dmcojk70qh65b"]
+[gd_scene load_steps=2 format=3 uid="uid://dmcojk70qh65b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5s6y"]
+font_size = 24
 
 [node name="newgame" type="ColorRect"]
-custom_minimum_size = Vector2(1500, 200)
-color = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(700, 80)
+color = Color(0.717647, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -11,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 68
 text = "NEW GAME"
+label_settings = SubResource("LabelSettings_a5s6y")
 horizontal_alignment = 1
 vertical_alignment = 1

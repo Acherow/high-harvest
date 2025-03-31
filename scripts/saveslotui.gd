@@ -21,3 +21,8 @@ signal clicked(fil)
 func _on_gui_input(event):
 	if(event.is_action_pressed("leftclick")):
 		clicked.emit(file)
+
+
+func _on_texture_rect_gui_input(event):
+	if(event.is_action_pressed("leftclick")):
+		deletesave()
