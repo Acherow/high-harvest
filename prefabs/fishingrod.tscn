@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://cu0mgfedl1ed6"]
+[gd_scene load_steps=24 format=4 uid="uid://cu0mgfedl1ed6"]
 
 [ext_resource type="Resource" uid="uid://dff82fu5e586d" path="res://invobjs/fishingrod.tres" id="1_3t0vu"]
 [ext_resource type="Script" path="res://scripts/fishingrod.gd" id="1_5x0dm"]
 [ext_resource type="Texture2D" uid="uid://d1gcmajy16hcv" path="res://models/textures/rodbobber.png" id="3_avb4q"]
 [ext_resource type="Script" path="res://scripts/linerenderer.gd" id="4_kmbad"]
+[ext_resource type="Shader" path="res://ybillboard.gdshader" id="5_3h4mf"]
+[ext_resource type="Texture2D" uid="uid://u3vksp26x306" path="res://sprites/wormhooked.png" id="6_wtu5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1f2j"]
 cull_mode = 2
@@ -154,6 +156,25 @@ _data = {
 "caught": SubResource("Animation_4vohp")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76kwm"]
+render_priority = 0
+shader = ExtResource("5_3h4mf")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/texture_albedo = ExtResource("6_wtu5i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uppwr"]
+material = SubResource("ShaderMaterial_76kwm")
+size = Vector2(0.2, 0.2)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vnwb"]
 size = Vector3(0.0664063, 1.37097, 0.0742188)
 
@@ -203,6 +224,10 @@ libraries = {
 "": SubResource("AnimationLibrary_t6616")
 }
 autoplay = "RESET"
+
+[node name="worm" type="MeshInstance3D" parent="rod/bobber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+mesh = SubResource("QuadMesh_uppwr")
 
 [node name="rendpoint" type="Node3D" parent="rod"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13775, 0)

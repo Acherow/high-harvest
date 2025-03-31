@@ -1,4 +1,5 @@
 extends basepickup
+class_name fishingrod
 
 @onready var rod: MeshInstance3D = $rod
 @onready var bobber: RigidBody3D = $rod/bobber
@@ -23,6 +24,9 @@ var catch : String
 
 var pl : PlayerCam
 
+var wormed : bool = false
+@onready var worm: MeshInstance3D = $rod/bobber/worm
+
 func _ready() -> void:
 	super()
 	add_collision_exception_with(bobber)
@@ -34,6 +38,8 @@ func trigger(bod):
 	pl = bod
 
 func _physics_process(delta: float) -> void:
+	worm.visible = wormed
+	
 	bobber.get_node("CollisionShape3D").disabled = castout
 	if(catch != ""):
 		anim.play("caught")

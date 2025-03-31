@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://bq1occye76gd2"]
+
+[ext_resource type="Texture2D" uid="uid://8hmut7b4rjca" path="res://sprites/itemicons/fishingbaitcan.png" id="1_bjhw5"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_76u8u"]
+
+[resource]
+script = ExtResource("2_76u8u")
+name = "Bait Can"
+weight = 0.5
+icon = ExtResource("1_bjhw5")
+description = "A can to put worms in. "
+objaddress = "baitcan"
+customproperties = {}
