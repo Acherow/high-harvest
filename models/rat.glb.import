@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctpt5fe5juopq"
-path="res://.godot/imported/potato.glb-4b3bcfaaa72637f346d1405d83371e64.scn"
+uid="uid://drdr8uqu8f2yr"
+path="res://.godot/imported/rat.glb-cf663359d8563a8309d8075b76952850.scn"
 
 [deps]
 
-source_file="res://models/potato.glb"
-dest_files=["res://.godot/imported/potato.glb-4b3bcfaaa72637f346d1405d83371e64.scn"]
+source_file="res://models/rat.glb"
+dest_files=["res://.godot/imported/rat.glb-cf663359d8563a8309d8075b76952850.scn"]
 
 [params]
 

@@ -1,16 +1,15 @@
-extends Control
+extends Node3D
 
-@onready var mainscreen = $mainscreen
-@onready var savescreen = $saves
+var camangle : float = 0.0
+
+@onready var cam = $Camera3D
 
 const NEWGAME = preload("res://prefabs/uistuff/newgame_ui.tscn")
 const SAVESLOT = preload("res://prefabs/uistuff/save_slot_ui.tscn")
-@onready var savecontainer = $saves/ColorRect/VBoxContainer
+@onready var savecontainer = $saves/viewportcont2/SubViewport/ColorRect/VBoxContainer
 
 var saveslots = []
-
 func _ready():
-	backtomain()
 	for n in Savedata.datacount():
 		var sl = SAVESLOT.instantiate()
 		sl.file = n
@@ -38,16 +37,17 @@ func newgame(event):
 		Savedata.load_data()
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 
-func startbutton():
-	mainscreen.visible = false
-	savescreen.visible = true
+func _process(delta):
+	cam.rotation_degrees.y = lerp(cam.rotation_degrees.y,camangle,delta*10)
 
-func optionsbutton():
-	pass
-
-func quitbutton():
-	get_tree().quit()
+func lookatsaves():
+	camangle = -90
 
 func backtomain():
-	mainscreen.visible = true
-	savescreen.visible = false
+	camangle = 0
+
+func lookatoptions():
+	camangle = 90
+
+func quit():
+	get_tree().quit()

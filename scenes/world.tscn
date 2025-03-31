@@ -202,7 +202,7 @@ background_color = Color(0.180392, 0.501961, 0.505882, 1)
 sky = SubResource("Sky_n5ujh")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.03
+ambient_light_energy = 0.01
 ssao_enabled = true
 ssao_radius = 0.68
 ssao_intensity = 2.02
@@ -1649,6 +1649,16 @@ bind/1/name = &"blades"
 bind/1/bone = -1
 bind/1/pose = Transform3D(1, -8.74228e-08, 0, 0, 0, 1, -8.74228e-08, -1, 0, 2.09815e-06, 0, 24)
 
+[sub_resource type="Animation" id="Animation_hji84"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:blades")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
+
 [sub_resource type="Animation" id="Animation_nssgv"]
 resource_name = "spin"
 length = 4.0
@@ -1661,16 +1671,6 @@ tracks/0/path = NodePath("Skeleton3D:blades")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, -3.09086e-08, -3.09086e-08, 0.707107, 4, 1, 2.51215e-15, 0.707107, 0.707107, 2.51215e-15)
-
-[sub_resource type="Animation" id="Animation_hji84"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton3D:blades")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gh4oo"]
 _data = {
