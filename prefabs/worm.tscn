@@ -1,7 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnl57lbyhdky1"]
+[gd_scene load_steps=8 format=3 uid="uid://cnl57lbyhdky1"]
 
 [ext_resource type="Texture2D" uid="uid://cn0tecprnx6cu" path="res://sprites/worm1.png" id="1_i315x"]
+[ext_resource type="Script" path="res://scripts/worm.gd" id="1_ljvlq"]
 [ext_resource type="Texture2D" uid="uid://c7hpqctby54nv" path="res://sprites/worm2.png" id="2_cmuh6"]
+
+[sub_resource type="Animation" id="Animation_r5av4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_i315x")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2fv23"]
 resource_name = "idle"
@@ -33,40 +61,17 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_r5av4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_i315x")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_053u6"]
 _data = {
 "RESET": SubResource("Animation_r5av4"),
 "idle": SubResource("Animation_2fv23")
 }
 
-[node name="worm" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_goqt8"]
+size = Vector3(0.1, 0.05, 0.3)
+
+[node name="worm" type="RigidBody3D" groups=["pickup"]]
+script = ExtResource("1_ljvlq")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -78,3 +83,6 @@ libraries = {
 "": SubResource("AnimationLibrary_053u6")
 }
 autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_goqt8")

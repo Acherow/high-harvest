@@ -39,6 +39,7 @@ func trigger(bod):
 
 func _physics_process(delta: float) -> void:
 	worm.visible = wormed
+	worm.global_basis = Basis()
 	
 	bobber.get_node("CollisionShape3D").disabled = castout
 	if(catch != ""):
@@ -95,6 +96,7 @@ func reset():
 			pl.inventory.invlist.append(Library.invobjs[catch])
 			pl.inventory.UpdateList()
 		catch = ""
+		wormed = false
 	bobber.reparent(rod)
 	bobber.freeze = true
 	await get_tree().process_frame
@@ -104,7 +106,7 @@ func reset():
 
 func _on_bobber_body_entered(body: Node) -> void:
 	if(body.is_in_group("water")):
-		fishtime.start(randi_range(waittime.x,waittime.y))
+		fishtime.start(randi_range(waittime.x,waittime.y) if wormed else randi_range(waittime.x*2,waittime.y*2))
 
 func _on_fishtime_timeout() -> void:
 	if(catch != ""):

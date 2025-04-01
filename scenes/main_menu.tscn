@@ -51,7 +51,7 @@ background_color = Color(0.180392, 0.501961, 0.505882, 1)
 sky = SubResource("Sky_n5ujh")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.4
+ambient_light_energy = 0.0
 ssao_enabled = true
 ssao_radius = 0.68
 ssao_intensity = 2.02
@@ -224,11 +224,13 @@ resource_local_to_scene = true
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_xcb4m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_j1osi"]
-font_color = Color(0, 0, 0, 1)
+font_size = 96
+font_color = Color(0.24, 0.18, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d8j7"]
 size = Vector3(1, 1, 0.1)
@@ -493,7 +495,7 @@ mesh = SubResource("ArrayMesh_1ufst")
 skeleton = NodePath("")
 
 [node name="viewportcont" type="MeshInstance3D" parent="mainmenu"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.15592)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_do0oc")
 surface_material_override/0 = SubResource("StandardMaterial3D_iqisi")
@@ -502,14 +504,14 @@ script = ExtResource("10_gcorl")
 [node name="SubViewport" type="SubViewport" parent="mainmenu/viewportcont"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(128, 128)
+size = Vector2i(1024, 1024)
 render_target_update_mode = 4
 
 [node name="startbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 40.0
-offset_top = 10.0
-offset_right = 111.0
-offset_bottom = 33.0
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 636.0
+offset_bottom = 232.0
 rotation = -0.0959931
 mouse_filter = 1
 text = "START"
@@ -517,20 +519,20 @@ label_settings = SubResource("LabelSettings_j1osi")
 script = ExtResource("11_jsdpj")
 
 [node name="optionsbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 28.5
-offset_top = 52.5
-offset_right = 99.5
-offset_bottom = 75.5
+offset_left = 300.0
+offset_top = 450.0
+offset_right = 722.0
+offset_bottom = 582.0
 mouse_filter = 1
 text = "OPTIONS"
 label_settings = SubResource("LabelSettings_j1osi")
 script = ExtResource("11_jsdpj")
 
 [node name="quitbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 40.0
-offset_top = 103.0
-offset_right = 111.0
-offset_bottom = 126.0
+offset_left = 400.0
+offset_top = 850.0
+offset_right = 684.0
+offset_bottom = 982.0
 rotation = -0.0872665
 mouse_filter = 1
 text = "QUIT"

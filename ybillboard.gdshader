@@ -1,7 +1,7 @@
 // NOTE: Shader automatically converted from Godot Engine 4.2.stable.mono's StandardMaterial3D.
 
 shader_type spatial;
-render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx, depth_prepass_alpha, shadows_disabled;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_toon,specular_disabled, depth_prepass_alpha, shadows_disabled;
 uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color,filter_nearest,repeat_enable;
 uniform float point_size : hint_range(0,128);
