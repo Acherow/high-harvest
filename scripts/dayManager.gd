@@ -31,8 +31,8 @@ var moonenergy
 func _ready() -> void:
 	timeofday = Savedata.gamedata["timeofday"]
 	israining = Savedata.gamedata["israining"]
-	raintimer.start(Savedata.gamedata["raintime"])
 	if(rainobj != null):
+		raintimer.start(Savedata.gamedata["raintime"])
 		rainobj.call_deferred("reparent",get_tree().get_first_node_in_group("player"))
 		await get_tree().process_frame
 		rainobj.position = Vector3.ZERO
@@ -45,8 +45,8 @@ func _process(delta):
 	Savedata.gamedata["timeofday"] = timeofday
 	Savedata.gamedata["playtime"] += delta
 	Savedata.gamedata["israining"] = israining
-	Savedata.gamedata["raintime"] = raintimer.time_left
 	if(rainobj != null):
+		Savedata.gamedata["raintime"] = raintimer.time_left
 		rainobj.amount_ratio = snapped(currain, .1)
 		environment.sky.sky_material.set_shader_parameter("day_top_color",topgradient.sample(currain))
 		environment.sky.sky_material.set_shader_parameter("day_bottom_color",bottomgradient.sample(currain))

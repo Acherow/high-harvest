@@ -53,6 +53,10 @@ func _on_timer_timeout():
 					get_tree().current_scene.add_child(bx)
 					bx.global_position = boxspawn.global_position
 					bx.global_rotation = boxspawn.global_rotation
+					var l = Library.objs["boxlid"].instantiate()
+					get_tree().current_scene.add_child(l)
+					bx._on_lidcheck_body_entered(l)
+					ignore.append(l)
 					n.queue_free()
 			elif(n is storeflyer):
 				usedturn = true
