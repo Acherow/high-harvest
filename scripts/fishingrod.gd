@@ -27,9 +27,20 @@ var pl : PlayerCam
 var wormed : bool = false
 @onready var worm: MeshInstance3D = $rod/bobber/worm
 
+var data : InventoryObject
+
 func _ready() -> void:
 	super()
 	add_collision_exception_with(bobber)
+	await get_tree().process_frame
+	data = get_meta("obj").duplicate()
+	set_meta("obj", data)
+	if(data.customproperties.has("wormed")):
+		wormed = data.customproperties["wormed"]
+	else:
+		wormed = false
+		data.customproperties["wormed"] = wormed
+		set_meta("obj", data)
 
 func trigger(bod):
 	if(throwing || resetting || castout):
@@ -41,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	worm.visible = wormed
 	worm.global_basis = Basis()
 	
-	bobber.get_node("CollisionShape3D").disabled = castout
+	bobber.get_node("CollisionShape3D").disabled = !castout
 	if(catch != ""):
 		anim.play("caught")
 	else:
@@ -81,6 +92,7 @@ func _physics_process(delta: float) -> void:
 	rod.rotation_degrees.x = lerp(0,25,throwlength/1)
 
 func cast():
+	updatedata()
 	throwcooldown.start()
 	castout = true
 	bobber.reparent(get_tree().current_scene)
@@ -97,6 +109,7 @@ func reset():
 			pl.inventory.UpdateList()
 		catch = ""
 		wormed = false
+		updatedata()
 	bobber.reparent(rod)
 	bobber.freeze = true
 	await get_tree().process_frame
@@ -119,3 +132,9 @@ func _on_fishtime_timeout() -> void:
 				chances.append(n)
 		catch = chances.pick_random()
 		fishtime.start(randi_range(escapetime.x,escapetime.y))
+
+func updatedata():
+	if(data == null):
+		data = get_meta("obj").duplicate()
+	data.customproperties["wormed"] = wormed
+	set_meta("obj", data)

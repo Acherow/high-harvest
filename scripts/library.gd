@@ -244,6 +244,10 @@ const fish : Dictionary = {
 	"fish2":1,
 }
 
+const critters : Dictionary = {
+	"worm":preload("res://prefabs/worm.tscn"),
+}
+
 const others : Dictionary = {
 	"table":preload("res://prefabs/table.tscn"),
 	"truck":preload("res://prefabs/truck.tscn"),

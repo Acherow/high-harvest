@@ -18,6 +18,8 @@ func _ready():
 		saveslots.append(sl)
 	var ng = NEWGAME.instantiate()
 	ng.gui_input.connect(newgame)
+	ng.mouse_exited.connect(func(): ng.color = Color("b70000"))
+	ng.mouse_entered.connect(func(): ng.color = Color("d45800"))
 	savecontainer.add_child(ng)
 
 func updateslots():
