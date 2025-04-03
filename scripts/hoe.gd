@@ -34,6 +34,12 @@ func dig():
 				if(n.collider.has_method("uproot")):
 					#n.collider.uproot()
 					return
+			var wormcount = clamp(randi_range(-5,2),0,2)
+			for w in wormcount:
+				var wom = Library.critters["worm"].instantiate()
+				get_tree().current_scene.add_child(wom)
+				wom.global_position = point
+				wom.global_rotation_degrees.y = randi_range(-180,180)
 			var hol = hole.instantiate()
 			get_tree().current_scene.add_child(hol)
 			hol.global_position = point

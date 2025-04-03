@@ -21,8 +21,9 @@
 radius = 0.45
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vnlbs"]
+exposure_multiplier = 0.1
 auto_exposure_enabled = true
-auto_exposure_scale = 0.1
+auto_exposure_scale = 0.05
 auto_exposure_speed = 0.6
 dof_blur_far_distance = 40.0
 dof_blur_far_transition = 10.0

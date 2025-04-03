@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://b4jtleag6oj6"]
+[gd_scene load_steps=36 format=4 uid="uid://b4jtleag6oj6"]
 
 [ext_resource type="Texture2D" uid="uid://cb7unwltsr3ne" path="res://models/house/Chao_DefaultMaterial_Height.png" id="1_cvtnr"]
+[ext_resource type="Texture2D" uid="uid://t7kpivbyg8jt" path="res://models/textures/wood.png" id="1_uv7w6"]
 [ext_resource type="Texture2D" uid="uid://bobn3mctssadp" path="res://models/house/Chao_DefaultMaterial_Normal.png" id="2_xiww5"]
 [ext_resource type="Texture2D" uid="uid://dyu6t8deq6nnl" path="res://models/house/Parede_DefaultMaterial_Roughness.png" id="3_wnsv6"]
 [ext_resource type="Texture2D" uid="uid://c8uixs67yo2bp" path="res://models/house/Parede_DefaultMaterial_Normal.png" id="4_8qeep"]
@@ -9,17 +10,19 @@
 diffuse_mode = 3
 specular_mode = 1
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.85098, 0.764706, 0.537255, 1)
-albedo_texture = ExtResource("3_wnsv6")
+albedo_texture = ExtResource("1_uv7w6")
 roughness_texture = ExtResource("3_wnsv6")
 normal_enabled = true
 normal_texture = ExtResource("4_8qeep")
 texture_filter = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrosg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cttf1"]
 diffuse_mode = 3
 specular_mode = 2
-albedo_color = Color(0.229304, 0.12431, 0.0755509, 1)
+albedo_color = Color(0.42, 0.22771, 0.1386, 1)
+albedo_texture = ExtResource("1_uv7w6")
+uv1_scale = Vector3(2.84, 2.84, 2.84)
+texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_g3yj7"]
 _surfaces = [{
@@ -62,7 +65,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("CQAhACoAIQABAAUAAwAhAAkAIQADAAEAHQARABcAHQANABEAAAAVAAQAFQAIABsAAgAVAAAAFQACAAgAGgAYABQAGgAeABgAJwAgACQAJwApACAAEwAWABkAEwAHABYADAAjABAADAAmACMACgAfABwACgAOAB8ADwArACgADwALACsAEgAiAAYAEgAlACIA"),
-"material": SubResource("StandardMaterial3D_yrosg"),
+"material": SubResource("StandardMaterial3D_cttf1"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 44,
@@ -73,6 +76,13 @@ shadow_mesh = SubResource("ArrayMesh_g3yj7")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1n7m8"]
 data = PackedVector3Array(6.05, 0, -4, 6.05, 0, 4, 6.05, 1.683, -0.0001, -6.05, 0, 4, -6.05, 0, -4, -6.05, 1.683, -0.0001, 6.3334, 1.683, -0.0001, -6.3334, -0.2776, 4.6747, 6.3334, -0.2776, 4.6747, -6.3334, -0.2776, 4.6747, -6.0001, 1.683, -0.0001, -6.3334, 1.683, -0.0001, 5.9999, 1.683, -0.0001, -6.3334, -0.2776, 4.6747, 6.3334, 1.683, -0.0001, -6.3334, -0.2776, 4.6747, 5.9999, 1.683, -0.0001, -6.0001, 1.683, -0.0001, 6.3334, 0.179, -4.9312, -6.3334, 2.303, -0.0001, -6.3334, 0.179, -4.9312, 6.3334, 0.179, -4.9312, 6.3334, 2.303, -0.0001, -6.3334, 2.303, -0.0001, -6.0001, 1.683, -0.0001, -6.3334, -0.2776, -4.6749, -6.3334, 1.683, -0.0001, -6.3334, -0.2776, -4.6749, 6.3334, 1.683, -0.0001, 6.3334, -0.2776, -4.6749, 5.9999, 1.683, -0.0001, -6.3334, -0.2776, -4.6749, -6.0001, 1.683, -0.0001, -6.3334, -0.2776, -4.6749, 5.9999, 1.683, -0.0001, 6.3334, 1.683, -0.0001, 6.3334, -0.2776, -4.6749, -6.3334, 0.179, -4.9312, -6.3334, -0.2776, -4.6749, 6.3334, -0.2776, -4.6749, 6.3334, 0.179, -4.9312, -6.3334, 0.179, -4.9312, 6.3334, 0.179, 4.9312, -6.3334, -0.2776, 4.6747, -6.3334, 0.179, 4.9312, 6.3334, 0.179, 4.9312, 6.3334, -0.2776, 4.6747, -6.3334, -0.2776, 4.6747, -6.3334, 2.303, -0.0001, -6.3334, -0.2776, -4.6749, -6.3334, 0.179, -4.9312, -6.3334, 2.303, -0.0001, -6.3334, 1.683, -0.0001, -6.3334, -0.2776, -4.6749, 6.3334, 2.303, -0.0001, -6.3334, 0.179, 4.9312, -6.3334, 2.303, -0.0001, 6.3334, 2.303, -0.0001, 6.3334, 0.179, 4.9312, -6.3334, 0.179, 4.9312, 6.3334, 1.683, -0.0001, 6.3334, 0.179, -4.9312, 6.3334, -0.2776, -4.6749, 6.3334, 1.683, -0.0001, 6.3334, 2.303, -0.0001, 6.3334, 0.179, -4.9312, 6.3334, 2.303, -0.0001, 6.3334, -0.2776, 4.6747, 6.3334, 0.179, 4.9312, 6.3334, 2.303, -0.0001, 6.3334, 1.683, -0.0001, 6.3334, -0.2776, 4.6747, -6.3334, 2.303, -0.0001, -6.3334, -0.2776, 4.6747, -6.3334, 1.683, -0.0001, -6.3334, 2.303, -0.0001, -6.3334, 0.179, 4.9312, -6.3334, -0.2776, 4.6747)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrosg"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.42, 0.22771, 0.1386, 1)
+albedo_texture = ExtResource("1_uv7w6")
+texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5nwsv"]
 _surfaces = [{
@@ -293,8 +303,16 @@ size = Vector3(12.5, 1, 12)
 [sub_resource type="BoxShape3D" id="BoxShape3D_sybn6"]
 size = Vector3(12, 0.25, 8)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmvvx"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.42, 0.22771, 0.1386, 1)
+albedo_texture = ExtResource("1_uv7w6")
+uv1_scale = Vector3(4.725, 4.725, 4.725)
+texture_filter = 2
+
 [sub_resource type="BoxMesh" id="BoxMesh_v7of1"]
-material = SubResource("StandardMaterial3D_yrosg")
+material = SubResource("StandardMaterial3D_jmvvx")
 size = Vector3(12.5, 1, 12)
 
 [node name="house" type="StaticBody3D"]

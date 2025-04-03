@@ -21,9 +21,17 @@ func _on_body_entered(body):
 		body.wormed = true
 		worms -= 1
 		updatedata()
+		body.updatedata()
+	if(body is worm):
+		body.queue_free()
+		worms += 1
+		updatedata()
 
 func updatedata():
 	if(data == null):
 		data = get_meta("obj").duplicate()
 	data.customproperties["worms"] = worms
 	set_meta("obj", data)
+
+func info():
+	return "Worms: %d" % worms

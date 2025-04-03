@@ -1,14 +1,77 @@
-[gd_scene load_steps=49 format=4 uid="uid://xihg4pj7a381"]
+[gd_scene load_steps=58 format=4 uid="uid://xihg4pj7a381"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ld3qd"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
-[ext_resource type="Shader" path="res://water.gdshader" id="5_x6x2f"]
+[ext_resource type="Script" path="res://scripts/mainmenudaymanager.gd" id="5_a16qn"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="7_j5j42"]
 [ext_resource type="Texture2D" uid="uid://dipl3vtt0tsng" path="res://stars.png" id="8_kdd5n"]
+[ext_resource type="Script" path="res://scripts/windmill.gd" id="9_n5m3s"]
 [ext_resource type="Texture2D" uid="uid://t7kpivbyg8jt" path="res://models/textures/wood.png" id="9_oc0k8"]
 [ext_resource type="Texture2D" uid="uid://dwkdhq1jjkyxi" path="res://models/textures/whitewood.png" id="10_8rm7b"]
 [ext_resource type="Script" path="res://scripts/3Dviewport.gd" id="10_gcorl"]
 [ext_resource type="Script" path="res://scripts/mybutton.gd" id="11_jsdpj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owlut"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fixae"]
+resource_name = "windmill_Cube_001"
+_surfaces = [{
+"aabb": AABB(-20, -4, -6, 40, 48, 12),
+"attribute_data": PackedByteArray("AAAAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AAAgPwAAAAAAACA/AACAPwAAAD4AAAA/AADAPgAAQD8AACA/AABAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AAAgPwAAAAAAACA/AACAPwAAID8AAEA/AAAgPwAAgD4AACA/AAAAPwAAID8AAAAAAAAgPwAAgD8AAGA/AACAPgAAID8AAEA/AABgPwAAAD8AACA/AAAAPwAAID8AAIA+AAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAAAAAAAA+AACAPgAAwD4AAAAAAADAPgAAgD8AAMA+AACAPwAAAD4AAAA/AAAAPgAAAD8AAMA+AABAPwAAwD4AAEA/AADAPgAAQD8AAMA+AACAPgAAwD4AAIA+AADAPgAAgD4AAMA+AACAPgAAwD4AAAA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAAAAACA/AAAAAAAAID8AAIA/AAAgPwAAgD8AACA/AAAAAAAAID8AAIA/AABgPwAAgD4AACA/AABAPwAAID8AAEA/AAAgPwAAQD8AACA/AABAPwAAYD8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AACAPgAAID8AAIA+AAAgPwAAgD4AACA/AACAPg=="),
+"bone_aabbs": [AABB(-6, -4, -6, 12, 36, 12), AABB(-20, 4, 5.74264, 40, 40, 1.00136e-05)],
+"format": 34359745559,
+"index_count": 162,
+"index_data": PackedByteArray("AgAHAAQAAgAGAAcABgALAAcABgAKAAsACgAJAAsACgAIAAkACAADAAkACAABAAMABQAIAAoABQAAAAgABwANAAQABwAOAA0ADAAXAA8ADAARABcAAwAPAAkAAwAMAA8ACwAOAAcACwAQAA4ACQAQAAsACQAPABAAFgATABUAFgAXABMAEAAUAA4AEAAWABQADwAWABAADwAXABYADgASAA0ADgAUABIAGAAbABkAGAAaABsAJAAdACUAJAAfAB0AJgAeACcAJgAcAB4AKAAjACkAKAAiACMAKgAgACsAKgAhACAAGwAlABkAGwAkACUAGAAnABoAGAAmACcAGgApABsAGgAoACkAGQArABgAGQAqACsAJAAsAB8AJAAtACwAJgAuABwAJgAvAC4AKgAwACEAKgAxADAAKAAyACIAKAAzADIA"),
+"lods": [2.36997, PackedByteArray("NgBMAEcANwA6AE0AOwBRAE4APABBAFIAQgBVAFMAQwA9AFYAPgBFAFcAPgA1AEUAOAA/AEQAOQA0AEAARgBJAFgAVABYAEsAVABLAFAATwBKAEgAGAAbABkAGwAlABkAGQArABgAGQAqACsAKgAgACsAKgAhACAAKgAwACEAKgAxADAAGAAaABsAGgApABsAGAAnABoAGgAoACkAKAAjACkAKAAiACMAKAAyACIAKAAzADIAGAAmACcAJgAeACcAJgAcAB4AJgAuABwAJgAvAC4AGwAkACUAJAAdACUAJAAfAB0AJAAsAB8AJAAtACwA")],
+"material": SubResource("StandardMaterial3D_owlut"),
+"primitive": 3,
+"skin_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAA//8AAAAAAAA="),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 89,
+"vertex_data": PackedByteArray("AADAwAAAgMAAAMBAAADAwAAAgMAAAMBAAADAwAAAgMAAAMBAAACAwAAAoEEAAIBAAACAwAAAoEEAAIBAAADAwAAAgMAAAMDAAADAwAAAgMAAAMDAAACAwAAAoEEAAIDAAADAQAAAgMAAAMBAAACAQAAAoEEAAIBAAADAQAAAgMAAAMDAAACAQAAAoEEAAIDAAACAwAAA4EEAAIBAAACAwAAA4EEAAIBAAACAwAAA4EEAAIDAAACAQAAA4EEAAIBAAACAQAAA4EEAAIDAAACAvwAAAEIAAIA/AACAvwAAAEIAAIA/AACAvwAAAEIAAIA/AACAvwAAAEIAAIC/AACAvwAAAEIAAIC/AACAPwAAAEIAAIC/AACAPwAAAEIAAIA///9/vwAAuEGsw7dA//9/PwAAuEGsw7dA//9/vwAAyEGsw7dA//9/PwAAyEGsw7dA//+fwQAAuEGsw7dA//+fQQAAuEGsw7dA//+fwQAAyEGsw7dA//+fQQAAyEGsw7dA//9/vwAAgECsw7dA//9/PwAAgECsw7dA//9/vwAAMEKsw7dA//9/PwAAMEKsw7dA//+nQAAAyEGsw7dA//+nQAAAuEGsw7dA//+nwAAAuEGsw7dA//+nwAAAyEGsw7dA//9/vwAA6kGsw7dA//9/PwAA6kGsw7dA//9/PwAAlkGsw7dA//9/vwAAlkGsw7dA//+fQQAA4EGsw7dA//+nQAAA4EGsw7dA//+fwQAAoEGsw7dA//+nwAAAoEGsw7dAAACAQAAAgECsw7dAAACAQAAAlkGsw7dAAACAwAAAMEKsw7dAAACAwAAA6kGsw7dAAADAwAAAgMAAAMBAAADAwAAAgMAAAMBAAADAwAAAgMAAAMBAAADAwAAAgMAAAMBAAADAwAAAgMAAAMDAAADAwAAAgMAAAMDAAADAwAAAgMAAAMDAAADAwAAAgMAAAMDAAADAwAAAgMAAAMDAAADAQAAAgMAAAMBAAADAQAAAgMAAAMBAAADAQAAAgMAAAMBAAADAQAAAgMAAAMBAAADAQAAAgMAAAMDAAADAQAAAgMAAAMDAAADAQAAAgMAAAMDAAADAQAAAgMAAAMDAAACAwAAA4EEAAIBAAACAwAAA4EEAAIBAAACAwAAA4EEAAIBAAACAwAAA4EEAAIBAAACAvwAAAEIAAIA/AACAvwAAAEIAAIA/AACAvwAAAEIAAIA/AACAvwAAAEIAAIC/AACAvwAAAEIAAIC/AACAvwAAAEIAAIC/AACAvwAAAEIAAIC/AACAvwAAAEIAAIC/AACAPwAAAEIAAIC/AACAPwAAAEIAAIC/AACAPwAAAEIAAIC/AACAPwAAAEIAAIC/AACAPwAAAEIAAIA/AACAPwAAAEIAAIA/AACAPwAAAEIAAIA/AACAPwAAAEIAAIA/v1N/WFW+g7C/U39Y0GHP4b9Tf1hdaM/hnUI7hRpxr/6dQjuFDop7/X8nPywH4Sqffyc/LKFDRe88BZ3C5oj3+j+sf1jXtc/hYb07hfB1i/t/2D8sXbyw58L6ncLXfvf6IU1Cmv///z8hTUKa////P0IaIM3///+/3bJCmv///z+85SDN////vxpjNcb///8/GmM1xv///z8aYzXGGB7BqjVGGuP///+/NUYa43sq8rDJuRrjGB481eScNcZ7KgvP/3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z/vWpw/Vb6DsIlrPmHQYc/hIzwNcV1oz+GHMulWXWjP4Umx9AIH4SqfqlOYMQfhKp/DI/pEoUNF70wIiy2hQ0XvKSZoCKFDRe/MxuJc17XP4b+RRXbXtc/hLrFDJde1z+GOe1gt17XP4ejdDxddvLDn1fv6Tl28sOde2ftTXbyw50fCih1dvLDnWH/vhf///z+MaNa7////PzM5I4r///8/glRNr////z+8as7D////P5tWibn///8/xnpp8hgewaqiKcyL////v9IWWFr///+/UhOl3P///7/vVoLG////v6BclPJ7KvKw2hQb4xgePNXr5hEKGB481b7zgrEYHjzVdJWZ8xgePNXJ7NeueyoLzyHgHWx7KgvP350Hj3sqC88uhu3ZeyoLzw==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Skin" id="Skin_taaeq"]
+resource_name = "Skin"
+bind_count = 2
+bind/0/name = &"body"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &"blades"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, -8.74228e-08, 0, 0, 0, 1, -8.74228e-08, -1, 0, 2.09815e-06, 0, 24)
+
+[sub_resource type="Animation" id="Animation_hji84"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:blades")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
+
+[sub_resource type="Animation" id="Animation_nssgv"]
+resource_name = "spin"
+length = 4.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:blades")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, -3.09086e-08, -3.09086e-08, 0.707107, 4, 1, 2.51215e-15, 0.707107, 0.707107, 2.51215e-15)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gh4oo"]
+_data = {
+"RESET": SubResource("Animation_hji84"),
+"spin": SubResource("Animation_nssgv")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1udd1"]
 shader = ExtResource("7_j5j42")
@@ -51,7 +114,7 @@ background_color = Color(0.180392, 0.501961, 0.505882, 1)
 sky = SubResource("Sky_n5ujh")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.4
+ambient_light_energy = 0.0
 ssao_enabled = true
 ssao_radius = 0.68
 ssao_intensity = 2.02
@@ -116,9 +179,7 @@ material = SubResource("StandardMaterial3D_jo085")
 size = Vector2(1500, 600)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2aq8"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
+specular_mode = 2
 albedo_color = Color(0.6, 0.447059, 0.176471, 1)
 texture_filter = 0
 
@@ -151,31 +212,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ugk8w")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnr25"]
-render_priority = 0
-shader = ExtResource("5_x6x2f")
-shader_parameter/WATER_COL = Color(0, 0.496254, 0.375254, 1)
-shader_parameter/WATER2_COL = Color(0, 0.454856, 0.352973, 1)
-shader_parameter/FOAM_COL = Color(0.183449, 0.519774, 0.403607, 1)
-shader_parameter/distortion_speed = 1.0
-shader_parameter/tile = Vector2(10, 10)
-shader_parameter/wave_speed = 1.0
-shader_parameter/wave_amplitude = 0.1
-shader_parameter/wave_frequency = 0.5
-shader_parameter/time_offset = 0.0
-shader_parameter/water_size = Vector2(128, 128)
-shader_parameter/water_transparency = 0.8
-shader_parameter/water_depth_factor = 10.0
-shader_parameter/foam_width = 30.0
-shader_parameter/foam_edge_softness = 0.05
-shader_parameter/foam_smoothness = 0.03
-shader_parameter/foam_distortion_speed = 0.5
-shader_parameter/foam_distortion_amount = 0.1
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_fxhxj"]
-material = SubResource("ShaderMaterial_wnr25")
-size = Vector2(70, 80)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqie1"]
 diffuse_mode = 3
@@ -228,7 +264,16 @@ shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_xcb4m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_j1osi"]
+font_size = 96
 font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_irunv"]
+font_size = 96
+font_color = Color(0.75212, 0.610328, 1.15514e-06, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d8j7"]
 size = Vector3(1, 1, 0.1)
@@ -320,8 +365,10 @@ resource_local_to_scene = true
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_rujbh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hx5bg"]
+size = Vector3(0.75, 1, 0.1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yte7u"]
 _surfaces = [{
@@ -419,8 +466,14 @@ shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_r7g1u")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2k8g0"]
-font_size = 25
+font_size = 96
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gy0os"]
+font_size = 96
+font_color = Color(0.75212, 0.610328, 1.15514e-06, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h04m6"]
 size = Vector3(0.4, 0.2, 0.1)
@@ -436,14 +489,112 @@ alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_5wwrw")
 
+[sub_resource type="LabelSettings" id="LabelSettings_gkvbc"]
+font_size = 96
+font_color = Color(0.75212, 0.610328, 1.15514e-06, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [node name="menu" type="Node3D"]
 script = ExtResource("1_ld3qd")
 
+[node name="windmill" type="Node3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 419.65, 0.75, -261.644)
+script = ExtResource("9_n5m3s")
+
+[node name="Skeleton3D" type="Skeleton3D" parent="windmill"]
+bones/0/name = "body"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "blades"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 0, -8.74228e-08, -8.74228e-08, 0, -1, 0, 1, 0, 0, 24, 0)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 24, 0)
+bones/1/rotation = Quaternion(0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="windmill/Skeleton3D"]
+mesh = SubResource("ArrayMesh_fixae")
+skin = SubResource("Skin_taaeq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="windmill"]
+libraries = {
+"": SubResource("AnimationLibrary_gh4oo")
+}
+autoplay = "spin"
+
+[node name="windmill2" type="Node3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 419.65, 0.75, -211.644)
+script = ExtResource("9_n5m3s")
+
+[node name="Skeleton3D" type="Skeleton3D" parent="windmill2"]
+bones/0/name = "body"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "blades"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 0, -8.74228e-08, -8.74228e-08, 0, -1, 0, 1, 0, 0, 24, 0)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 24, 0)
+bones/1/rotation = Quaternion(0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="windmill2/Skeleton3D"]
+mesh = SubResource("ArrayMesh_fixae")
+skin = SubResource("Skin_taaeq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="windmill2"]
+libraries = {
+"": SubResource("AnimationLibrary_gh4oo")
+}
+autoplay = "spin"
+
+[node name="windmill3" type="Node3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 419.65, 0.75, -161.644)
+script = ExtResource("9_n5m3s")
+
+[node name="Skeleton3D" type="Skeleton3D" parent="windmill3"]
+bones/0/name = "body"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "blades"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 0, -8.74228e-08, -8.74228e-08, 0, -1, 0, 1, 0, 0, 24, 0)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 24, 0)
+bones/1/rotation = Quaternion(0.707107, -3.09086e-08, -3.09086e-08, 0.707107)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="windmill3/Skeleton3D"]
+mesh = SubResource("ArrayMesh_fixae")
+skin = SubResource("Skin_taaeq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="windmill3"]
+libraries = {
+"": SubResource("AnimationLibrary_gh4oo")
+}
+autoplay = "spin"
+
 [node name="day manager" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7xvkv")
+script = ExtResource("5_a16qn")
 
 [node name="sun" type="DirectionalLight3D" parent="day manager"]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965925, 0, -0.965925, 0.258819, 0, 7, 0)
+transform = Transform3D(1, 0, 0, 0, -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 7, 0)
+visible = false
 light_energy = 2.0
 light_indirect_energy = 2.0
 shadow_enabled = true
@@ -476,16 +627,18 @@ mesh = SubResource("PlaneMesh_fif3d")
 skeleton = NodePath("../..")
 
 [node name="maingrass" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.5, 0)
 mesh = SubResource("ArrayMesh_g47jy")
 skeleton = NodePath("")
 
-[node name="water" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.082, -3, 112.836)
-mesh = SubResource("PlaneMesh_fxhxj")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+light_energy = 0.1
+light_indirect_energy = 0.0
+omni_range = 6.0
+omni_attenuation = 0.0
 
 [node name="mainmenu" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.5)
@@ -493,7 +646,7 @@ mesh = SubResource("ArrayMesh_1ufst")
 skeleton = NodePath("")
 
 [node name="viewportcont" type="MeshInstance3D" parent="mainmenu"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.15592)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_do0oc")
 surface_material_override/0 = SubResource("StandardMaterial3D_iqisi")
@@ -502,40 +655,46 @@ script = ExtResource("10_gcorl")
 [node name="SubViewport" type="SubViewport" parent="mainmenu/viewportcont"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(128, 128)
+size = Vector2i(1024, 1024)
 render_target_update_mode = 4
 
 [node name="startbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 40.0
-offset_top = 10.0
-offset_right = 111.0
-offset_bottom = 33.0
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 636.0
+offset_bottom = 232.0
 rotation = -0.0959931
 mouse_filter = 1
 text = "START"
 label_settings = SubResource("LabelSettings_j1osi")
 script = ExtResource("11_jsdpj")
+regularlook = SubResource("LabelSettings_j1osi")
+hoverlook = SubResource("LabelSettings_irunv")
 
 [node name="optionsbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 28.5
-offset_top = 52.5
-offset_right = 99.5
-offset_bottom = 75.5
+offset_left = 300.0
+offset_top = 450.0
+offset_right = 722.0
+offset_bottom = 582.0
 mouse_filter = 1
 text = "OPTIONS"
 label_settings = SubResource("LabelSettings_j1osi")
 script = ExtResource("11_jsdpj")
+regularlook = SubResource("LabelSettings_j1osi")
+hoverlook = SubResource("LabelSettings_irunv")
 
 [node name="quitbtn" type="Label" parent="mainmenu/viewportcont/SubViewport"]
-offset_left = 40.0
-offset_top = 103.0
-offset_right = 111.0
-offset_bottom = 126.0
+offset_left = 400.0
+offset_top = 850.0
+offset_right = 684.0
+offset_bottom = 982.0
 rotation = -0.0872665
 mouse_filter = 1
 text = "QUIT"
 label_settings = SubResource("LabelSettings_j1osi")
 script = ExtResource("11_jsdpj")
+regularlook = SubResource("LabelSettings_j1osi")
+hoverlook = SubResource("LabelSettings_irunv")
 
 [node name="Area3D" type="Area3D" parent="mainmenu/viewportcont"]
 
@@ -557,6 +716,7 @@ script = ExtResource("10_gcorl")
 
 [node name="SubViewport" type="SubViewport" parent="saves/viewportcont2"]
 transparent_bg = true
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1024, 1024)
 render_target_update_mode = 4
@@ -589,7 +749,7 @@ theme_override_constants/separation = 20
 [node name="Area3D" type="Area3D" parent="saves/viewportcont2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="saves/viewportcont2/Area3D"]
-shape = SubResource("BoxShape3D_0d8j7")
+shape = SubResource("BoxShape3D_hx5bg")
 
 [node name="options" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -1, 0, 2.4)
@@ -612,7 +772,7 @@ script = ExtResource("10_gcorl")
 [node name="SubViewport" type="SubViewport" parent="back/viewportcont3"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(128, 64)
+size = Vector2i(512, 256)
 render_target_update_mode = 4
 
 [node name="backbtn" type="Label" parent="back/viewportcont3/SubViewport"]
@@ -621,10 +781,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -17.0
-offset_right = 26.0
-offset_bottom = 8.0
+offset_left = -123.5
+offset_top = -88.0
+offset_right = 125.5
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0959931
@@ -632,6 +792,8 @@ mouse_filter = 1
 text = "BACK"
 label_settings = SubResource("LabelSettings_2k8g0")
 script = ExtResource("11_jsdpj")
+regularlook = SubResource("LabelSettings_2k8g0")
+hoverlook = SubResource("LabelSettings_gy0os")
 
 [node name="Area3D" type="Area3D" parent="back/viewportcont3"]
 
@@ -654,7 +816,7 @@ script = ExtResource("10_gcorl")
 [node name="SubViewport" type="SubViewport" parent="back2/viewportcont3"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(128, 64)
+size = Vector2i(512, 256)
 render_target_update_mode = 4
 
 [node name="backbtn" type="Label" parent="back2/viewportcont3/SubViewport"]
@@ -663,10 +825,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -17.0
-offset_right = 26.0
-offset_bottom = 8.0
+offset_left = -123.5
+offset_top = -88.0
+offset_right = 125.5
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0959931
@@ -674,6 +836,8 @@ mouse_filter = 1
 text = "BACK"
 label_settings = SubResource("LabelSettings_2k8g0")
 script = ExtResource("11_jsdpj")
+regularlook = SubResource("LabelSettings_2k8g0")
+hoverlook = SubResource("LabelSettings_gkvbc")
 
 [node name="Area3D" type="Area3D" parent="back2/viewportcont3"]
 

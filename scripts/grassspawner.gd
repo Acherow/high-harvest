@@ -5,9 +5,8 @@ extends MultiMeshInstance3D
 var aabb1 : AABB = AABB(Vector3(-40.0,-10,-40.0), Vector3(80.0,20,80.0))
 var aabb2 : AABB = AABB(Vector3(40.0,-10,70.0), Vector3(60.0,20,80.0))
 
-@export var list : Array
-@export var spawnamount : int = 500
-@export var size : Vector2 = Vector2(300,500)
+@export var spawnamount : int = 100
+@export var size : Vector2 = Vector2(100,100)
 func _ready() -> void:
 	#print(aabb1.has_point(Vector3(3,0,12)))
 	var amt
@@ -19,7 +18,6 @@ func _ready() -> void:
 	#multimesh.buffer.clear()
 	#multimesh.instance_count = 0
 	
-	#STILL GENERATING INSIDE THE AABB. FIX OR DIE
 	multimesh = multimesh.duplicate()
 	for n in amt:
 		var trans : Transform3D
