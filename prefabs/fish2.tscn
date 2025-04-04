@@ -87,7 +87,7 @@ albedo_texture = ExtResource("2_7qgw2")
 texture_filter = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ufjc"]
-size = Vector3(0.103271, 0.224609, 0.4)
+size = Vector3(0.103271, 0.224609, 0.378906)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1npw2"]
 resource_name = "fishing_Cube_005"

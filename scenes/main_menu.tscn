@@ -365,6 +365,8 @@ resource_local_to_scene = true
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = SubResource("ViewportTexture_rujbh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hx5bg"]
@@ -593,8 +595,7 @@ environment = SubResource("Environment_7xvkv")
 script = ExtResource("5_a16qn")
 
 [node name="sun" type="DirectionalLight3D" parent="day manager"]
-transform = Transform3D(1, 0, 0, 0, -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 7, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, 0)
 light_energy = 2.0
 light_indirect_energy = 2.0
 shadow_enabled = true
