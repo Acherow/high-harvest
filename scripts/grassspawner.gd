@@ -3,11 +3,17 @@
 extends MultiMeshInstance3D
 
 var aabb1 : AABB = AABB(Vector3(-40.0,-10,-40.0), Vector3(80.0,20,80.0))
-var aabb2 : AABB = AABB(Vector3(40.0,-10,70.0), Vector3(60.0,20,80.0))
+var aabb2 : AABB = AABB(Vector3(40.0,-10,70.0), Vector3(55.0,20,80.0))
 
 @export var spawnamount : int = 100
 @export var size : Vector2 = Vector2(100,100)
+
+@export var generate : bool = false
+
 func _ready() -> void:
+	if(!generate):
+		return
+	
 	#print(aabb1.has_point(Vector3(3,0,12)))
 	var amt
 	#spawnamount = 50

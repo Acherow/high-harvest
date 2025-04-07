@@ -145,8 +145,9 @@ func agecheck():
 
 var curdir = Vector3.ZERO
 func _on_actiontimer_timeout():
-	audio.stream = adultsounds.pick_random()
-	audio.play()
+	if(randi_range(0,20) == 0):
+		audio.stream = adultsounds.pick_random()
+		audio.play()
 	if(!floorcast.is_colliding()):
 		anim.play("idle")
 		curdir = Vector3.ZERO

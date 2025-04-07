@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://cgt1naiu6xuqm"]
+
+[ext_resource type="Texture2D" uid="uid://b3sbovg6qy6oj" path="res://sprites/itemicons/squid.png" id="1_bxr27"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_5nq1q"]
+
+[resource]
+script = ExtResource("2_5nq1q")
+name = "Squid"
+weight = 1.0
+icon = ExtResource("1_bxr27")
+description = "A squid you fished up."
+objaddress = "squid"
+customproperties = {}

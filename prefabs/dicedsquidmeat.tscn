@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://bn3q28h1n3ymo"]
+[gd_scene load_steps=11 format=4 uid="uid://bad05hvwyv0om"]
 
-[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_r1q3q"]
-[ext_resource type="Material" uid="uid://b6ugoj03pwb24" path="res://models/textures/chicken/meat/chickenmeat.tres" id="2_q7kvo"]
-[ext_resource type="Material" uid="uid://dxq4yqc8q6mpc" path="res://models/textures/chicken/meat/rottenchickenmeat.tres" id="3_hp0pb"]
-[ext_resource type="Resource" uid="uid://dfvpylp0b8vlw" path="res://invobjs/dicedcrowmeat.tres" id="4_agc25"]
-[ext_resource type="AudioStream" uid="uid://cqn2txsmicguq" path="res://sounds/meatcollision.wav" id="4_nrrhk"]
+[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_q0xqx"]
+[ext_resource type="Material" uid="uid://b6ugoj03pwb24" path="res://models/textures/chicken/meat/chickenmeat.tres" id="2_u6cgd"]
+[ext_resource type="Material" uid="uid://dxq4yqc8q6mpc" path="res://models/textures/chicken/meat/rottenchickenmeat.tres" id="3_18og5"]
+[ext_resource type="AudioStream" uid="uid://cqn2txsmicguq" path="res://sounds/meatcollision.wav" id="4_ewtjx"]
+[ext_resource type="Resource" uid="uid://80v2d6hic61j" path="res://invobjs/dicedsquid.tres" id="5_g3d5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpha5"]
 diffuse_mode = 3
@@ -37,7 +37,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
-"material": ExtResource("2_q7kvo"),
+"material": ExtResource("2_u6cgd"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
@@ -50,19 +50,19 @@ shadow_mesh = SubResource("ArrayMesh_jerki")
 margin = 0.1
 size = Vector3(0.18, 0.18, 0.18)
 
-[node name="dicedcrowmeat" type="RigidBody3D" groups=["diced", "pickup"]]
+[node name="dicedsquidmeat" type="RigidBody3D" groups=["diced", "pickup"]]
 mass = 0.1
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_r1q3q")
-mats = Array[Material]([ExtResource("2_q7kvo")])
-rotmats = Array[Material]([ExtResource("3_hp0pb")])
+script = ExtResource("1_q0xqx")
+mats = Array[Material]([ExtResource("2_u6cgd")])
+rotmats = Array[Material]([ExtResource("3_18og5")])
 cookedmats = Array[Material]([SubResource("StandardMaterial3D_cpha5")])
 burntmats = Array[Material]([SubResource("StandardMaterial3D_hwo7c")])
 fillamount = 5.0
 cookedfillamount = 8.0
-sounds = Array[AudioStream]([ExtResource("4_nrrhk")])
-metadata/obj = ExtResource("4_agc25")
+sounds = Array[AudioStream]([ExtResource("4_ewtjx")])
+metadata/obj = ExtResource("5_g3d5a")
 
 [node name="model" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_touay")

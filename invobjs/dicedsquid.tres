@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://80v2d6hic61j"]
+
+[ext_resource type="Texture2D" uid="uid://cg620qvf4kqo3" path="res://sprites/itemicons/dicedchickenmeat.png" id="1_tsjwy"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_1ru3c"]
+
+[resource]
+script = ExtResource("2_1ru3c")
+name = "Diced squid"
+weight = 0.1
+icon = ExtResource("1_tsjwy")
+description = "Squid cube."
+objaddress = "dicedsquidmeat"
+customproperties = {}

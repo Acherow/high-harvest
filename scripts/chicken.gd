@@ -88,7 +88,7 @@ func jumptowards(node):
 		apply_central_impulse((dir * 2) + (global_basis.y*2))
 
 func _on_actiontimer_timeout():
-	if(randi_range(0,10) == 0):
+	if(randi_range(0,20) == 0):
 		match agestage:
 			0:
 				audio.stream = childsounds.pick_random()
