@@ -46,6 +46,10 @@ func _ready():
 	add_collision_exception_with(shadow)
 	shadow.add_collision_exception_with(self)
 	curspeed = 100
+	crouched = Savedata.gamedata["crouched"]
+	shape.shape.height = 1.5 if Savedata.gamedata["crouched"] else 2
+	shape.position.y = .75 if Savedata.gamedata["crouched"] else 1
+	cam.position.y = .90 if Savedata.gamedata["crouched"] else 1.8
 
 func resetjump():
 	curjumpvel = 0
@@ -58,6 +62,14 @@ func _input(event):
 
 var gravvel : float = .1
 func _physics_process(delta):
+	if(crouched && cam.position.y > .9):
+		shape.shape.height = lerp(shape.shape.height, 1.5, .1)
+		shape.position.y = lerp(shape.position.y, .75, .1)
+		cam.position.y = lerp(cam.position.y, .90, .1)
+	if(!crouched && cam.position.y < 1.8):
+		shape.shape.height = lerp(shape.shape.height, 2.0, .1)
+		shape.position.y = lerp(shape.position.y, 1.0, .1)
+		cam.position.y = lerp(cam.position.y, 1.8, .1)
 	if(underwater):
 		damage += delta*10
 	
@@ -111,6 +123,8 @@ func _physics_process(delta):
 			steptimer.stop()
 		
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if(crouched):
+			direction = direction * .5
 		if direction:
 			if(curspeed < (SPEED if !Input.is_action_pressed("shift") else SPEED * 2)):
 				curspeed += 10
@@ -172,9 +186,10 @@ func crouchheight(down : bool = true):
 	if(!down && ceilingcheck.is_colliding()):
 		return
 	crouched = down
-	shape.shape.height = 1.5 if down else 2
-	shape.position.y = .75 if down else 1
-	cam.position.y = .90 if down else 1.8
+	Savedata.gamedata["crouched"] = crouched
+	#shape.shape.height = 1.5 if down else 2
+	#shape.position.y = .75 if down else 1
+	#cam.position.y = .90 if down else 1.8
 
 func feed(amt : float, crunch : bool = true):
 	hunger += amt

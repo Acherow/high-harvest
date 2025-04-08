@@ -115,8 +115,9 @@ size = Vector3(1.54126, 0.190497, 0.84375)
 [sub_resource type="BoxShape3D" id="BoxShape3D_whc1w"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="closet" type="RigidBody3D" groups=["heavy", "pickup", "tooheavy"]]
+[node name="closet" type="RigidBody3D" groups=["heavy", "pickup", "serialize", "tooheavy"]]
 mass = 15.0
+metadata/objaddress = "closet"
 
 [node name="closet" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_y7v35")

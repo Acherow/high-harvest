@@ -90,6 +90,7 @@ var objs : Dictionary = {
 	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
 	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
 	"dicedsquid":load("res://prefabs/dicedsquid.tscn"),
+	"rat":load("res://prefabs/rat.tscn"),
 }
 
 var invobjs : Dictionary = {
@@ -177,6 +178,7 @@ var invobjs : Dictionary = {
 	"dicedfish1":load("res://invobjs/dicedfish1.tres"),
 	"dicedfish2":load("res://invobjs/dicedfish2.tres"),
 	"dicedsquid":load("res://invobjs/dicedsquid.tres"),
+	"rat":load("res://invobjs/rat.tres"),
 }
 
 var purchasables : Dictionary = {
