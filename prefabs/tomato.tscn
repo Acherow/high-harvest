@@ -7,24 +7,38 @@
 [ext_resource type="AudioStream" uid="uid://cl4lj6u6so6b4" path="res://sounds/collision2.wav" id="3_ctnwg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1osy"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yejn"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0, 1, 0.0980392, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sb2v"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(1, 0.416667, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjn6l"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.741375, 0.634601, 3.85046e-07, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6i3d"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.77, 0.0847, 0.256025, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mus2"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0, 0.82, 0.41, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcduu"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_ulgwh"]
@@ -93,7 +107,7 @@ shadow_mesh = SubResource("ArrayMesh_ipph6")
 [sub_resource type="SphereShape3D" id="SphereShape3D_rin4n"]
 radius = 0.2
 
-[node name="tomato" type="RigidBody3D" groups=["pickup"]]
+[node name="tomato" type="RigidBody3D" groups=["food", "pickup"]]
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 1

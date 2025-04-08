@@ -131,7 +131,7 @@ bind/1/name = &"Bone.001_2"
 bind/1/bone = -1
 bind/1/pose = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1.86265e-09, 0)
 
-[node name="fish" type="RigidBody3D" node_paths=PackedStringArray("model") groups=["fish", "pickup"]]
+[node name="fish" type="RigidBody3D" node_paths=PackedStringArray("model") groups=["fish", "food", "pickup"]]
 script = ExtResource("1_iu8ht")
 model = NodePath("Skeleton3D/model_001")
 mats = Array[Material]([SubResource("StandardMaterial3D_hbv16"), SubResource("StandardMaterial3D_e7486")])

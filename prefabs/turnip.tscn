@@ -131,7 +131,7 @@ shadow_mesh = SubResource("ArrayMesh_ocqvq")
 radius = 0.194846
 height = 0.498517
 
-[node name="turnip" type="RigidBody3D" groups=["pickup"]]
+[node name="turnip" type="RigidBody3D" groups=["food", "pickup"]]
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 1

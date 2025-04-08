@@ -51,7 +51,7 @@ height = 0.15
 [sub_resource type="SphereShape3D" id="SphereShape3D_calu0"]
 radius = 0.25
 
-[node name="crowmeat" type="RigidBody3D" groups=["pickup"]]
+[node name="crowmeat" type="RigidBody3D" groups=["food", "pickup"]]
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 1

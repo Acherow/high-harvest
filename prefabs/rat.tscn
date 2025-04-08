@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://kofljr7fo8an"]
+[gd_scene load_steps=14 format=4 uid="uid://kofljr7fo8an"]
 
 [ext_resource type="Texture2D" uid="uid://ctu08ae666iw" path="res://models/textures/rat.png" id="1_1p3hq"]
 [ext_resource type="Script" path="res://scripts/rat.gd" id="1_a4ku4"]
 [ext_resource type="Texture2D" uid="uid://pgct3moo6lpn" path="res://sprites/itemicons/rat.png" id="1_js8e5"]
 [ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_dmsws"]
 [ext_resource type="Script" path="res://scripts/pickupproxy.gd" id="2_ojbj8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rqra0"]
+friction = 0.0
 
 [sub_resource type="Resource" id="Resource_3h3ky"]
 script = ExtResource("2_dmsws")
@@ -69,6 +72,11 @@ size = Vector3(0.15, 0.15, 0.15)
 size = Vector3(0.05, 0.05, 0.1)
 
 [node name="rat" type="RigidBody3D" groups=["pickup"]]
+physics_material_override = SubResource("PhysicsMaterial_rqra0")
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.1, 0)
+linear_damp = 1.0
+angular_damp = 1.0
 script = ExtResource("1_a4ku4")
 metadata/obj = SubResource("Resource_3h3ky")
 
@@ -125,6 +133,8 @@ twist_span = 0.785398
 [node name="head" type="RigidBody3D" parent="." node_paths=PackedStringArray("source") groups=["pickup"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_rqra0")
+angular_damp = 1.0
 script = ExtResource("2_ojbj8")
 source = NodePath("..")
 
@@ -150,6 +160,7 @@ twist_span = 0.523599
 [node name="tail1" type="RigidBody3D" parent="." node_paths=PackedStringArray("source") groups=["pickup"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, -0.2)
 mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_rqra0")
 script = ExtResource("2_ojbj8")
 source = NodePath("..")
 
@@ -174,6 +185,7 @@ twist_span = 0.523599
 [node name="tail2" type="RigidBody3D" parent="." node_paths=PackedStringArray("source") groups=["pickup"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, -0.4)
 mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_rqra0")
 script = ExtResource("2_ojbj8")
 source = NodePath("..")
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2vokif8ovsee" path="res://models/textures/squid.png" id="1_c4okl"]
 [ext_resource type="Resource" uid="uid://cgt1naiu6xuqm" path="res://invobjs/squid.tres" id="1_pibpr"]
 [ext_resource type="Script" path="res://scripts/pickupproxy.gd" id="2_gvfl3"]
-[ext_resource type="Script" path="res://prefabs/squidtentacle.gd" id="3_nykih"]
+[ext_resource type="Script" path="res://scripts/squidtentacle.gd" id="3_nykih"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llhmp"]
 diffuse_mode = 3
@@ -173,7 +173,7 @@ radius = 0.09
 height = 0.1
 radius = 0.03
 
-[node name="squid" type="RigidBody3D" node_paths=PackedStringArray("model") groups=["pickup"]]
+[node name="squid" type="RigidBody3D" node_paths=PackedStringArray("model") groups=["food", "pickup"]]
 script = ExtResource("1_8lqr4")
 model = NodePath("Skeleton3D/model")
 mats = Array[Material]([SubResource("StandardMaterial3D_llhmp"), SubResource("StandardMaterial3D_djv8p")])
@@ -198,7 +198,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0.167466, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 0.167466, 4.44089e-15)
-bones/1/rotation = Quaternion(0, -7.10545e-15, 1.18645e-27, 1)
+bones/1/rotation = Quaternion(-8.43021e-42, -7.10545e-15, 1.18645e-27, 1)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "R.bt"
 bones/2/parent = -1

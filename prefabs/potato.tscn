@@ -55,7 +55,7 @@ shadow_mesh = SubResource("ArrayMesh_v0fch")
 radius = 0.12
 height = 0.4
 
-[node name="potato" type="RigidBody3D" groups=["pickup"]]
+[node name="potato" type="RigidBody3D" groups=["food", "pickup"]]
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_oyp4s")
