@@ -7,7 +7,7 @@
 
 
 shader_type spatial;
-render_mode cull_disabled;
+render_mode cull_disabled, diffuse_toon, specular_disabled;
 
 // Water color and foam color
 uniform vec4 WATER_COL : source_color = vec4(0.04, 0.38, 0.88, 1.0);
