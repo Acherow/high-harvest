@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cuhw12pljh4ps" path="res://models/textures/shotgun/shotgun.png" id="4_p5e2p"]
 [ext_resource type="Material" uid="uid://c4dvsvdrvpiok" path="res://models/textures/shotgun/empty.tres" id="5_87grl"]
 [ext_resource type="Texture2D" uid="uid://cjy70n2ooinfi" path="res://sprites/shotgunflare.png" id="5_fnndi"]
-[ext_resource type="AudioStream" uid="uid://jo8ijedluvm0" path="res://sounds/Shotgun tiro.mp3" id="8_8f3rs"]
-[ext_resource type="AudioStream" uid="uid://dl6g3b3n3qke0" path="res://sounds/Shotgun reload.mp3" id="9_yeig6"]
+[ext_resource type="AudioStream" uid="uid://jo8ijedluvm0" path="res://sounds/shotgun/Shotgun tiro.mp3" id="8_8f3rs"]
+[ext_resource type="AudioStream" uid="uid://dl6g3b3n3qke0" path="res://sounds/shotgun/Shotgun reload.mp3" id="9_yeig6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bp6pp"]
 size = Vector3(0.0410156, 0.145557, 0.56192)

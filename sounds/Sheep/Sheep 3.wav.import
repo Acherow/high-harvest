@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ng561xs8wbx7"
+path="res://.godot/imported/Sheep 3.wav-31e8524cc2b44231146cb029341ab90b.sample"
+
+[deps]
+
+source_file="res://sounds/Sheep/Sheep 3.wav"
+dest_files=["res://.godot/imported/Sheep 3.wav-31e8524cc2b44231146cb029341ab90b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

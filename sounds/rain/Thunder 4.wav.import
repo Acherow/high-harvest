@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4v7rn3h7aamx"
+path="res://.godot/imported/Thunder 4.wav-76f2e686603d0ec28c5b4facc5c163df.sample"
+
+[deps]
+
+source_file="res://sounds/rain/Thunder 4.wav"
+dest_files=["res://.godot/imported/Thunder 4.wav-76f2e686603d0ec28c5b4facc5c163df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

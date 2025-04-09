@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcbudvjwwu04m"
+path="res://.godot/imported/Ammo reload.mp3-e9079fedd44a472ef170c84c2f1f5187.mp3str"
+
+[deps]
+
+source_file="res://sounds/shotgun/Ammo/Ammo reload.mp3"
+dest_files=["res://.godot/imported/Ammo reload.mp3-e9079fedd44a472ef170c84c2f1f5187.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
