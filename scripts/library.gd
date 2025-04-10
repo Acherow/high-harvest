@@ -89,7 +89,7 @@ var objs : Dictionary = {
 	"squid":load("res://prefabs/squid.tscn"),
 	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
 	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
-	"dicedsquid":load("res://prefabs/dicedsquid.tscn"),
+	"dicedsquid":load("res://prefabs/dicedsquidmeat.tscn"),
 	"rat":load("res://prefabs/rat.tscn"),
 }
 

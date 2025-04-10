@@ -5,19 +5,22 @@ class_name rat
 @onready var head = $head
 
 var tgt
-var curdir
+var curdir : Vector3
 var eaten
 
 var path : Array
 
+var nav
+
 func _ready():
 	tgt = getclosestfood()
+	nav = get_tree().get_first_node_in_group("ratvigation")
 
 func _physics_process(delta):
 	if(eaten):
 		tgt = getclosesthole()
 		if(path == null || path.is_empty()):
-			path = get_tree().get_first_node_in_group("ratvigation").getpath(global_position+linear_velocity,tgt.global_position)
+			path = nav.getpath(global_position+linear_velocity,tgt.global_position)
 	if(tgt != null):
 		if(path == null || path.is_empty()):
 			curdir = global_position.direction_to(tgt.global_position).normalized()
@@ -46,6 +49,6 @@ func getclosestfood():
 func getclosesthole():
 	var hole
 	for n in get_tree().get_nodes_in_group("mousehole"):
-		if((hole == null || global_position.distance_to(hole.global_position) > global_position.distance_to(n.global_position))):
+		if((hole == null || global_position.distance_to(hole.global_position) > global_position.distance_to(n.global_position)) && nav.getpath(global_position,n.global_position) != [global_position,n.global_position]):
 			hole = n
 	return hole

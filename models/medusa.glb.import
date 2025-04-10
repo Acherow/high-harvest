@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctpt5fe5juopq"
-path="res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"
+uid="uid://ojixhhqgjipi"
+path="res://.godot/imported/medusa.glb-0c9dcc3c52f4900eb4dc865805fbbbbc.scn"
 
 [deps]
 
-source_file="res://models/Potato.glb"
-dest_files=["res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"]
+source_file="res://models/medusa.glb"
+dest_files=["res://.godot/imported/medusa.glb-0c9dcc3c52f4900eb4dc865805fbbbbc.scn"]
 
 [params]
 

@@ -61,5 +61,5 @@ func getpath(startpoint:Vector3,endpoint:Vector3) -> Array:
 				parents[n] = cur
 				if(!open.has(n)):
 					open.append(n)
-	print("shrug")
+	#print("shrug")
 	return [startpoint,endpoint]

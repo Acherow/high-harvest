@@ -61,7 +61,8 @@ text = "QUICK LOAD"
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 theme = ExtResource("2_ouoiv")
-text = "SAVE"
+text = "SAVE
+"
 
 [node name="quitbutton" type="Button" parent="ps/VBoxContainer"]
 custom_minimum_size = Vector2(200, 100)

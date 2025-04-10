@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://c4or6y3183p1b"]
+[gd_scene load_steps=11 format=4 uid="uid://c4or6y3183p1b"]
 
+[ext_resource type="Script" path="res://scripts/birdman.gd" id="1_0t6lq"]
 [ext_resource type="Texture2D" uid="uid://btpbs4dmtykvs" path="res://models/textures/birdman.png" id="1_we3cu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yn2mb"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("1_we3cu")
 texture_filter = 2
 
@@ -322,6 +325,7 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nj3ei"]
 
 [node name="birdman" type="CharacterBody3D"]
+script = ExtResource("1_0t6lq")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 bones/0/name = "hip"
@@ -403,7 +407,12 @@ skin = SubResource("Skin_smjwf")
 libraries = {
 "": SubResource("AnimationLibrary_ks6k3")
 }
+autoplay = "idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_nj3ei")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.4)
+target_position = Vector3(0, 0, 0.5)
