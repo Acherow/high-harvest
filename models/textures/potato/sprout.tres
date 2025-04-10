@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ct7rroykktynm"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_pd272"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_pd272"]
 [ext_resource type="Texture2D" uid="uid://ciqdwvx6mdv3d" path="res://models/textures/potato/sprout.png" id="2_408ta"]
 
 [resource]

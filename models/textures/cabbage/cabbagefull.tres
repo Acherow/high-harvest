@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dr4j56tcdgwm4"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_e7oim"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_e7oim"]
 [ext_resource type="Texture2D" uid="uid://clmcw5qqguhsi" path="res://models/textures/cabbage/cabbagefull.png" id="2_j2bth"]
 
 [resource]
