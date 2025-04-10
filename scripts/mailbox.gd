@@ -9,15 +9,17 @@ extends Node3D
 var ignore : Array
 
 @export var allquests : Array[Quest]
+@export var priorityquests : Array[Quest]
 var curquests : Array[Quest]
 
 func _ready():
 	%"day manager".day.connect(spawnflyer)
 	for n in Savedata.gamedata["curquests"]:
-		var i = allquests[n[0]]
+		var i = allquests[n[0]] if n[2] else priorityquests[n[0]]
 		var q = i.duplicate()
 		q.progress = n[1]
 		q.index = n[0]
+		q.priority = n[2]
 		curquests.append(q)
 	#spawnnewspaper()
 
@@ -87,8 +89,10 @@ func spawnletter(solditems : Array):
 				str += q.reward()
 				erases.append(q)
 				#print(Savedata.gamedata.unlocks)
-		for p in erases:
+		for p : Quest in erases:
 			curquests.erase(p)
+			if(!p.repeatable):
+				Savedata.gamedata["completedquests"].append([p.index,p.priority])
 		if(Savedata.gamedata.daysales.has(n)):
 			Savedata.gamedata.daysales[n] += itemamounts[n]
 		for b in itemamounts[n]:
@@ -144,8 +148,21 @@ func spawnnewspaper():
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	ignore.erase(body)
 
+func generateaquest():
+	var completedpriority = Savedata.gamedata["completedquests"].filter(func(a): return a[1])
+	var prioquests = priorityquests.filter(func(a): return !completedpriority.has(a) && \
+	Savedata.gamedata["day"]>= a.minimumday && \
+	!curquests.map(func(a): return a.index).has(a.index))
+	if(!prioquests.is_empty()):
+		pass
+	
+	var completednormal = Savedata.gamedata["completedquests"].filter(func(a): return a[0])
+	var regquests = allquests.filter(func(a): return !completednormal.has(a) && \
+	Savedata.gamedata["day"]>= a.minimumday && \
+	!curquests.map(func(a): return a.index).has(a.index))
+
 func serializequests():
 	var qs = []
 	for n in curquests:
-		qs.append([n.index,n.progress])
+		qs.append([n.index,n.progress, n.priority])
 	Savedata.gamedata["curquests"] = qs

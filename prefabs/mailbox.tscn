@@ -12,6 +12,7 @@ checkamount = false
 repeatable = true
 progress = 0.0
 goal = 100.0
+minimumday = 0
 unlockreward = []
 cashreward = 50.0
 
@@ -24,6 +25,7 @@ checkamount = true
 repeatable = true
 progress = 0.0
 goal = 10.0
+minimumday = 0
 unlockreward = []
 cashreward = 20.0
 

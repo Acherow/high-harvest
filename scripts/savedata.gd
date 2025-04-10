@@ -116,7 +116,7 @@ func load_data():
 				#"hoe" = 100.0,
 			},
 			"curquests": [
-				#[0,0]
+				#[0,0,false]
 			],
 			"completedquests": [
 				
