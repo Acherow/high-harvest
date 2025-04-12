@@ -15,11 +15,11 @@ func _ready() -> void:
 	else:
 		audio.playing = false
 	
-	if(data.customproperties.has("curvinyl")):
-		curvinyl = data.customproperties["curvinyl"]
-		var vin = Library.objs[curvinyl].instantiate()
-		get_tree().current_scene.add_child(vin)
-		vin.global_position = vinylcheck.global_position
+	#if(data.customproperties.has("curvinyl")):
+		#curvinyl = data.customproperties["curvinyl"]
+		#var vin = Library.objs[curvinyl].instantiate()
+		#get_tree().current_scene.add_child(vin)
+		#vin.global_position = vinylcheck.global_position
 	add_collision_exception_with(grab)
 
 func _physics_process(delta: float) -> void:

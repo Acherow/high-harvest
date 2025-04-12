@@ -10,6 +10,7 @@ func grabtrigger(pl : Player):
 	pl.frozen = true
 	pl.crouchheight(true)
 	seated = pl
+	truck.add_collision_exception_with(seated)
 	if(pl.cam.held != null):
 		add_collision_exception_with(pl.cam.held)
 		truck.add_collision_exception_with(pl.cam.held)
@@ -20,8 +21,11 @@ func grabtrigger(pl : Player):
 
 func _input(event):
 	if(seated != null && event.is_action_pressed("jump")):
-		seated.reparent(get_tree().current_scene)
-		#remove_collision_exception_with(seated)
+		var pos = seated.global_position
+		seated.call_deferred("reparent",get_tree().current_scene)
+		await get_tree().process_frame
+		seated.global_position = pos
+		truck.remove_collision_exception_with(seated)
 		#remove_child(seated)
 		if(seated.cam.held):
 			remove_collision_exception_with(seated.cam.held)

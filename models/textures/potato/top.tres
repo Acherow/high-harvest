@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d0uu2qbcg7o5b"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_kt7g7"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_kt7g7"]
 [ext_resource type="Texture2D" uid="uid://d0sqhgyyqqrkr" path="res://models/textures/potato/top.png" id="2_xcw1t"]
 
 [resource]

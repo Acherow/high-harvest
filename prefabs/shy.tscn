@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bekppgq2bplwo"]
 
-[ext_resource type="Shader" path="res://friend.gdshader" id="1_tbdpy"]
+[ext_resource type="Shader" path="res://shaders/friend.gdshader" id="1_tbdpy"]
 [ext_resource type="Texture2D" uid="uid://cgxuaaohrrfyh" path="res://sprites/shy.png" id="2_7j24h"]
 [ext_resource type="Script" path="res://scripts/shy.gd" id="3_6sor3"]
 

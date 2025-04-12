@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://brwg1u5ykq02f"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_0mkb3"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_0mkb3"]
 [ext_resource type="Texture2D" uid="uid://4x0ocgwhh51e" path="res://models/textures/tomato/tomatofull.png" id="2_mj3ir"]
 
 [resource]

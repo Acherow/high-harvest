@@ -121,7 +121,7 @@ shadow_mesh = SubResource("ArrayMesh_exf8j")
 radius = 0.1
 height = 0.6
 
-[node name="carrot" type="RigidBody3D" groups=["pickup"]]
+[node name="carrot" type="RigidBody3D" groups=["food", "pickup"]]
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 1

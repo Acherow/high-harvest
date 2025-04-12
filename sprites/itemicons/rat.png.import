@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfnmfdq2ak10r"
-path.s3tc="res://.godot/imported/farmhouse.png-05e812542d6471410aba47b0bb7ea97d.s3tc.ctex"
+uid="uid://pgct3moo6lpn"
+path="res://.godot/imported/rat.png-6744bb5d1ad157d6fe409430b7298ded.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/farmhouse.png"
-dest_files=["res://.godot/imported/farmhouse.png-05e812542d6471410aba47b0bb7ea97d.s3tc.ctex"]
+source_file="res://sprites/itemicons/rat.png"
+dest_files=["res://.godot/imported/rat.png-6744bb5d1ad157d6fe409430b7298ded.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

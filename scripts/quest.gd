@@ -11,10 +11,13 @@ class_name Quest
 @export var progress : float
 @export var goal : float
 
+@export var minimumday : int
+
 @export var unlockreward : Array
 @export var cashreward : float
 
 var index : int = 0
+var priority : bool = false
 
 func check(item, value):
 	if(itemtype == item || itemtype == ""):

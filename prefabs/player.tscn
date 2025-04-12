@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwi170efjq44q"]
+[gd_scene load_steps=25 format=3 uid="uid://cwi170efjq44q"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uppgx"]
 [ext_resource type="AudioStream" uid="uid://rsygbcngeuhg" path="res://sounds/footstep.mp3" id="2_mkyug"]
@@ -16,9 +16,80 @@
 [ext_resource type="AudioStream" uid="uid://c0okwql2d5onq" path="res://sounds/metalstep/metalstep1.mp3" id="9_wyome"]
 [ext_resource type="AudioStream" uid="uid://s4myjatqdrtl" path="res://sounds/metalstep/metalstep2.mp3" id="10_esf2u"]
 [ext_resource type="AudioStream" uid="uid://bpbypmpb8f072" path="res://sounds/metalstep/metalstep3.mp3" id="11_sqtju"]
+[ext_resource type="Texture2D" uid="uid://hfhq2owg4gcb" path="res://sprites/inventory.png" id="13_h6rgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i14eu"]
 radius = 0.45
+
+[sub_resource type="Animation" id="Animation_81hvo"]
+resource_name = "show"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(752, 1104), Vector2(752, 318), Vector2(752, 340)]
+}
+
+[sub_resource type="Animation" id="Animation_uniqa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, 340)]
+}
+
+[sub_resource type="Animation" id="Animation_gxt4d"]
+resource_name = "hide"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(752, 340), Vector2(752, 318), Vector2(752, 340), Vector2(752, 1104)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"actualhide"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1qit"]
+_data = {
+"RESET": SubResource("Animation_uniqa"),
+"hide": SubResource("Animation_gxt4d"),
+"show": SubResource("Animation_81hvo")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7etg"]
 font_size = 128
@@ -86,9 +157,8 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.196078, 0.627451, 1, 0.576471)
 
-[node name="inventory" type="Control" parent="cam/CanvasLayer"]
+[node name="inventory" type="TextureRect" parent="cam/CanvasLayer"]
 visible = false
-layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -101,46 +171,42 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("13_h6rgy")
 script = ExtResource("3_w0mcb")
 
-[node name="ColorRect" type="ColorRect" parent="cam/CanvasLayer/inventory"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.14902, 0.14902, 0.14902, 1)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cam/CanvasLayer/inventory"]
+libraries = {
+"": SubResource("AnimationLibrary_y1qit")
+}
 
-[node name="list" type="ColorRect" parent="cam/CanvasLayer/inventory"]
-clip_children = 2
-layout_mode = 2
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 225.0
-offset_bottom = 325.0
-mouse_filter = 2
-color = Color(0.294118, 0.294118, 0.294118, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="cam/CanvasLayer/inventory/list"]
+[node name="VBoxContainer" type="VBoxContainer" parent="cam/CanvasLayer/inventory"]
 layout_mode = 1
-offset_right = 200.0
-offset_bottom = 300.0
+anchors_preset = -1
+anchor_left = 0.0188554
+anchor_top = 0.07
+anchor_right = 0.537687
+anchor_bottom = 0.832
+offset_left = 0.174999
+offset_right = -5.14001
+offset_bottom = 3.19998
+rotation = -0.0174533
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="picturebox" type="ColorRect" parent="cam/CanvasLayer/inventory"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -175.0
-offset_top = 25.0
-offset_right = -25.0
-offset_bottom = 175.0
+anchors_preset = -1
+anchor_left = 0.547
+anchor_top = 0.095
+anchor_right = 0.908
+anchor_bottom = 0.47
+offset_left = 23.995
+offset_top = -25.0
+offset_right = 24.18
+offset_bottom = -25.0
 grow_horizontal = 0
 mouse_filter = 2
-color = Color(0.294118, 0.294118, 0.294118, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="itemicon" type="TextureRect" parent="cam/CanvasLayer/inventory/picturebox"]
 layout_mode = 1
@@ -154,47 +220,54 @@ stretch_mode = 4
 
 [node name="descbox" type="ColorRect" parent="cam/CanvasLayer/inventory"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -175.0
-offset_top = -210.0
-offset_right = -25.0
-offset_bottom = -25.0
+anchors_preset = -1
+anchor_left = 0.573639
+anchor_top = 0.46
+anchor_right = 0.94
+anchor_bottom = 0.88
+offset_left = -0.0599976
+offset_right = -0.100037
+offset_bottom = -3.05176e-05
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
-color = Color(0.294118, 0.294118, 0.294118, 1)
+color = Color(0.294118, 0.294118, 0.294118, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="item name" type="Label" parent="cam/CanvasLayer/inventory/descbox"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -157.0
+anchors_preset = -1
+anchor_left = 0.0655922
+anchor_top = -0.124881
+anchor_right = 1.07306
+anchor_bottom = 0.0101191
+offset_left = 0.0300002
+offset_top = -0.0199986
+offset_right = -0.0299988
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="item desc" type="Label" parent="cam/CanvasLayer/inventory/descbox"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 42.0
-offset_right = -4.0
-offset_bottom = -30.0
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.027
+anchor_right = 0.972
+anchor_bottom = 0.818
+offset_left = 0.0239999
+offset_top = 0.00399995
+offset_right = -0.0240021
+offset_bottom = -0.064003
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.32175, 0.33, 0.0825, 1)
 theme_override_font_sizes/font_size = 12
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="label" type="Label" parent="cam/CanvasLayer/inventory/descbox"]
 layout_mode = 1
@@ -202,12 +275,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
-offset_top = 159.0
+offset_top = 144.0
 offset_right = -5.0
-offset_bottom = -3.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/font_color = Color(0.592157, 0.592157, 0.298039, 1)
 theme_override_font_sizes/font_size = 12
 text = "Weight:
 "
@@ -219,28 +292,32 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 55.0
-offset_top = 159.0
+offset_top = 144.0
 offset_right = -8.0
-offset_bottom = -3.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/font_color = Color(0.592157, 0.592157, 0.160784, 1)
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="weightbox" type="ColorRect" parent="cam/CanvasLayer/inventory"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -60.0
-offset_right = 225.0
-offset_bottom = -25.0
+anchors_preset = -1
+anchor_left = 0.0672289
+anchor_top = 0.8785
+anchor_right = 0.510675
+anchor_bottom = 0.972
+offset_left = 0.0999985
+offset_top = 3.60001
+offset_right = 0.0699768
+offset_bottom = 0.199982
 grow_vertical = 0
+rotation = -0.0174533
 mouse_filter = 2
-color = Color(0.294118, 0.294118, 0.294118, 1)
+color = Color(0.294118, 0.294118, 0.294118, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="cam/CanvasLayer/inventory/weightbox"]
 layout_mode = 1
@@ -252,6 +329,7 @@ offset_top = -11.5
 offset_right = 66.0
 offset_bottom = 11.5
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.646029, 0.646029, 0.646029, 1)
 text = "Weight:"
 vertical_alignment = 1
 
@@ -268,6 +346,7 @@ offset_right = -4.0
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.647059, 1)
 text = "0 / 20.0
 "
 horizontal_alignment = 2

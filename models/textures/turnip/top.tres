@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dy4ejvgykwreu"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_nexu5"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_nexu5"]
 [ext_resource type="Texture2D" uid="uid://bisnq00oyoh1e" path="res://models/textures/turnip/top.png" id="2_5sjbc"]
 
 [resource]

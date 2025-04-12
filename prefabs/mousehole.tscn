@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgn7mcu3yhb5s"]
+
+[ext_resource type="Script" path="res://scripts/mousehole.gd" id="1_xra57"]
+[ext_resource type="Texture2D" uid="uid://mg8tx0b35j4h" path="res://sprites/mousehole.png" id="2_xtuhe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_al0j0"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="mousehole" type="Area3D" groups=["mousehole"]]
+script = ExtResource("1_xra57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_al0j0")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.3, 0.3, 0.3)
+texture_albedo = ExtResource("2_xtuhe")
+upper_fade = 1e-05
+lower_fade = 1e-05
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

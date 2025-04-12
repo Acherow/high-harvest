@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4iad8bo8ejyf"
+path="res://.godot/imported/Menu Button Sound.mp3-3943674fb7cc4ca4ea0878104a152dd1.mp3str"
+
+[deps]
+
+source_file="res://sounds/Menu Button Sound.mp3"
+dest_files=["res://.godot/imported/Menu Button Sound.mp3-3943674fb7cc4ca4ea0878104a152dd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

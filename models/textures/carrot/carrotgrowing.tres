@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://o0feq43d1no6"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_cwmdr"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_cwmdr"]
 [ext_resource type="Texture2D" uid="uid://bk2y1kt16afo2" path="res://models/textures/carrot/carrotgrowing.png" id="2_u8ju4"]
 
 [resource]

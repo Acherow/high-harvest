@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpdacb24t3gh3"]
 
-[ext_resource type="Shader" path="res://friend.gdshader" id="1_n7ge5"]
+[ext_resource type="Shader" path="res://shaders/friend.gdshader" id="1_n7ge5"]
 [ext_resource type="Texture2D" uid="uid://ccbnhikmujxj2" path="res://sprites/friend01.png" id="2_k81om"]
 [ext_resource type="Script" path="res://scripts/friend.gd" id="3_30qsd"]
 [ext_resource type="Texture2D" uid="uid://bknd88xnfmmyw" path="res://sprites/friend02.png" id="4_683a6"]

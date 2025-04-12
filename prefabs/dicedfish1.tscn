@@ -34,7 +34,7 @@ rings = 0
 height = 0.1
 radius = 0.1
 
-[node name="dicedfish1" type="RigidBody3D" groups=["diced", "pickup"]]
+[node name="dicedfish1" type="RigidBody3D" groups=["diced", "food", "pickup"]]
 mass = 0.1
 contact_monitor = true
 max_contacts_reported = 1

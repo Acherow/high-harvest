@@ -57,7 +57,7 @@ shadow_mesh = SubResource("ArrayMesh_jerki")
 margin = 0.1
 size = Vector3(0.18, 0.18, 0.18)
 
-[node name="dicedpumpkin" type="RigidBody3D" groups=["diced", "pickup"]]
+[node name="dicedpumpkin" type="RigidBody3D" groups=["diced", "food", "pickup"]]
 mass = 0.1
 contact_monitor = true
 max_contacts_reported = 1

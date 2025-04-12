@@ -51,7 +51,7 @@ height = 0.3
 [sub_resource type="SphereShape3D" id="SphereShape3D_calu0"]
 radius = 0.25
 
-[node name="pigmeat" type="RigidBody3D" groups=["pickup"]]
+[node name="pigmeat" type="RigidBody3D" groups=["food", "pickup"]]
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_6nxfs")

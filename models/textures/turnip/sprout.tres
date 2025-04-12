@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dslrsddy4x2ei"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_cicpp"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_cicpp"]
 [ext_resource type="Texture2D" uid="uid://ob7cjgje86m" path="res://models/textures/turnip/sprout.png" id="2_vvm0h"]
 
 [resource]

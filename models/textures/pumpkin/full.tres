@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cwqmeyl722lq1"]
 
-[ext_resource type="Shader" path="res://ybillboard.gdshader" id="1_24u4l"]
+[ext_resource type="Shader" path="res://shaders/ybillboard.gdshader" id="1_24u4l"]
 [ext_resource type="Texture2D" uid="uid://drsguawr7tmdu" path="res://models/textures/pumpkin/full.png" id="2_642qk"]
 
 [resource]

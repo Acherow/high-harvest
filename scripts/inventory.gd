@@ -6,8 +6,9 @@ var invlist : Array = []
 var selected : InventoryObject = null
 
 @onready var body = $"../../.."
-@onready var listcont = $list/VBoxContainer
+@onready var listcont = $VBoxContainer
 const item = preload("res://prefabs/listitem.tscn")
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 @onready var item_name = $"descbox/item name"
 @onready var item_desc = $"descbox/item desc"
@@ -42,6 +43,7 @@ func _input(event):
 
 var extfrozen : bool = false
 func showInv():
+	anim.play("show")
 	visible = true
 	extfrozen = body.frozen
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -49,6 +51,9 @@ func showInv():
 
 func hideInv():
 	await get_tree().process_frame
+	anim.play("hide")
+
+func actualhide():
 	visible = false
 	if(!extfrozen):
 		body.frozen = false

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://cuoe1pr35amqq"]
+
+[ext_resource type="Texture2D" uid="uid://pgct3moo6lpn" path="res://sprites/itemicons/rat.png" id="1_gvfjg"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_moqa8"]
+
+[resource]
+script = ExtResource("2_moqa8")
+name = "Rat"
+weight = 0.5
+icon = ExtResource("1_gvfjg")
+description = "A live rat, in your pocket."
+objaddress = "rat"
+customproperties = {}

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wepgto5jkd6c"
+path="res://.godot/imported/Jar 2.wav-2a961ee92327bc0cb87d160b1d4fd2c5.sample"
+
+[deps]
+
+source_file="res://sounds/Jar Breaking/Jar 2.wav"
+dest_files=["res://.godot/imported/Jar 2.wav-2a961ee92327bc0cb87d160b1d4fd2c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

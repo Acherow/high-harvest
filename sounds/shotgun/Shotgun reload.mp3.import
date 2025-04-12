@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl6g3b3n3qke0"
+path="res://.godot/imported/Shotgun reload.mp3-064781e1a4b1a6eddebbc060ee7b815c.mp3str"
+
+[deps]
+
+source_file="res://sounds/shotgun/Shotgun reload.mp3"
+dest_files=["res://.godot/imported/Shotgun reload.mp3-064781e1a4b1a6eddebbc060ee7b815c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
