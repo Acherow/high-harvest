@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqhgdv2ww7x6"
-path="res://.godot/imported/rottenfish2.png-a534447d2615950a1e34136d70c82a53.ctex"
+uid="uid://0an4ys20twcu"
+path="res://.godot/imported/Luminatha.png-662e4186def4c71a2d1c45425eb2d11e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/rottenfish2.png"
-dest_files=["res://.godot/imported/rottenfish2.png-a534447d2615950a1e34136d70c82a53.ctex"]
+source_file="res://models/textures/fish/Luminatha.png"
+dest_files=["res://.godot/imported/Luminatha.png-662e4186def4c71a2d1c45425eb2d11e.ctex"]
 
 [params]
 

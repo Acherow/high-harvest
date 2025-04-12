@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo4ikbklcunau"
-path="res://.godot/imported/stars.png-256a232ab4d0d756c204342db2d8c8ef.ctex"
+uid="uid://3ecq4ywp402d"
+path="res://.godot/imported/rottenfish1.png-5eabc44b18464cadab57d7786b81899d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stars.png"
-dest_files=["res://.godot/imported/stars.png-256a232ab4d0d756c204342db2d8c8ef.ctex"]
+source_file="res://models/textures/fish/rottenfish1.png"
+dest_files=["res://.godot/imported/rottenfish1.png-5eabc44b18464cadab57d7786b81899d.ctex"]
 
 [params]
 

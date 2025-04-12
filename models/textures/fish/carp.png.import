@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo4ikbklcunau"
-path="res://.godot/imported/stars.png-256a232ab4d0d756c204342db2d8c8ef.ctex"
+uid="uid://clw62wp5kf21o"
+path="res://.godot/imported/carp.png-f6b632bd223ad77f11be29e8bf054322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stars.png"
-dest_files=["res://.godot/imported/stars.png-256a232ab4d0d756c204342db2d8c8ef.ctex"]
+source_file="res://models/textures/fish/carp.png"
+dest_files=["res://.godot/imported/carp.png-f6b632bd223ad77f11be29e8bf054322.ctex"]
 
 [params]
 

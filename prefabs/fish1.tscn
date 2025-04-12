@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_o4n0j"]
 [ext_resource type="Resource" uid="uid://dftywjhjwqky4" path="res://invobjs/fish1.tres" id="1_y3r4f"]
-[ext_resource type="Texture2D" uid="uid://5d0p6mhq14yu" path="res://models/textures/fish1.png" id="2_x8cha"]
+[ext_resource type="Texture2D" uid="uid://5d0p6mhq14yu" path="res://models/textures/fish/fish1.png" id="2_x8cha"]
 [ext_resource type="Script" path="res://scripts/pickupproxy.gd" id="3_7p4ts"]
-[ext_resource type="Texture2D" uid="uid://3ecq4ywp402d" path="res://models/textures/rottenfish1.png" id="3_hmvor"]
+[ext_resource type="Texture2D" uid="uid://3ecq4ywp402d" path="res://models/textures/fish/rottenfish1.png" id="3_hmvor"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u55mu"]
 transparency = 2

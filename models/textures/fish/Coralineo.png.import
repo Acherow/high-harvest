@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwjmkenmf6467"
-path="res://.godot/imported/fish2.png-6918cd26ca965494482fc9c758f44a4d.ctex"
+uid="uid://dv3f6lrcgiy1j"
+path="res://.godot/imported/Coralineo.png-948626ae4a07f7c7bdb754162c594e68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/fish2.png"
-dest_files=["res://.godot/imported/fish2.png-6918cd26ca965494482fc9c758f44a4d.ctex"]
+source_file="res://models/textures/fish/Coralineo.png"
+dest_files=["res://.godot/imported/Coralineo.png-948626ae4a07f7c7bdb754162c594e68.ctex"]
 
 [params]
 

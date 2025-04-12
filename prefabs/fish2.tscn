@@ -2,8 +2,8 @@
 
 [ext_resource type="Resource" uid="uid://fbh5uoy3obl3" path="res://invobjs/fish2.tres" id="1_1et4j"]
 [ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_iu8ht"]
-[ext_resource type="Texture2D" uid="uid://cwjmkenmf6467" path="res://models/textures/fish2.png" id="2_7qgw2"]
-[ext_resource type="Texture2D" uid="uid://bqhgdv2ww7x6" path="res://models/textures/rottenfish2.png" id="3_oobh0"]
+[ext_resource type="Texture2D" uid="uid://cwjmkenmf6467" path="res://models/textures/fish/fish2.png" id="2_7qgw2"]
+[ext_resource type="Texture2D" uid="uid://bqhgdv2ww7x6" path="res://models/textures/fish/rottenfish2.png" id="3_oobh0"]
 [ext_resource type="Script" path="res://scripts/pickupproxy.gd" id="3_oqr1u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbv16"]
