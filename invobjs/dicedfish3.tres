@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://4ag7qkkvruj6"]
+
+[ext_resource type="Texture2D" uid="uid://bmuld7w66xvu8" path="res://sprites/itemicons/dicedfish2.png" id="1_5r5fo"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_mvhlc"]
+
+[resource]
+script = ExtResource("2_mvhlc")
+name = "Diced Carp"
+weight = 0.1
+icon = ExtResource("1_5r5fo")
+description = "Carp slice."
+objaddress = "dicedfish3"
+customproperties = {}

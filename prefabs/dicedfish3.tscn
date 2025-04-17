@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://b280h6xysjtx5"]
+
+[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_ex15x"]
+[ext_resource type="AudioStream" uid="uid://cqn2txsmicguq" path="res://sounds/meatcollision.wav" id="2_kw6a0"]
+[ext_resource type="Resource" uid="uid://4ag7qkkvruj6" path="res://invobjs/dicedfish3.tres" id="3_e7idk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8t5hl"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(1, 0.26, 0.272333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl8sx"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.71, 0.666927, 0.5112, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kucju"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.5, 0.28, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wpt7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pttpb"]
+material = SubResource("StandardMaterial3D_8t5hl")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+radial_segments = 8
+rings = 0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qivy4"]
+height = 0.1
+radius = 0.1
+
+[node name="dicedfish2" type="RigidBody3D" groups=["diced", "food", "pickup"]]
+mass = 0.1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ex15x")
+mats = Array[Material]([SubResource("StandardMaterial3D_8t5hl")])
+rotmats = Array[Material]([SubResource("StandardMaterial3D_wl8sx")])
+cookedmats = Array[Material]([SubResource("StandardMaterial3D_kucju")])
+burntmats = Array[Material]([SubResource("StandardMaterial3D_5wpt7")])
+fillamount = 5.0
+cookedfillamount = 8.0
+sounds = Array[AudioStream]([ExtResource("2_kw6a0")])
+metadata/obj = ExtResource("3_e7idk")
+
+[node name="model" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_pttpb")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_qivy4")
+
+[node name="agingtimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="agingtimer" to="." method="_on_agingtimer_timeout"]

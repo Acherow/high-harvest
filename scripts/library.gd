@@ -86,9 +86,11 @@ var objs : Dictionary = {
 	"vinyl2":load("res://prefabs/vinyl2.tscn"),
 	"fish1":load("res://prefabs/fish1.tscn"),
 	"fish2":load("res://prefabs/fish2.tscn"),
+	"fish3":load("res://prefabs/fish3.tscn"),
 	"squid":load("res://prefabs/squid.tscn"),
 	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
 	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
+	"dicedfish3":load("res://prefabs/dicedfish3.tscn"),
 	"dicedsquid":load("res://prefabs/dicedsquidmeat.tscn"),
 	"rat":load("res://prefabs/rat.tscn"),
 }
@@ -174,9 +176,11 @@ var invobjs : Dictionary = {
 	"vinyl2":load("res://invobjs/vinyl2.tres"),
 	"fish1":load("res://invobjs/fish1.tres"),
 	"fish2":load("res://invobjs/fish2.tres"),
+	"fish3":load("res://invobjs/fish3.tres"),
 	"squid":load("res://invobjs/squid.tres"),
 	"dicedfish1":load("res://invobjs/dicedfish1.tres"),
 	"dicedfish2":load("res://invobjs/dicedfish2.tres"),
+	"dicedfish3":load("res://invobjs/dicedfish3.tres"),
 	"dicedsquid":load("res://invobjs/dicedsquid.tres"),
 	"rat":load("res://invobjs/rat.tres"),
 }
