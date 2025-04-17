@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://b4oecj68xoyd7"]
+[gd_scene load_steps=120 format=4 uid="uid://b4oecj68xoyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cwi170efjq44q" path="res://prefabs/player.tscn" id="1_fkk1i"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="2_g20cd"]
@@ -162,10 +162,10 @@ size = Vector3(0.0986328, 0.1, 0.28125)
 size = Vector3(0.0986328, 0.3, 0.0911377)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lqd0l"]
-size = Vector3(1, 1.7, 1.5)
+size = Vector3(0.2, 1.7, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_un4os"]
-size = Vector3(1, 4, 1.3)
+size = Vector3(0.2, 4, 1.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3loil"]
 diffuse_mode = 3
@@ -273,17 +273,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6knwc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o64v"]
-diffuse_mode = 3
-specular_mode = 2
-albedo_texture = ExtResource("3_oolp2")
-uv1_scale = Vector3(46, 23, 23)
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_03omq"]
-material = SubResource("StandardMaterial3D_6o64v")
-size = Vector2(12, 12)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8stjo"]
 diffuse_mode = 3
 specular_mode = 2
@@ -335,6 +324,12 @@ size = Vector3(24, 4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d60ia"]
 size = Vector3(20, 4, 4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_68ik7"]
+size = Vector3(32, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6rw1"]
+size = Vector3(52, 4, 4)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ec5mo"]
 size = Vector3(84, 4, 4)
 
@@ -367,6 +362,13 @@ size = Vector3(24, 4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruvo3"]
 size = Vector3(12, 4, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o64v"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("3_oolp2")
+uv1_scale = Vector3(46, 23, 23)
+texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xq2re"]
 material = SubResource("StandardMaterial3D_6o64v")
@@ -556,6 +558,66 @@ material = SubResource("StandardMaterial3D_bicoh")
 size = Vector2(20, 4)
 orientation = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6mrq"]
+size = Vector3(61, 4, 86)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p278i"]
+size = Vector3(5, 4, 86)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iodlt"]
+size = Vector3(5, 4, 61)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2h5b"]
+size = Vector3(4, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_irp41"]
+size = Vector3(36, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rahtx"]
+size = Vector3(4, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l181"]
+size = Vector3(4, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yru88"]
+size = Vector3(8, 4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p84gm"]
+size = Vector3(4, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ke3xs"]
+size = Vector3(8, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahl3x"]
+size = Vector3(4, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k5hp"]
+size = Vector3(16, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7laj"]
+size = Vector3(12, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjau3"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfk60"]
+size = Vector3(12, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nafuw"]
+size = Vector3(8, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gwlai"]
+size = Vector3(4, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdysl"]
+size = Vector3(4, 4, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mfok"]
+size = Vector3(24, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2ncj"]
+size = Vector3(4, 4, 4)
+
 [node name="cellar" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_fkk1i")]
@@ -714,15 +776,15 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.771, 
 shape = SubResource("BoxShape3D_n0hga")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="room1/doorway/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.49691e-08, 3.15, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.49691e-08, 3.15, 0)
 shape = SubResource("BoxShape3D_lqd0l")
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="room1/doorway/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4, 2, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4, 2, 0)
 shape = SubResource("BoxShape3D_un4os")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="room1/doorway/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 2, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 2, 0)
 shape = SubResource("BoxShape3D_un4os")
 
 [node name="lockthing" type="MeshInstance3D" parent="room1/doorway"]
@@ -768,7 +830,7 @@ mesh = SubResource("ArrayMesh_xx00k")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room1"]
-mesh = SubResource("PlaneMesh_03omq")
+mesh = SubResource("PlaneMesh_ne382")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="room1"]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 4, 0)
@@ -785,7 +847,6 @@ shape = SubResource("BoxShape3D_mioh7")
 
 [node name="mazecol" type="StaticBody3D" parent="." groups=["stone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -52)
-visible = false
 metadata/material = "stone"
 
 [node name="CollisionShape3D50" type="CollisionShape3D" parent="mazecol"]
@@ -893,8 +954,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2, 28)
 shape = SubResource("BoxShape3D_d60ia")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="mazecol"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44, 2, 0)
-shape = SubResource("BoxShape3D_ec5mo")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44, 2, 26)
+shape = SubResource("BoxShape3D_68ik7")
+
+[node name="CollisionShape3D56" type="CollisionShape3D" parent="mazecol"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44, 2, -20)
+shape = SubResource("BoxShape3D_o6rw1")
 
 [node name="CollisionShape3D32" type="CollisionShape3D" parent="mazecol"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -44, 2, 0)
@@ -1680,13 +1745,329 @@ shape = SubResource("BoxShape3D_yhldw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.1, -52)
+visible = false
 mesh = SubResource("PlaneMesh_lx5nm")
 
 [node name="heaven" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, -56)
 
-[node name="Wallsize5" type="MeshInstance3D" parent="heaven"]
+[node name="Wall7size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -10, 2, -16)
+mesh = SubResource("PlaneMesh_ufklc")
+skeleton = NodePath("")
+
+[node name="Wall4size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 2, -10)
+mesh = SubResource("PlaneMesh_nlqtg")
+skeleton = NodePath("")
+
+[node name="Wall4size2" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -50, 2, 10)
+mesh = SubResource("PlaneMesh_nlqtg")
+skeleton = NodePath("")
+
+[node name="Wall4size3" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, -50, 2, 14)
+mesh = SubResource("PlaneMesh_nlqtg")
+skeleton = NodePath("")
+
+[node name="Wall1size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -22, 2, -4)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size2" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -16, 2, -6)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size49" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -14, 2, 0)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size24" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -8, 2, -2)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size25" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, 10, 2, 20)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size26" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, 10, 2, 28)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size27" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, 10, 2, 36)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size28" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -18, 2, 36)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size29" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -18, 2, 28)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size30" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -18, 2, 20)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size31" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -10, 2, 24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size32" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -10, 2, 32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size35" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -2, 2, 32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size36" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -6, 2, 32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size37" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.57968e-07, 0, 1, 0, 1, 0, -1, 0, 4.57968e-07, -4, 2, 30)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size38" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -4, 2, 34)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size39" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -2, 2, 24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size40" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -6, 2, 24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size41" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.57968e-07, 0, 1, 0, 1, 0, -1, 0, 4.57968e-07, -4, 2, 22)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size42" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -4, 2, 26)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size43" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -30, 2, 12)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size44" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -34, 2, 12)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size45" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.57968e-07, 0, 1, 0, 1, 0, -1, 0, 4.57968e-07, -32, 2, 10)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size46" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -32, 2, 14)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size33" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.39411e-07, 0, 1, 0, -2.39411e-07, 0, -1, 2, 2, 32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size34" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.39411e-07, 0, 1, 0, -2.39411e-07, 0, -1, 2, 2, 24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size50" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.39411e-07, 0, 1, 0, -2.39411e-07, 0, -1, 2, 2, 16)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size51" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -10, 2, 16)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size54" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.39411e-07, 0, 1, 0, -2.39411e-07, 0, -1, 2, 2, 40)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size55" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.26833e-07, 0, 1, 0, 3.26833e-07, 0, 1, -10, 2, 40)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size52" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -8, 2, 14)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size53" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, 0, 2, 14)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size3" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -4, 2, -10)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size4" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -32, 2, -30)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size18" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.70545e-07, 0, -1, 0, 1, 0, 1, 0, -3.70545e-07, -20, 2, -34)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size19" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -18, 2, -32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size20" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -18, 2, -24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size21" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.57968e-07, 0, 1, 0, 1, 0, -1, 0, 4.57968e-07, -20, 2, -22)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size22" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.57968e-07, 0, 1, 0, 1, 0, -1, 0, 4.57968e-07, -16, 2, -26)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size23" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.14256e-07, 0, 1, 0, -4.14256e-07, 0, -1, -18, 2, -8)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size5" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(2.98023e-07, 0, 1, 0, 1, 0, -1, 0, 2.98023e-07, -32, 2, -26)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size6" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, 1, -30, 2, -24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size7" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, 1, -30, 2, -32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size8" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.85446e-07, 0, -1, 0, 1, 0, 1, 0, -3.85446e-07, -28, 2, -34)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size9" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.72869e-07, 0, 1, 0, 1, 0, -1, 0, 4.72869e-07, -28, 2, -22)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size47" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -5.1658e-07, 0, 1, 0, 5.1658e-07, 0, 1, -26, 2, -20)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size48" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -5.1658e-07, 0, 1, 0, 5.1658e-07, 0, 1, -26, 2, -36)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size10" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.85446e-07, 0, -1, 0, 1, 0, 1, 0, -3.85446e-07, -36, 2, -34)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size11" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.72869e-07, 0, 1, 0, 1, 0, -1, 0, 4.72869e-07, -36, 2, -22)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size12" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.85446e-07, 0, -1, 0, 1, 0, 1, 0, -3.85446e-07, -44, 2, -34)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size13" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(4.72869e-07, 0, 1, 0, 1, 0, -1, 0, 4.72869e-07, -44, 2, -22)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size14" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.29157e-07, 0, 1, 0, -4.29157e-07, 0, -1, -38, 2, -36)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size15" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.29157e-07, 0, 1, 0, -4.29157e-07, 0, -1, -38, 2, -20)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size16" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.29157e-07, 0, 1, 0, -4.29157e-07, 0, -1, -34, 2, -24)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall1size17" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.29157e-07, 0, 1, 0, -4.29157e-07, 0, -1, -34, 2, -32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall5size" type="MeshInstance3D" parent="heaven"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22, 2, 12)
+mesh = SubResource("PlaneMesh_8aig0")
+skeleton = NodePath("")
+
+[node name="Wall5size2" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -32, 2, -14)
+mesh = SubResource("PlaneMesh_8aig0")
+skeleton = NodePath("")
+
+[node name="Wall5size3" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -32, 2, -42)
+mesh = SubResource("PlaneMesh_8aig0")
+skeleton = NodePath("")
+
+[node name="Wall5size1" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -32, 2, 22)
+mesh = SubResource("PlaneMesh_8aig0")
+skeleton = NodePath("")
+
+[node name="Wall5size4" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -14, 2, -16)
 mesh = SubResource("PlaneMesh_8aig0")
 skeleton = NodePath("")
 
@@ -1710,15 +2091,15 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.771, 
 shape = SubResource("BoxShape3D_n0hga")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="heaven/doorway2/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.49691e-08, 3.15, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.15, 0)
 shape = SubResource("BoxShape3D_lqd0l")
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="heaven/doorway2/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4, 2, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.4, 2, 0)
 shape = SubResource("BoxShape3D_un4os")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="heaven/doorway2/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 2, 0.4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4, 2, 0)
 shape = SubResource("BoxShape3D_un4os")
 
 [node name="lockthing" type="MeshInstance3D" parent="heaven/doorway2"]
@@ -1757,6 +2138,325 @@ limit_lower = -1.5708
 node_a = NodePath("../door")
 node_b = NodePath("../StaticBody3D")
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.7, 1.3, 0)
+
+[node name="Wall2size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -38, 2, 2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size4" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 2, 2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size5" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 2, -6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size6" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -18, 2, -2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size10" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, -14, 2, -30)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size15" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 6, 2, 18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size16" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 6, 2, 26)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size17" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 6, 2, 34)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size18" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 6, 2, 38)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size19" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 6, 2, 30)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size20" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 6, 2, 22)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size21" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, -14, 2, 18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size22" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, -14, 2, 26)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size23" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, -14, 2, 34)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size24" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -14, 2, 38)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size25" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -14, 2, 30)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size26" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -14, 2, 22)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size11" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, -22, 2, -38)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size12" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, -22, 2, -18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size13" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -42, 2, -18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size14" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -42, 2, -38)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size7" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -6, 2, -6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size8" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -10, 2, 2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size9" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -30, 2, -2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size2" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -42, 2, 6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size3" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -42, 2, 18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall6size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -2, 2, 2)
+mesh = SubResource("PlaneMesh_2hirk")
+skeleton = NodePath("")
+
+[node name="Wall3size" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -4, 2, 42)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size6" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -6, 2, 8)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size3" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -32, 2, -38)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size4" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -32, 2, -18)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size5" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -46, 2, -28)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size2" type="MeshInstance3D" parent="heaven"]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -34, 2, -4)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="heaven"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, -2, 0)
+shape = SubResource("BoxShape3D_f6mrq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 6, 0)
+shape = SubResource("BoxShape3D_f6mrq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, 0)
+shape = SubResource("BoxShape3D_p278i")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.5, 2, -44.5)
+shape = SubResource("BoxShape3D_iodlt")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.5, 2, 44.5)
+shape = SubResource("BoxShape3D_iodlt")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 2, 32)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 2, 24)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 2, 40)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 32)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 24)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 2, 16)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 16)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 40)
+shape = SubResource("BoxShape3D_r2h5b")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2, 20)
+shape = SubResource("BoxShape3D_irp41")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 2, 24)
+shape = SubResource("BoxShape3D_rahtx")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2, 18)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 8)
+shape = SubResource("BoxShape3D_yru88")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -6)
+shape = SubResource("BoxShape3D_p84gm")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -20)
+shape = SubResource("BoxShape3D_ke3xs")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2, -16)
+shape = SubResource("BoxShape3D_ahl3x")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2, 6)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2, -18)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, -18)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, -38)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -34)
+shape = SubResource("BoxShape3D_7k5hp")
+
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, -20)
+shape = SubResource("BoxShape3D_r7laj")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, -36)
+shape = SubResource("BoxShape3D_r7laj")
+
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, -32)
+shape = SubResource("BoxShape3D_jjau3")
+
+[node name="CollisionShape3D39" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, -24)
+shape = SubResource("BoxShape3D_jjau3")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2, -38)
+shape = SubResource("BoxShape3D_0l181")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38, 2, -4)
+shape = SubResource("BoxShape3D_tfk60")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26, 2, -2)
+shape = SubResource("BoxShape3D_nafuw")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 2, 0)
+shape = SubResource("BoxShape3D_gwlai")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30, 2, -12)
+shape = SubResource("BoxShape3D_fdysl")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 2)
+shape = SubResource("BoxShape3D_0mfok")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 2, 32)
+shape = SubResource("BoxShape3D_n2ncj")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 2, 24)
+shape = SubResource("BoxShape3D_n2ncj")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="heaven/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 2, 12)
+shape = SubResource("BoxShape3D_n2ncj")
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
