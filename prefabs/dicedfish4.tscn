@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b280h6xysjtx5"]
+[gd_scene load_steps=10 format=3 uid="uid://dhvvqvbbnuc7r"]
 
-[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_ex15x"]
-[ext_resource type="AudioStream" uid="uid://cqn2txsmicguq" path="res://sounds/meatcollision.wav" id="2_kw6a0"]
-[ext_resource type="Resource" uid="uid://4ag7qkkvruj6" path="res://invobjs/dicedfish3.tres" id="3_e7idk"]
+[ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_s7uy6"]
+[ext_resource type="AudioStream" uid="uid://cqn2txsmicguq" path="res://sounds/meatcollision.wav" id="2_so8p3"]
+[ext_resource type="Resource" uid="uid://bycnf7h7x23rn" path="res://invobjs/dicedfish4.tres" id="3_25v71"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8t5hl"]
 diffuse_mode = 3
@@ -40,15 +40,15 @@ radius = 0.1
 mass = 0.1
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_ex15x")
+script = ExtResource("1_s7uy6")
 mats = Array[Material]([SubResource("StandardMaterial3D_8t5hl")])
 rotmats = Array[Material]([SubResource("StandardMaterial3D_wl8sx")])
 cookedmats = Array[Material]([SubResource("StandardMaterial3D_kucju")])
 burntmats = Array[Material]([SubResource("StandardMaterial3D_5wpt7")])
 fillamount = 5.0
 cookedfillamount = 8.0
-sounds = Array[AudioStream]([ExtResource("2_kw6a0")])
-metadata/obj = ExtResource("3_e7idk")
+sounds = Array[AudioStream]([ExtResource("2_so8p3")])
+metadata/obj = ExtResource("3_25v71")
 
 [node name="model" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_pttpb")

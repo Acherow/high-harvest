@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://bycnf7h7x23rn"]
+
+[ext_resource type="Texture2D" uid="uid://bmuld7w66xvu8" path="res://sprites/itemicons/dicedfish2.png" id="1_8y57g"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_wh2yy"]
+
+[resource]
+script = ExtResource("2_wh2yy")
+name = "Diced Mullet"
+weight = 0.1
+icon = ExtResource("1_8y57g")
+description = "Mullet slice."
+objaddress = "dicedfish4"
+customproperties = {}
