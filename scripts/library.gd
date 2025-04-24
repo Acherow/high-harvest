@@ -88,6 +88,7 @@ var objs : Dictionary = {
 	"fish2":load("res://prefabs/fish2.tscn"),
 	"fish3":load("res://prefabs/fish3.tscn"),
 	"fish4":load("res://prefabs/fish4.tscn"),
+	"fish5":load("res://prefabs/fish5.tscn"),
 	"squid":load("res://prefabs/squid.tscn"),
 	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
 	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
@@ -180,6 +181,7 @@ var invobjs : Dictionary = {
 	"fish2":load("res://invobjs/fish2.tres"),
 	"fish3":load("res://invobjs/fish3.tres"),
 	"fish4":load("res://invobjs/fish4.tres"),
+	"fish5":load("res://invobjs/fish5.tres"),
 	"squid":load("res://invobjs/squid.tres"),
 	"dicedfish1":load("res://invobjs/dicedfish1.tres"),
 	"dicedfish2":load("res://invobjs/dicedfish2.tres"),
@@ -227,6 +229,11 @@ var sellvalues : Dictionary = {
 	"cabbage" = 7.0,
 	"pumpkin" = 10.0,
 	"potato" = 9.0,
+	"fish1" = 10.0,
+	"fish2" = 10.0,
+	"fish3" = 10.0,
+	"fish4" = 10.0,
+	"squid" = 15.0,
 	"egg" = 7.0,
 	"trashbag" = 1.0,
 	"ammobox" = 5.0,
@@ -254,11 +261,12 @@ const crops : Dictionary = {
 }
 
 const fish : Dictionary = {
-	"fish1":2,
-	"fish2":2,
-	"fish3":2,
-	"fish4":1,
-	"squid":1,
+	"fish1":3,
+	"fish2":3,
+	"fish3":3,
+	"fish4":3,
+	"fish5":1,
+	"squid":2,
 }
 
 const critters : Dictionary = {
