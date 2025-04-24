@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgi60pan37j43"
-path="res://.godot/imported/Aquaflora.png-91dee3db4b8ea71f062dc29572bd5912.ctex"
+uid="uid://bs7r4avxtcsep"
+path="res://.godot/imported/cellarlever.png-b16c0bf322202a7bddf33ca5260c622b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/fish/Aquaflora.png"
-dest_files=["res://.godot/imported/Aquaflora.png-91dee3db4b8ea71f062dc29572bd5912.ctex"]
+source_file="res://models/textures/cellarlever.png"
+dest_files=["res://.godot/imported/cellarlever.png-b16c0bf322202a7bddf33ca5260c622b.ctex"]
 
 [params]
 

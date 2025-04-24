@@ -87,10 +87,12 @@ var objs : Dictionary = {
 	"fish1":load("res://prefabs/fish1.tscn"),
 	"fish2":load("res://prefabs/fish2.tscn"),
 	"fish3":load("res://prefabs/fish3.tscn"),
+	"fish4":load("res://prefabs/fish4.tscn"),
 	"squid":load("res://prefabs/squid.tscn"),
 	"dicedfish1":load("res://prefabs/dicedfish1.tscn"),
 	"dicedfish2":load("res://prefabs/dicedfish2.tscn"),
 	"dicedfish3":load("res://prefabs/dicedfish3.tscn"),
+	"dicedfish4":load("res://prefabs/dicedfish4.tscn"),
 	"dicedsquid":load("res://prefabs/dicedsquidmeat.tscn"),
 	"rat":load("res://prefabs/rat.tscn"),
 }
@@ -177,10 +179,12 @@ var invobjs : Dictionary = {
 	"fish1":load("res://invobjs/fish1.tres"),
 	"fish2":load("res://invobjs/fish2.tres"),
 	"fish3":load("res://invobjs/fish3.tres"),
+	"fish4":load("res://invobjs/fish4.tres"),
 	"squid":load("res://invobjs/squid.tres"),
 	"dicedfish1":load("res://invobjs/dicedfish1.tres"),
 	"dicedfish2":load("res://invobjs/dicedfish2.tres"),
 	"dicedfish3":load("res://invobjs/dicedfish3.tres"),
+	"dicedfish4":load("res://invobjs/dicedfish4.tres"),
 	"dicedsquid":load("res://invobjs/dicedsquid.tres"),
 	"rat":load("res://invobjs/rat.tres"),
 }
@@ -252,6 +256,8 @@ const crops : Dictionary = {
 const fish : Dictionary = {
 	"fish1":2,
 	"fish2":2,
+	"fish3":2,
+	"fish4":1,
 	"squid":1,
 }
 

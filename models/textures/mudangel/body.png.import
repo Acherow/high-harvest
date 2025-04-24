@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b02iwfq2oftgm"
-path="res://.godot/imported/Windflick.png-b4316dec6239ade3658e4b0af32ab0a6.ctex"
+uid="uid://dmaiwwlwt41sb"
+path="res://.godot/imported/body.png-413503e2beda965443262992d883c7c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/fish/Windflick.png"
-dest_files=["res://.godot/imported/Windflick.png-b4316dec6239ade3658e4b0af32ab0a6.ctex"]
+source_file="res://models/textures/mudangel/body.png"
+dest_files=["res://.godot/imported/body.png-413503e2beda965443262992d883c7c7.ctex"]
 
 [params]
 

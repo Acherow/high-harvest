@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0an4ys20twcu"
-path="res://.godot/imported/Luminatha.png-662e4186def4c71a2d1c45425eb2d11e.ctex"
+uid="uid://cuhtuuqpg3q0d"
+path="res://.godot/imported/face1.png-25fee4b30498572fdf8b0afdc6e41928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/textures/fish/Luminatha.png"
-dest_files=["res://.godot/imported/Luminatha.png-662e4186def4c71a2d1c45425eb2d11e.ctex"]
+source_file="res://models/textures/mudangel/face1.png"
+dest_files=["res://.godot/imported/face1.png-25fee4b30498572fdf8b0afdc6e41928.ctex"]
 
 [params]
 
