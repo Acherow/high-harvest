@@ -1080,6 +1080,7 @@ skeleton = NodePath("../room1")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 7, 4, -56)
+visible = false
 mesh = SubResource("PlaneMesh_xq2re")
 skeleton = NodePath("../room1")
 
@@ -1745,7 +1746,6 @@ shape = SubResource("BoxShape3D_yhldw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.1, -52)
-visible = false
 mesh = SubResource("PlaneMesh_lx5nm")
 
 [node name="heaven" type="Node3D" parent="."]
@@ -2457,6 +2457,259 @@ shape = SubResource("BoxShape3D_n2ncj")
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="heaven/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 2, 12)
 shape = SubResource("BoxShape3D_n2ncj")
+
+[node name="lair" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 0, -52)
+
+[node name="Wall1size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.52328e-07, 0, 1, 0, -2.52328e-07, 0, -1, 17, 2, -32)
+mesh = SubResource("PlaneMesh_x0u2g")
+skeleton = NodePath("")
+
+[node name="Wall2size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, 13, 2, -30)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size2" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, 1, 2, -30)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size3" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 5, 2, -26)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size4" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 1, 2, -22)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size5" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -3, 2, -26)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size6" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, -11, 2, -18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size7" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -7, 2, -14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size8" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -11, 2, -10)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size9" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -15, 2, -14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size10" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, -11, 2, 6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size24" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, -11, 2, 18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size11" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -7, 2, 10)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size12" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -11, 2, 14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size13" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -15, 2, 10)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size14" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, 13, 2, 6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size25" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, 25, 2, 18)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size26" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-4.37118e-08, 0, -1, 0, 1, 0, 1, 0, -4.37118e-08, 25, 2, 14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size15" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 17, 2, 10)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size16" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 13, 2, 14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size18" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -11, 2, 38)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size19" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 17, 2, -2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size20" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 8.74232e-08, 0, 1, 0, -8.74232e-08, 0, -1, -3, 2, -2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size21" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -7, 2, -2)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size23" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31135e-07, 0, 1, 0, 1, 0, -1, 0, 1.31135e-07, 1, 2, 6)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size22" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 8.74232e-08, 0, 1, 0, -8.74232e-08, 0, -1, -3, 2, -14)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall2size17" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, 9, 2, 10)
+mesh = SubResource("PlaneMesh_tgiq6")
+skeleton = NodePath("")
+
+[node name="Wall3size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -7, 2, -28)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size2" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 1.17225e-07, 0, 1, 0, -1.17225e-07, 0, -1, 9, 2, -24)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size3" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-7.35137e-08, 0, -1, 0, 1, 0, 1, 0, -7.35137e-08, -13, 2, -22)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size4" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1.39091e-08, 0, 1, 0, 1, 0, -1, 0, -1.39091e-08, -13, 2, -6)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size5" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.01332e-07, 0, -1, 0, 1, 0, 1, 0, 1.01332e-07, -13, 2, 2)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size6" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, 1.45043e-07, 0, 1, 0, -1.45043e-07, 0, 1, 5, 2, 12)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size7" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, -2.32466e-07, 0, 1, 0, 2.32466e-07, 0, -1, 21, 2, 24)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size9" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1.88755e-07, 0, 1, 0, 1, 0, -1, 0, -1.88755e-07, 3, 2, -18)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size10" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, -2.32466e-07, 0, 1, 0, 2.32466e-07, 0, -1, -3, 2, 36)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall3size11" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1.88755e-07, 0, 1, 0, 1, 0, -1, 0, -1.88755e-07, 11, 2, 18)
+mesh = SubResource("PlaneMesh_1flad")
+skeleton = NodePath("")
+
+[node name="Wall4size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11, 2, 42)
+mesh = SubResource("PlaneMesh_nlqtg")
+skeleton = NodePath("")
+
+[node name="Wall4size2" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -19, 2, -14)
+mesh = SubResource("PlaneMesh_nlqtg")
+skeleton = NodePath("")
+
+[node name="Wall5size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -3, 2, 16)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall5size2" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 7, 2, 26)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall5size5" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(3.05979e-07, 0, 1, 0, 1, 0, -1, 0, 3.05979e-07, 7, 2, -6)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall5size6" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-3.93402e-07, 0, -1, 0, 1, 0, 1, 0, -3.93402e-07, 7, 2, 2)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall5size3" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 1, -7, 2, 28)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall5size4" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -15, 2, 28)
+mesh = SubResource("PlaneMesh_xccxq")
+skeleton = NodePath("")
+
+[node name="Wall6size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 9, 2, -10)
+mesh = SubResource("PlaneMesh_2hirk")
+skeleton = NodePath("")
+
+[node name="Wall6size2" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 21, 2, 2)
+mesh = SubResource("PlaneMesh_2hirk")
+skeleton = NodePath("")
+
+[node name="Wall6size3" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 9, 2, 30)
+mesh = SubResource("PlaneMesh_2hirk")
+skeleton = NodePath("")
+
+[node name="Wall6size4" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(-3.93403e-07, 0, -1, 0, 1, 0, 1, 0, -3.93403e-07, 5, 2, -34)
+mesh = SubResource("PlaneMesh_2hirk")
+skeleton = NodePath("")
+
+[node name="Wall10size" type="MeshInstance3D" parent="lair"]
+transform = Transform3D(1, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 1, -19, 2, 22)
+mesh = SubResource("PlaneMesh_wth3m")
+skeleton = NodePath("")
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
