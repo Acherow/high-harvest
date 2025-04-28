@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
 [ext_resource type="Script" path="res://scripts/mainmenudaymanager.gd" id="5_a16qn"]
 [ext_resource type="Shader" path="res://shaders/sky.gdshader" id="7_j5j42"]
-[ext_resource type="Texture2D" uid="uid://dipl3vtt0tsng" path="res://sprites/stars.png" id="8_kdd5n"]
+[ext_resource type="Texture2D" uid="uid://bo4ikbklcunau" path="res://sprites/stars.png" id="8_kdd5n"]
 [ext_resource type="Script" path="res://scripts/windmill.gd" id="9_n5m3s"]
 [ext_resource type="Texture2D" uid="uid://t7kpivbyg8jt" path="res://models/textures/wood.png" id="9_oc0k8"]
 [ext_resource type="Texture2D" uid="uid://dwkdhq1jjkyxi" path="res://models/textures/whitewood.png" id="10_8rm7b"]
