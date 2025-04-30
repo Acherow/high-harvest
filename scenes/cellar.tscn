@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://b4oecj68xoyd7"]
+[gd_scene load_steps=135 format=4 uid="uid://b4oecj68xoyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cwi170efjq44q" path="res://prefabs/player.tscn" id="1_fkk1i"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="2_g20cd"]
@@ -624,6 +624,45 @@ size = Vector3(24, 4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2ncj"]
 size = Vector3(4, 4, 4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vk2f"]
+size = Vector3(61, 4, 86)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ra4lt"]
+size = Vector3(61, 4, 86)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tthaq"]
+size = Vector3(12, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shnty"]
+size = Vector3(8, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7y4h"]
+size = Vector3(8, 4, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a35pw"]
+size = Vector3(64, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmv7s"]
+size = Vector3(8, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40868"]
+size = Vector3(8, 4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ns8hk"]
+size = Vector3(12, 4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8wndk"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7hfo"]
+size = Vector3(16, 4, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4whr"]
+size = Vector3(16, 4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7036y"]
+size = Vector3(24, 4, 5)
+
 [node name="cellar" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_fkk1i")]
@@ -1082,7 +1121,6 @@ skeleton = NodePath("../room1")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 7, 4, -56)
-visible = false
 mesh = SubResource("PlaneMesh_xq2re")
 skeleton = NodePath("../room1")
 
@@ -1743,6 +1781,7 @@ shape = SubResource("BoxShape3D_yhldw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.1, -52)
+visible = false
 mesh = SubResource("PlaneMesh_lx5nm")
 
 [node name="heaven" type="Node3D" parent="."]
@@ -2780,6 +2819,88 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 1, -19, 2, 22)
 mesh = SubResource("PlaneMesh_wth3m")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lair"]
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 4)
+shape = SubResource("BoxShape3D_5vk2f")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
+shape = SubResource("BoxShape3D_ra4lt")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 2, 36)
+shape = SubResource("BoxShape3D_tthaq")
+
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -11, 2, 28)
+shape = SubResource("BoxShape3D_shnty")
+
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1, 2, 16)
+shape = SubResource("BoxShape3D_shnty")
+
+[node name="CollisionShape3D44" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 2, -2)
+shape = SubResource("BoxShape3D_shnty")
+
+[node name="CollisionShape3D45" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 2, -14)
+shape = SubResource("BoxShape3D_k7y4h")
+
+[node name="CollisionShape3D46" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17, 2, -2)
+shape = SubResource("BoxShape3D_shnty")
+
+[node name="CollisionShape3D57" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 2, 10)
+shape = SubResource("BoxShape3D_a35pw")
+
+[node name="CollisionShape3D47" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 2, 10)
+shape = SubResource("BoxShape3D_nmv7s")
+
+[node name="CollisionShape3D48" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 2, 10)
+shape = SubResource("BoxShape3D_nmv7s")
+
+[node name="CollisionShape3D49" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 2, -14)
+shape = SubResource("BoxShape3D_nmv7s")
+
+[node name="CollisionShape3D50" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 2, -26)
+shape = SubResource("BoxShape3D_nmv7s")
+
+[node name="CollisionShape3D51" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 2, 22)
+shape = SubResource("BoxShape3D_40868")
+
+[node name="CollisionShape3D52" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 15, 2, -24)
+shape = SubResource("BoxShape3D_ns8hk")
+
+[node name="CollisionShape3D58" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 19, 2, -32)
+shape = SubResource("BoxShape3D_8wndk")
+
+[node name="CollisionShape3D53" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -11, 2, 44.5)
+shape = SubResource("BoxShape3D_k7hfo")
+
+[node name="CollisionShape3D54" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -15, 2, -28)
+shape = SubResource("BoxShape3D_f4whr")
+
+[node name="CollisionShape3D56" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -15, 2, -28)
+shape = SubResource("BoxShape3D_f4whr")
+
+[node name="CollisionShape3D55" type="CollisionShape3D" parent="lair/StaticBody3D"]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 5, 2, -36.5)
+shape = SubResource("BoxShape3D_7036y")
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
