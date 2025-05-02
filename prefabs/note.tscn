@@ -4,6 +4,8 @@
 [ext_resource type="Resource" uid="uid://cel6o03k5yygt" path="res://invobjs/note.tres" id="2_0asbs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_julhk"]
+diffuse_mode = 3
+specular_mode = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k62gd"]
 _surfaces = [{

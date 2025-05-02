@@ -2059,6 +2059,7 @@ shape = SubResource("BoxShape3D_yhldw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.01, -52)
+visible = false
 mesh = SubResource("PlaneMesh_lx5nm")
 
 [node name="heaven" type="Node3D" parent="."]
