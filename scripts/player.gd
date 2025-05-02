@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 @onready var coyote_time = $coyoteTime
-@onready var cam = $cam
+@onready var cam :PlayerCam = $cam
 @onready var shape = $CollisionShape3D
 @onready var ceilingcheck = $ceilingcheck
 @onready var groundcheck: ShapeCast3D = $groundcheck
