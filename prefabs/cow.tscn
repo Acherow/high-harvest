@@ -1,7 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://d1ll441m3j3jk"]
+[gd_scene load_steps=25 format=4 uid="uid://d1ll441m3j3jk"]
 
 [ext_resource type="Texture2D" uid="uid://dsgyjuh4iomw" path="res://models/textures/cow/Cow_Texutre2.png" id="1_1pfad"]
 [ext_resource type="Script" path="res://scripts/cow.gd" id="1_mgsyr"]
+[ext_resource type="AudioStream" uid="uid://b8n01ekeyk4oi" path="res://sounds/cow/Vaca1.mp3" id="2_3ljsy"]
+[ext_resource type="AudioStream" uid="uid://8w8onmo3va5r" path="res://sounds/cow/Vaca2.mp3" id="3_wkje4"]
+[ext_resource type="AudioStream" uid="uid://pp74ki82ahx4" path="res://sounds/cow/Vaca3.mp3" id="4_jdjgx"]
+[ext_resource type="AudioStream" uid="uid://bc6ilvhw5isr6" path="res://sounds/cow/Vaca4.mp3" id="5_s5p7j"]
+[ext_resource type="AudioStream" uid="uid://b3ccgcmg344v3" path="res://sounds/cow/Vaca5.mp3" id="6_4d8v6"]
+[ext_resource type="AudioStream" uid="uid://bxq6wsdcnlunu" path="res://sounds/cow/Vaca6.mp3" id="7_1i55n"]
+[ext_resource type="AudioStream" uid="uid://b4hh30r4tfx37" path="res://sounds/cow/Vaca7.mp3" id="8_tf0i8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tajed"]
 diffuse_mode = 3
@@ -510,6 +517,7 @@ _data = {
 
 [node name="cow" type="RigidBody3D" groups=["cow", "heavy", "pickup"]]
 script = ExtResource("1_mgsyr")
+adultsounds = Array[AudioStream]([ExtResource("2_3ljsy"), ExtResource("3_wkje4"), ExtResource("4_jdjgx"), ExtResource("5_s5p7j"), ExtResource("6_4d8v6"), ExtResource("7_1i55n"), ExtResource("8_tf0i8")])
 
 [node name="adult" type="Node3D" parent="."]
 
@@ -714,3 +722,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0101871, -0.0441442)
 libraries = {
 "": SubResource("AnimationLibrary_5e72u")
 }
+
+[connection signal="timeout" from="agetimer" to="." method="_on_agetimer_timeout"]
+[connection signal="timeout" from="actiontimer" to="." method="_on_actiontimer_timeout"]

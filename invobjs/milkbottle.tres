@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://dwa3o3qnjhu6b"]
+
+[ext_resource type="Texture2D" uid="uid://dqkmxfoa4pvy2" path="res://sprites/itemicons/milkbottleempty.png" id="1_ppkph"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_c5pt6"]
+
+[resource]
+script = ExtResource("2_c5pt6")
+name = "Milk bottle"
+weight = 0.5
+icon = ExtResource("1_ppkph")
+description = "A bottle to fill with milk from a cow."
+objaddress = "milkbottle"
+customproperties = {}

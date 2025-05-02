@@ -53,6 +53,8 @@ var objs : Dictionary = {
 	"dicedcrowmeat":load("res://prefabs/dicedcrowmeat.tscn"),
 	"pigmeat":load("res://prefabs/pigmeat.tscn"),
 	"dicedpigmeat":load("res://prefabs/dicedpigmeat.tscn"),
+	"cowmeat":load("res://prefabs/cowmeat.tscn"),
+	"dicedcowmeat":load("res://prefabs/dicedcowmeat.tscn"),
 	"calendar":load("res://prefabs/calendar.tscn"),
 	"nail":load("res://prefabs/nail.tscn"),
 	"dice":load("res://prefabs/dice.tscn"),
@@ -96,6 +98,7 @@ var objs : Dictionary = {
 	"dicedfish4":load("res://prefabs/dicedfish4.tscn"),
 	"dicedsquid":load("res://prefabs/dicedsquidmeat.tscn"),
 	"rat":load("res://prefabs/rat.tscn"),
+	"milkbottle":load("res://prefabs/milkbottle.tscn"),
 }
 
 var invobjs : Dictionary = {
@@ -146,6 +149,8 @@ var invobjs : Dictionary = {
 	"dicedcrowmeat":load("res://invobjs/dicedcrowmeat.tres"),
 	"pigmeat":load("res://invobjs/pigmeat.tres"),
 	"dicedpigmeat":load("res://invobjs/dicedpigmeat.tres"),
+	"cowmeat":load("res://invobjs/cowmeat.tres"),
+	"dicedcowmeat":load("res://invobjs/dicedcowmeat.tres"),
 	"calendar":load("res://invobjs/calendar.tres"),
 	"nail":load("res://invobjs/nail.tres"),
 	"dice":load("res://invobjs/dice.tres"),
@@ -189,6 +194,7 @@ var invobjs : Dictionary = {
 	"dicedfish4":load("res://invobjs/dicedfish4.tres"),
 	"dicedsquid":load("res://invobjs/dicedsquid.tres"),
 	"rat":load("res://invobjs/rat.tres"),
+	"milkbottle":load("res://invobjs/milkbottle.tres"),
 }
 
 var purchasables : Dictionary = {
@@ -203,6 +209,7 @@ var purchasables : Dictionary = {
 	"chicken" = 17.0,
 	"rooster" = 30.0,
 	"pig" = 20.0,
+	"cow" = 20.0,
 	"newtrashbag" = 5.0,
 	"trashcan" = 10.0,
 	#"shotgun" = 30.0,
@@ -220,6 +227,7 @@ var purchasables : Dictionary = {
 	"veggiemanbox" = 10.0,
 	"lawngnome" = 5.0,
 	"candle" = 5.0,
+	"milkbottle" = 1.0,
 }
 
 var sellvalues : Dictionary = {
@@ -241,6 +249,7 @@ var sellvalues : Dictionary = {
 	"chickenmeat" = 20.0,
 	"crowmeat" = 6.0,
 	"pigmeat" = 30.0,
+	"cowmeat" = 30.0,
 	"rotten meat" = 0.00,
 	"spoiled food" = 0.00,
 	"carrotseedbag" = 10.0,
@@ -249,6 +258,7 @@ var sellvalues : Dictionary = {
 	"usedseedbag" = 1.0,
 	"totem" = 100.0,
 	"usedsixpack"= 1.0,
+	"milk" = 10.0,
 }
 
 const crops : Dictionary = {

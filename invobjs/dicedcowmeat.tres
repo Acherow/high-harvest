@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://cfygjt2gsvctj"]
+
+[ext_resource type="Texture2D" uid="uid://dwhkd08vgkr0x" path="res://sprites/itemicons/dicedpigmeat.png" id="1_nxhxd"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_0tfk4"]
+
+[resource]
+script = ExtResource("2_0tfk4")
+name = "Diced cow"
+weight = 0.1
+icon = ExtResource("1_nxhxd")
+description = "Cow cube."
+objaddress = "dicedcowmeat"
+customproperties = {}

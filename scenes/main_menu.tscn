@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://xihg4pj7a381"]
+[gd_scene load_steps=59 format=4 uid="uid://xihg4pj7a381"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ld3qd"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dwkdhq1jjkyxi" path="res://models/textures/whitewood.png" id="10_8rm7b"]
 [ext_resource type="Script" path="res://scripts/3Dviewport.gd" id="10_gcorl"]
 [ext_resource type="Script" path="res://scripts/mybutton.gd" id="11_jsdpj"]
+[ext_resource type="Texture2D" uid="uid://dkmqa2o6mbd7" path="res://logo.png" id="11_y0co1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owlut"]
 shading_mode = 0
@@ -642,7 +643,7 @@ omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="mainmenu" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0.3)
 mesh = SubResource("ArrayMesh_1ufst")
 skeleton = NodePath("")
 
@@ -844,6 +845,12 @@ hoverlook = SubResource("LabelSettings_gkvbc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="back2/viewportcont3/Area3D"]
 shape = SubResource("BoxShape3D_h04m6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -1)
+pixel_size = 0.0025
+texture_filter = 2
+texture = ExtResource("11_y0co1")
 
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/startbtn" to="." method="lookatsaves"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/optionsbtn" to="." method="lookatoptions"]

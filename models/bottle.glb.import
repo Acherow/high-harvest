@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctpt5fe5juopq"
-path="res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"
+uid="uid://f7ti7bq5mjsq"
+path="res://.godot/imported/bottle.glb-4cfd23eab9e40d9a8957f8cb8ac593b7.scn"
 
 [deps]
 
-source_file="res://models/Potato.glb"
-dest_files=["res://.godot/imported/Potato.glb-1fc0b97d2c87b3c04de20e95be88c95f.scn"]
+source_file="res://models/bottle.glb"
+dest_files=["res://.godot/imported/bottle.glb-4cfd23eab9e40d9a8957f8cb8ac593b7.scn"]
 
 [params]
 
