@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d1ll441m3j3jk"]
+[gd_scene load_steps=26 format=4 uid="uid://d1ll441m3j3jk"]
 
 [ext_resource type="Texture2D" uid="uid://dsgyjuh4iomw" path="res://models/textures/cow/Cow_Texutre2.png" id="1_1pfad"]
 [ext_resource type="Script" path="res://scripts/cow.gd" id="1_mgsyr"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b3ccgcmg344v3" path="res://sounds/cow/Vaca5.mp3" id="6_4d8v6"]
 [ext_resource type="AudioStream" uid="uid://bxq6wsdcnlunu" path="res://sounds/cow/Vaca6.mp3" id="7_1i55n"]
 [ext_resource type="AudioStream" uid="uid://b4hh30r4tfx37" path="res://sounds/cow/Vaca7.mp3" id="8_tf0i8"]
+[ext_resource type="Resource" uid="uid://dd2ro331r5nm2" path="res://invobjs/cow.tres" id="9_8p78s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tajed"]
 diffuse_mode = 3
@@ -518,6 +519,7 @@ _data = {
 [node name="cow" type="RigidBody3D" groups=["cow", "heavy", "pickup"]]
 script = ExtResource("1_mgsyr")
 adultsounds = Array[AudioStream]([ExtResource("2_3ljsy"), ExtResource("3_wkje4"), ExtResource("4_jdjgx"), ExtResource("5_s5p7j"), ExtResource("6_4d8v6"), ExtResource("7_1i55n"), ExtResource("8_tf0i8")])
+metadata/obj = ExtResource("9_8p78s")
 
 [node name="adult" type="Node3D" parent="."]
 
@@ -581,6 +583,7 @@ mesh = SubResource("ArrayMesh_kow1j")
 skin = SubResource("Skin_j7jj1")
 
 [node name="teenager" type="Node3D" parent="."]
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="teenager"]
 bones/0/name = "body_2"
@@ -638,6 +641,7 @@ mesh = SubResource("ArrayMesh_xwat3")
 skin = SubResource("Skin_reddi")
 
 [node name="child" type="Node3D" parent="."]
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="child"]
 bones/0/name = "body_3"
