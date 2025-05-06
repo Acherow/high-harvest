@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dijpq44waghio"]
+[gd_scene load_steps=14 format=4 uid="uid://dijpq44waghio"]
 
 [ext_resource type="Texture2D" uid="uid://cuhtuuqpg3q0d" path="res://models/textures/mudangel/face1.png" id="1_6rmm0"]
 [ext_resource type="Texture2D" uid="uid://cuqwvirm8k6pk" path="res://models/textures/mudangel/face2.png" id="2_tod8a"]
@@ -138,6 +138,34 @@ bind/14/name = &"esse.006"
 bind/14/bone = -1
 bind/14/pose = Transform3D(-0.600802, -0.0322234, 0.798749, 0.0254406, -0.999452, -0.021184, 0.798995, 0.00759361, 0.601292, 0.11509, 0.233748, -0.0657811)
 
+[sub_resource type="Animation" id="Animation_pk0f4"]
+resource_name = "faceoff"
+length = 0.2
+step = 0.1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:head")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.1, 1, 0.000920877, 0.999735, -0.0188507, 0.0131978, 0.2, 1, -0.0594528, -0.0131986, -0.00406692, 0.998136)
+
+[sub_resource type="Animation" id="Animation_dlt1q"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:head")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.0594528, -0.0131986, -0.00406692, 0.998136)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5ay6"]
+_data = {
+"RESET": SubResource("Animation_dlt1q"),
+"faceoff": SubResource("Animation_pk0f4")
+}
+
 [node name="mudangel" type="Node3D"]
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
@@ -161,7 +189,7 @@ bones/2/rest = Transform3D(0.999619, 0.00968806, -0.0258644, -0.00654928, 0.9928
 bones/2/enabled = true
 bones/2/position = Vector3(-3.37604e-09, 0.362229, -2.79397e-09)
 bones/2/rotation = Quaternion(-0.0594528, -0.0131986, -0.00406692, 0.998136)
-bones/2/scale = Vector3(1, 1, 1)
+bones/2/scale = Vector3(0.999999, 0.999999, 1)
 bones/3/name = "Bone.005"
 bones/3/parent = 1
 bones/3/rest = Transform3D(0.999548, -0.0218251, 0.0206711, -0.0220737, -0.0661093, 0.997568, -0.0204054, -0.997574, -0.0665612, 0.017727, 0.280786, -0.235858)
@@ -250,3 +278,24 @@ bones/14/scale = Vector3(1, 1, 1)
 [node name="mudangel" type="MeshInstance3D" parent="Skeleton3D"]
 mesh = SubResource("ArrayMesh_gg8dw")
 skin = SubResource("Skin_abcw0")
+
+[node name="viewbox" type="Marker3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="viewbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="viewbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="viewbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="viewbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2, 0)
+
+[node name="poses" type="AnimationPlayer" parent="."]
+
+[node name="faceanim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c5ay6")
+}

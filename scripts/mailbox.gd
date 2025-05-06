@@ -14,14 +14,8 @@ var curquests : Array[Quest]
 
 func _ready():
 	%"day manager".day.connect(spawnflyer)
-	for n in Savedata.gamedata["curquests"]:
-		var i = allquests[n[0]] if n[2] else priorityquests[n[0]]
-		var q = i.duplicate()
-		q.progress = n[1]
-		q.index = n[0]
-		q.priority = n[2]
-		curquests.append(q)
-	#spawnnewspaper()
+	deserializequests()
+	spawnnewspaper()
 
 func _on_timer_timeout():
 	if(InfoChecker.visibletoplayer(global_position)):
@@ -137,6 +131,8 @@ func spawnflyer():
 	flyer.global_rotation = letterspawn.global_rotation
 
 func spawnnewspaper():
+	for n in 6 - curquests.size():
+		generateaquest()
 	var paper : newspaper = Library.objs["newspaper"].instantiate()
 	get_tree().current_scene.call_deferred("add_child",paper)
 	await get_tree().process_frame
@@ -152,14 +148,33 @@ func generateaquest():
 	var completedpriority = Savedata.gamedata["completedquests"].filter(func(a): return a[1])
 	var prioquests = priorityquests.filter(func(a): return !completedpriority.has(a) && \
 	Savedata.gamedata["day"]>= a.minimumday && \
-	!curquests.map(func(a): return a.index).has(a.index))
+	!curquests.filter(func(a): return a.priority).map(func(a): return a.index).has(a.index))
 	if(!prioquests.is_empty()):
-		pass
+		var chosen = prioquests.pick_random()
+		var actualquest = chosen.duplicate()
+		actualquest.index = priorityquests.find(chosen)
+		curquests.append(actualquest)
+		return
 	
 	var completednormal = Savedata.gamedata["completedquests"].filter(func(a): return a[0])
 	var regquests = allquests.filter(func(a): return !completednormal.has(a) && \
 	Savedata.gamedata["day"]>= a.minimumday && \
-	!curquests.map(func(a): return a.index).has(a.index))
+	!curquests.filter(func(a): return !a.priority).map(func(a): return a.index).has(allquests.find(a)))
+	if(!regquests.is_empty()):
+		var chosen = regquests.pick_random()
+		var actualquest = chosen.duplicate()
+		actualquest.index = allquests.find(chosen)
+		curquests.append(actualquest)
+
+func deserializequests():
+	curquests.clear()
+	for n in Savedata.gamedata["curquests"]:
+		var i = allquests[n[0]] if n[2] else priorityquests[n[0]]
+		var q = i.duplicate()
+		q.progress = n[1]
+		q.index = n[0]
+		q.priority = n[2]
+		curquests.append(q)
 
 func serializequests():
 	var qs = []

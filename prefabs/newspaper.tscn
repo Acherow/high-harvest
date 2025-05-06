@@ -226,6 +226,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting"]
 layout_mode = 1
@@ -298,6 +299,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting2"]
 layout_mode = 1
@@ -370,6 +372,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting3"]
 layout_mode = 1
@@ -442,6 +445,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting4"]
 layout_mode = 1
@@ -514,6 +518,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting5"]
 layout_mode = 1
@@ -586,6 +591,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.266575, 0.266575, 0.266575, 1)
 text = "DESC"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="amount" type="Label" parent="textstuff/ColorRect/ColorRect/GridContainer/newspaperlisting6"]
 layout_mode = 1
