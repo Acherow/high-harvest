@@ -16,7 +16,7 @@ func _ready():
 	data = get_meta("obj").duplicate()
 	if(data.customproperties.has("writtenquests")):
 		writtenquests = data.customproperties["writtenquests"]
-		date.text = "day " + data.customproperties["day"]
+		date.text = "day " + str(data.customproperties["day"])
 	else:
 		data.customproperties["writtenquests"] = writtenquests
 		data.customproperties["day"] = Savedata.gamedata["day"]

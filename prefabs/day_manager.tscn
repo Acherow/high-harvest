@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://tihuvtjmxi4p"]
 
 [ext_resource type="Shader" path="res://shaders/sky.gdshader" id="1_7vbnq"]
-[ext_resource type="Texture2D" uid="uid://dipl3vtt0tsng" path="res://sprites/stars.png" id="2_lrmd5"]
+[ext_resource type="Texture2D" uid="uid://bo4ikbklcunau" path="res://sprites/stars.png" id="2_lrmd5"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="3_mrgqb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_88cxw"]

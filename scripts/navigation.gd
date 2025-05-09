@@ -1,9 +1,10 @@
 extends Node
+class_name Navigation
+
 var nodes : Array = []
 
 func _ready():
 	nodes = get_children()
-	#nodes = get_children()
 
 func getpath(startpoint:Vector3,endpoint:Vector3) -> Array:
 	var startnode : AStarNode = null
