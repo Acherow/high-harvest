@@ -43,7 +43,7 @@ func _physics_process(delta):
 				return
 			velocity = (global_position.direction_to(path[0])).normalized() * 15
 			velocity.y = 0
-			global_basis = global_basis.looking_at(velocity)
+			global_basis = global_basis.looking_at((velocity + getprojected(player.global_position-global_position, Vector3.UP))/2)
 		
 		#global_basis = global_basis.looking_at(getprojected(player.global_position-global_position, Vector3.UP))
 	else:
