@@ -350,8 +350,10 @@ _data = {
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ufwn0"]
 
-[node name="mudangel" type="CharacterBody3D"]
+[node name="mudangel" type="CharacterBody3D" groups=["serialize"]]
 script = ExtResource("1_770ul")
+metadata/objaddress = "mudangel"
+metadata/customproperties = {}
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 bones/0/name = "hips"

@@ -63,4 +63,5 @@ func getpath(startpoint:Vector3,endpoint:Vector3) -> Array:
 				if(!open.has(n)):
 					open.append(n)
 	#print("shrug")
-	return [startpoint,endpoint]
+	#return [startpoint,endpoint]
+	return []

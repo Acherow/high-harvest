@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=4 uid="uid://b4oecj68xoyd7"]
+[gd_scene load_steps=164 format=4 uid="uid://b4oecj68xoyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cwi170efjq44q" path="res://prefabs/player.tscn" id="1_fkk1i"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="2_g20cd"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" path="res://scripts/leverbox.gd" id="9_x2x2u"]
 [ext_resource type="AudioStream" uid="uid://cie0xs3bnvmc7" path="res://sounds/metalstep/lever.mp3" id="11_k60om"]
 [ext_resource type="Script" path="res://scripts/AStarNode.gd" id="14_28elw"]
-[ext_resource type="PackedScene" uid="uid://dijpq44waghio" path="res://prefabs/mudangel.tscn" id="14_wxkkp"]
 
 [sub_resource type="Environment" id="Environment_upmu6"]
 background_mode = 1
@@ -16013,9 +16012,6 @@ neighbors = [NodePath("../@Node3D@35708"), NodePath("../@Node3D@35710"), NodePat
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 81)
 script = ExtResource("14_28elw")
 neighbors = [NodePath("../@Node3D@35709"), NodePath("../@Node3D@35646")]
-
-[node name="mudangel" parent="." instance=ExtResource("14_wxkkp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.846, 0, -39.277)
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]

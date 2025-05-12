@@ -94,6 +94,12 @@ func load_data():
 				["other", "woodenbox", Vector3(0, 0.5, -90), Vector3(0, 0, 0)], 
 				["pickup",Vector3(0, 1.3, -90), Vector3(0, 0, 0), "totem", {  }], 
 				["other", "scarecrow", Vector3(-12, 0.4, -75), Vector3(0, -180, 0)], 
+				["other", "mudangel", Vector3(88, 0, -16), Vector3(0, 0, 0)], 
+				["other", "mudangel", Vector3(77, 0, -36), Vector3(0, -90, 0)], 
+				["other", "mudangel", Vector3(65, 0, -44), Vector3(0, 0, 0)], 
+				["other", "mudangel", Vector3(52, 0, -77), Vector3(0, 0, 0)], 
+				["other", "mudangel", Vector3(52, 0, -90), Vector3(0, 0, 0)], 
+				["other", "mudangel", Vector3(72, 0, -60), Vector3(0, 0, 0)], 
 			],
 			"stocks": {
 					"carrot":1,
