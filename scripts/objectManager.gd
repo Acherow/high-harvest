@@ -115,6 +115,8 @@ func deserializeall():
 				obj.global_position = n[1]
 				obj.global_rotation = n[2]
 			"crop":
+				if(n[3] == ""):
+					n[3] = "pumpkinseed"
 				var obj = Library.crops[n[3]].instantiate()
 				get_tree().current_scene.add_child(obj)
 				if(obj is crop):

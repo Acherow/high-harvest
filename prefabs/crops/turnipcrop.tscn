@@ -47,10 +47,10 @@ resource_local_to_scene = true
 material = ExtResource("6_x8o10")
 size = Vector2(2, 2)
 
-[node name="turnipcrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["diggable", "serialize"]]
+[node name="turnipcrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["crop", "diggable", "serialize"]]
 script = ExtResource("1_1ucg0")
-maxgrowtime = 200.0
-dryrate = 0.7
+maxgrowtime = 600.0
+dryrate = 0.2
 stages = Array[Material]([ExtResource("2_cffqy"), ExtResource("3_t3djf"), ExtResource("4_xg4yc")])
 stalk = NodePath("coveredhole/stalk")
 dropaddress = "turnip"

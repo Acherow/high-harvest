@@ -52,6 +52,8 @@ func _process(delta):
 		environment.sky.sky_material.set_shader_parameter("day_bottom_color",bottomgradient.sample(currain))
 		environment.sky.sky_material.set_shader_parameter("clouds_cutoff",lerp(cloudlerp.x,cloudlerp.y,currain))
 	if(israining):
+		for n in get_tree().get_nodes_in_group("crop"):
+			n.curwetness += delta * 1
 		currain = lerp(currain,1.0,delta*.1)
 		#currain = clamp(currain+(delta*.1), 0,1)
 	else:

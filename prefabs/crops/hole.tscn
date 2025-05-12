@@ -72,7 +72,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mh0re")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ks85n"]
-radius = 0.1
+radius = 0.25
 
 [node name="hole" type="StaticBody3D" groups=["diggable", "hole", "serialize"]]
 script = ExtResource("1_kyb0m")
@@ -86,7 +86,7 @@ mesh = SubResource("ArrayMesh_rfu21")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0234244, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_ks85n")

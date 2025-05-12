@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://b3l0g55rbbm0b" path="res://sounds/smallmetalcollision.wav" id="2_w4qud"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf6uc"]
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_rlab6")
 texture_filter = 2
 

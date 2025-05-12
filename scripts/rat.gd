@@ -39,6 +39,10 @@ func _physics_process(delta):
 		head.apply_force(curdir * movespeed, (basis.z*.5))
 		#apply_force(curdir * movespeed, (basis.z*.2))
 
+func grabbed(pl):
+	eaten = true
+	path.clear()
+
 func getclosestfood():
 	var food
 	for n in get_tree().get_nodes_in_group("food"):

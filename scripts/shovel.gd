@@ -32,7 +32,7 @@ func dig():
 					audio.play()
 					return
 			
-			var wormcount = clamp(randi_range(-5,2),0,2)
+			var wormcount = clamp(randi_range(-20,4),0,4)
 			for w in wormcount:
 				var wom = Library.critters["worm"].instantiate()
 				get_tree().current_scene.add_child(wom)

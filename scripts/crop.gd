@@ -44,7 +44,7 @@ func uproot():
 	if(curtime >= maxgrowtime):
 		var c : RigidBody3D = Library.objs[dropaddress].instantiate()
 		get_tree().current_scene.add_child(c)
-		c.global_position = global_position
+		c.global_position = global_position + (Vector3.UP * .2)
 		c.apply_central_impulse(Vector3(randf_range(-2,2),1,randf_range(-2,2)))
 		if(seedaddress != ""):
 			for n in randi_range(-1,2):

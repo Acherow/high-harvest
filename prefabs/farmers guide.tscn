@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dhttylu5h124d" path="res://sprites/farmers guide/back.png" id="7_01gbb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkst3"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("3_o2fid")
 uv1_scale = Vector3(2, 1.44, 1)
 uv1_offset = Vector3(0, -0.45, 0)
@@ -47,6 +49,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k62gd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubm82"]
+diffuse_mode = 3
+specular_mode = 2
 uv1_scale = Vector3(2, 1.44, 1)
 uv1_offset = Vector3(0, -0.45, 0)
 texture_filter = 2

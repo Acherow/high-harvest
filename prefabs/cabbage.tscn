@@ -7,12 +7,16 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulvn0"]
 resource_name = "Material"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("1_aeqgm")
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8iua"]
 resource_name = "Material"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.35, 0.3199, 0.308, 1)
 albedo_texture = ExtResource("1_aeqgm")
 texture_filter = 2
@@ -20,6 +24,8 @@ texture_filter = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17yww"]
 resource_name = "Material"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.1848, 0.88, 0.555573, 1)
 albedo_texture = ExtResource("1_aeqgm")
 texture_filter = 2
@@ -27,6 +33,8 @@ texture_filter = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swcyv"]
 resource_name = "Material"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.14, 0.1064, 0.1064, 1)
 albedo_texture = ExtResource("1_aeqgm")
 texture_filter = 2

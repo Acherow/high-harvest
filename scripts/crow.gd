@@ -46,8 +46,9 @@ func act():
 			if(flying):
 				changemode()
 			#target.queue_free()
-			target.curwetness *= .8
-			target.curtime *= .8
+			if(target.curtime < target.maxgrowtime):
+				target.curwetness *= .95
+				target.curtime *= .95
 			target = null
 		if(target != null && global_position.distance_to(target.global_position) < 10):
 			if(flying):

@@ -29,7 +29,7 @@ func _ready():
 func _on_insidebox_body_entered(body):
 	if(body != self && body.has_meta("obj") && !body is boxlid && body != removeditem && !body is box):
 		var obj = body.get_meta("obj")
-		if(getcurweight() + obj.weight <= maxweight):
+		if(getcurweight() + obj.weight < maxweight):
 			inventory.append(obj)
 			body.queue_free()
 			updatedata()

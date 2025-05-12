@@ -191,8 +191,8 @@ external_skeleton = NodePath("../../Skeleton3D")
 
 [node name="HingeJoint3D" type="JoltHingeJoint3D" parent="."]
 limit_enabled = true
-limit_upper = 1.5708
-limit_lower = -1.5708
+limit_upper = 1.74533
+limit_lower = -1.74533
 node_a = NodePath("..")
 node_b = NodePath("../RigidBody3D")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

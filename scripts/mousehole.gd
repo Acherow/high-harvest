@@ -24,6 +24,6 @@ func _on_body_exited(body):
 
 
 func _on_timer_timeout():
-	timer.start(randi_range(40,80))
+	timer.start(randi_range(200,600))
 	if(get_tree().get_first_node_in_group("food") != null):
 		spawnrat()

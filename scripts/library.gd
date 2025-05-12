@@ -270,6 +270,7 @@ const crops : Dictionary = {
 	"turnipseed":preload("res://prefabs/crops/turnipcrop.tscn"),
 	"cabbageseed":preload("res://prefabs/crops/cabbagecrop.tscn"),
 	"dicedpotato":preload("res://prefabs/crops/potatocrop.tscn"),
+	"pumpkinseed":preload("res://prefabs/crops/pumpkincrop.tscn"),
 }
 
 const fish : Dictionary = {

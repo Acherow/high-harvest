@@ -53,10 +53,6 @@ func _physics_process(delta: float) -> void:
 	worm.global_basis = Basis()
 	
 	bobber.get_node("CollisionShape3D").disabled = !castout
-	if(catch != ""):
-		anim.play("caught")
-	else:
-		anim.play("RESET")
 	
 	if(castout && throwcooldown.is_stopped()):
 		if(Input.is_action_pressed("leftclick")):
@@ -110,19 +106,24 @@ func reset():
 		catch = ""
 		wormed = false
 		updatedata()
+		anim.play("RESET")
 	bobber.reparent(rod)
 	bobber.freeze = true
 	await get_tree().process_frame
 	castout = false
 	bobber.position = Vector3(0,1.05,-.1)
 	bobber.basis = Basis()
+	
 
 func _on_bobber_body_entered(body: Node) -> void:
 	if(body.is_in_group("water")):
 		fishtime.start(randi_range(waittime.x,waittime.y) if wormed else randi_range(waittime.x*2,waittime.y*2))
 
 func _on_fishtime_timeout() -> void:
+	if(!castout):
+		return
 	if(catch != ""):
+		anim.play("RESET")
 		catch = ""
 		fishtime.start(randi_range(waittime.x,waittime.y))
 	else:
@@ -132,6 +133,7 @@ func _on_fishtime_timeout() -> void:
 				chances.append(n)
 		catch = chances.pick_random()
 		fishtime.start(randi_range(escapetime.x,escapetime.y))
+		anim.play("caught")
 
 func updatedata():
 	if(data == null):

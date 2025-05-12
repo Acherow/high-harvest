@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mg8tx0b35j4h" path="res://sprites/mousehole.png" id="2_xtuhe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_al0j0"]
-size = Vector3(0.3, 0.3, 0.3)
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="mousehole" type="Area3D" groups=["mousehole"]]
 script = ExtResource("1_xra57")

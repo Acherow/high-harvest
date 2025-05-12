@@ -60,6 +60,7 @@ func load_data():
 				#["pickup",Vector3(-49.25, 1.6, 175.05), Vector3(deg_to_rad(-90), 0, 0), "note", ], 
 				#["pickup",Vector3(-22.25, 2.55, -27.3), Vector3(0, deg_to_rad(-90), 0), "nail", { }], 
 				["pickup",Vector3(-20.2, 0.9, -22.2), Vector3(0, 0, 0), "box", {  }], 
+				["pickup",Vector3(-20.2, 1.1, -22.2), Vector3(0, 0, 0), "boxlid", {  }], 
 				["other", "table", Vector3(-20.9, 1.4, -22.6), Vector3(0, 0, 0)], 
 				["other", "truck", Vector3(-50, .5, 175), Vector3(0, 0, 0), {"seated":true, "lights":true}], 
 				["other", "closet", Vector3(-22.75, .5, -22.2), Vector3(0, deg_to_rad(-90), 0)], 

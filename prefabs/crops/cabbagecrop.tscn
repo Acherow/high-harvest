@@ -47,10 +47,10 @@ resource_local_to_scene = true
 material = ExtResource("6_hd08u")
 size = Vector2(2, 2)
 
-[node name="cabbagecrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["diggable", "serialize"]]
+[node name="cabbagecrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["crop", "diggable", "serialize"]]
 script = ExtResource("1_dlok3")
-maxgrowtime = 220.0
-dryrate = 0.5
+maxgrowtime = 660.0
+dryrate = 0.1
 stages = Array[Material]([ExtResource("2_bn4pu"), ExtResource("3_t4eve"), ExtResource("4_fcdmb")])
 stalk = NodePath("coveredhole/stalk")
 dropaddress = "cabbage"

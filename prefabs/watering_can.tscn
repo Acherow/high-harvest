@@ -99,6 +99,6 @@ shape = SubResource("BoxShape3D_dfoi4")
 transform = Transform3D(1, 0, 0, 0, 0.861939, -0.507012, 0, 0.507012, 0.861939, 0, 0.185894, -0.459615)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

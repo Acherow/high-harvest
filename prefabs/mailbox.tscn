@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://lkw605adn76h"]
+[gd_scene load_steps=23 format=4 uid="uid://lkw605adn76h"]
 
 [ext_resource type="Script" path="res://scripts/mailbox.gd" id="1_sihdd"]
 [ext_resource type="Script" path="res://scripts/quest.gd" id="2_wwbyw"]
@@ -7,7 +7,7 @@
 script = ExtResource("2_wwbyw")
 title = "Market Distribution"
 desc = "Wealth redistribution is at an all time high! Get your share by selling now!"
-itemtype = ""
+itemtype = Array[String]([])
 checkamount = false
 repeatable = true
 progress = 0.0
@@ -20,7 +20,7 @@ cashreward = 50.0
 script = ExtResource("2_wwbyw")
 title = "Carrot Famine!"
 desc = "We have fallen on hard times as carrot stocks are at an all time low. Sales of carrots are to be handsomely rewarded!"
-itemtype = "carrot"
+itemtype = Array[String](["carrot"])
 checkamount = true
 repeatable = true
 progress = 0.0
@@ -28,6 +28,84 @@ goal = 10.0
 minimumday = 0
 unlockreward = []
 cashreward = 20.0
+
+[sub_resource type="Resource" id="Resource_7txoq"]
+script = ExtResource("2_wwbyw")
+title = "Eyes Are Watching!"
+desc = "Spuds pulled from the ground grow eyes... that blink. Uncursed potatoes from distant fields are urgently needed."
+itemtype = Array[String](["potato"])
+checkamount = true
+repeatable = true
+progress = 0.0
+goal = 10.0
+minimumday = 0
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_bagm6"]
+script = ExtResource("2_wwbyw")
+title = "Eggshells Hatch Smoke!"
+desc = "Cracked eggs release no yolk—just a black mist. The town bakery begs for actual eggs."
+itemtype = Array[String](["egg"])
+checkamount = true
+repeatable = true
+progress = 0.0
+goal = 10.0
+minimumday = 2
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_cubel"]
+script = ExtResource("2_wwbyw")
+title = "Tomatoes Pulse Like Hearts!"
+desc = "They beat slowly. If you cut them, they bleed and scream. City markets beg for untainted stock."
+itemtype = Array[String](["tomato"])
+checkamount = true
+repeatable = false
+progress = 0.0
+goal = 20.0
+minimumday = 0
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_lk3aw"]
+script = ExtResource("2_wwbyw")
+title = "Pumpkins changed overnight!"
+desc = "Entire harvests changed color and weight during the night. The city demands local pumpkins."
+itemtype = Array[String](["pumpkin"])
+checkamount = true
+repeatable = false
+progress = 0.0
+goal = 10.0
+minimumday = 0
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_pacew"]
+script = ExtResource("2_wwbyw")
+title = "Turnip sorrow wave!"
+desc = "Several townsfolk report intense emotional distress after eating turnips.Deliver clean turnips before everyone goes mad."
+itemtype = Array[String](["turnip"])
+checkamount = true
+repeatable = false
+progress = 0.0
+goal = 20.0
+minimumday = 0
+unlockreward = []
+cashreward = 50.0
+
+[sub_resource type="Resource" id="Resource_f81jc"]
+script = ExtResource("2_wwbyw")
+title = "Cabbage know a different sky"
+desc = "Scholars demand specimens for testing and offer a cash reward."
+itemtype = Array[String](["cabbage"])
+checkamount = true
+repeatable = true
+progress = 0.0
+goal = 20.0
+minimumday = 0
+unlockreward = []
+cashreward = 50.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvgho"]
 diffuse_mode = 3
@@ -172,7 +250,7 @@ size = Vector3(2, 2, 2)
 
 [node name="mailbox" type="Node3D"]
 script = ExtResource("1_sihdd")
-allquests = Array[ExtResource("2_wwbyw")]([SubResource("Resource_vnk4q"), SubResource("Resource_o0xvr")])
+allquests = Array[ExtResource("2_wwbyw")]([SubResource("Resource_vnk4q"), SubResource("Resource_o0xvr"), SubResource("Resource_7txoq"), SubResource("Resource_bagm6"), SubResource("Resource_cubel"), SubResource("Resource_lk3aw"), SubResource("Resource_pacew"), SubResource("Resource_f81jc")])
 
 [node name="flag" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.194325, 1.0317, -0.215075)

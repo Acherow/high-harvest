@@ -47,10 +47,10 @@ resource_local_to_scene = true
 material = ExtResource("6_su0kj")
 size = Vector2(2, 4)
 
-[node name="tomatocrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["diggable", "serialize"]]
+[node name="tomatocrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["crop", "diggable", "serialize"]]
 script = ExtResource("1_4xc76")
-maxgrowtime = 180.0
-dryrate = 0.8
+maxgrowtime = 540.0
+dryrate = 0.4
 stages = Array[Material]([ExtResource("2_a4nrm"), ExtResource("3_xed1s"), ExtResource("4_cv0lg")])
 stalk = NodePath("coveredhole/stalk")
 dropaddress = "tomato"

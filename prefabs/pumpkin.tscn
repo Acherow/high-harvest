@@ -1,10 +1,33 @@
-[gd_scene load_steps=8 format=4 uid="uid://dmsucj5vdgnr0"]
+[gd_scene load_steps=11 format=4 uid="uid://dmsucj5vdgnr0"]
 
 [ext_resource type="Texture2D" uid="uid://bqdqli8j6kn24" path="res://models/textures/pumpkin/pumpkin.png" id="1_7ntj1"]
 [ext_resource type="Script" path="res://scripts/fooditem.gd" id="1_hmhnu"]
 [ext_resource type="Resource" uid="uid://d31kekmyj0s07" path="res://invobjs/pumpkin.tres" id="2_qf6cs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp8p1"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_7ntj1")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2so5"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.1431, 0.53, 0.168893, 1)
+albedo_texture = ExtResource("1_7ntj1")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpdbi"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.54, 0.2106, 0.2106, 1)
+albedo_texture = ExtResource("1_7ntj1")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4iv8n"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
 albedo_texture = ExtResource("1_7ntj1")
 texture_filter = 2
 
@@ -46,6 +69,10 @@ points = PackedVector3Array(-7.00951e-05, -0.0881299, -0.358265, -7.00951e-05, 0
 [node name="pumpkin" type="RigidBody3D" groups=["pickup"]]
 collision_mask = 17
 script = ExtResource("1_hmhnu")
+mats = Array[Material]([SubResource("StandardMaterial3D_kp8p1")])
+rotmats = Array[Material]([SubResource("StandardMaterial3D_e2so5")])
+cookedmats = Array[Material]([SubResource("StandardMaterial3D_mpdbi")])
+burntmats = Array[Material]([SubResource("StandardMaterial3D_4iv8n")])
 metadata/obj = ExtResource("2_qf6cs")
 metadata/diced = {
 "dicedpumpkin": 4,

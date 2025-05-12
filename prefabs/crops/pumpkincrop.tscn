@@ -47,10 +47,10 @@ resource_local_to_scene = true
 material = ExtResource("6_qe3kp")
 size = Vector2(2, 2)
 
-[node name="pumpkincrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["diggable", "serialize"]]
+[node name="pumpkincrop" type="StaticBody3D" node_paths=PackedStringArray("stalk") groups=["crop", "diggable", "serialize"]]
 script = ExtResource("1_wvusd")
-maxgrowtime = 220.0
-dryrate = 0.5
+maxgrowtime = 660.0
+dryrate = 0.1
 stages = Array[Material]([ExtResource("2_y5pf2"), ExtResource("3_0e100"), ExtResource("4_87xn4")])
 stalk = NodePath("coveredhole/stalk")
 dropaddress = "pumpkin"
