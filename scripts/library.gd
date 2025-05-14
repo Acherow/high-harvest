@@ -32,6 +32,7 @@ var objs : Dictionary = {
 	"pumpkinseedbag":load("res://prefabs/seedstuff/pumpkinseedbag.tscn"),
 	"dicedpumpkin":load("res://prefabs/dicedpumpkin.tscn"),
 	"wateringcan":load("res://prefabs/watering_can.tscn"),
+	"wateringcan2":load("res://prefabs/watering_can2.tscn"),
 	"box":load("res://prefabs/box.tscn"),
 	"boxlid":load("res://prefabs/lid.tscn"),
 	"chicken":load("res://prefabs/chicken.tscn"),
@@ -132,6 +133,7 @@ var invobjs : Dictionary = {
 	"pumpkinseedbag":load("res://invobjs/pumpkinseedbag.tres"),
 	"dicedpumpkin":load("res://invobjs/dicedpumpkin.tres"),
 	"wateringcan":load("res://invobjs/wateringcan.tres"),
+	"wateringcan2":load("res://invobjs/betterwateringcan.tres"),
 	"storeflyer":load("res://invobjs/storeflyer.tres"),
 	"box":load("res://invobjs/box.tres"),
 	"boxlid":load("res://invobjs/lid.tres"),
@@ -297,6 +299,7 @@ const others : Dictionary = {
 	"woodenbox":preload("res://prefabs/woodenbox.tscn"),
 	"wickerman1":preload("res://prefabs/wickerman.tscn"),
 	"mudangel":preload("res://prefabs/mudangel.tscn"),
+	"chair":preload("res://prefabs/chair.tscn"),
 }
 
 const scenes : Array = [

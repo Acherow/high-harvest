@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4k4n7wii28gp"
+path="res://.godot/imported/ambience cellar.mp3-a9518d4371b4c4ea1a6a5dc3df6a7cd8.mp3str"
+
+[deps]
+
+source_file="res://sounds/ambience cellar.mp3"
+dest_files=["res://.godot/imported/ambience cellar.mp3-a9518d4371b4c4ea1a6a5dc3df6a7cd8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

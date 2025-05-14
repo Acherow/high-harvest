@@ -44,7 +44,7 @@ func serializeall():
 	var serquests = get_tree().get_nodes_in_group("serialize")
 	for n in serquests:
 		if(n is crop):
-			list.append(["crop", n.global_position, n.global_rotation, n.seedaddress, n.curtime])
+			list.append(["crop", n.global_position, n.global_rotation, n.seedaddress, n.curtime,n.curwetness])
 		if(n is crophole):
 			list.append(["crop", n.global_position, n.global_rotation, "crophole"])
 		if(n.has_meta("objaddress")):
@@ -121,6 +121,7 @@ func deserializeall():
 				get_tree().current_scene.add_child(obj)
 				if(obj is crop):
 					obj.curtime = n[4]
+					obj.curwetness = n[5]
 				obj.global_position = n[1]
 				obj.global_rotation = n[2]
 			"other":

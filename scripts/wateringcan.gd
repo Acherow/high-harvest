@@ -6,7 +6,7 @@ const droplet = preload("res://prefabs/water_drop.tscn")
 @onready var timer = $Timer
 
 var watercount : float = 5
-var maxwater : float = 20
+@export var maxwater : float = 20
 
 var data : InventoryObject
 

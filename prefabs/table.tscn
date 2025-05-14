@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=4 uid="uid://bi8w8ffy45ret"]
+[gd_scene load_steps=8 format=4 uid="uid://bi8w8ffy45ret"]
 
 [ext_resource type="Script" path="res://scripts/basepickup.gd" id="1_vnc5c"]
+[ext_resource type="Texture2D" uid="uid://t7kpivbyg8jt" path="res://models/textures/wood.png" id="2_r6gra"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f88na"]
 diffuse_mode = 3
 specular_mode = 2
 albedo_color = Color(0.31, 0.19468, 0.0868, 1)
+albedo_texture = ExtResource("2_r6gra")
+uv1_scale = Vector3(4, 4, 4)
+texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b7qxp"]
 _surfaces = [{

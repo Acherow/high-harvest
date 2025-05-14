@@ -62,6 +62,7 @@ func _process(delta):
 	
 	if(sun != null):
 		sun.light_energy = sunlightcurve.sample(timeofday/2400)
+		environment.ambient_light_energy = clamp(sunlightcurve.sample(timeofday/2400)*.2, 0.02,.5)
 		sun.rotation_degrees.x = lerp(90,-270, timeofday / 2400)
 	if(moon != null):
 		moon.light_energy = moonlightcurve.sample(timeofday/2400)
