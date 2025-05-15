@@ -3,8 +3,10 @@ extends StaticBody3D
 var seated
 @onready var seatpos = $seatpos
 @onready var truck: RigidBody3D = $".."
+@onready var start = $"../start"
 
 func grabtrigger(pl : Player):
+	start.play()
 	pl.reparent(self)
 	var p : CollisionShape3D
 	pl.frozen = true

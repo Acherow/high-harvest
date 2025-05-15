@@ -93,6 +93,7 @@ func load_data():
 				["pickup",Vector3(40.3, 1.5, -35.4), Vector3(deg_to_rad(180), 0, 0), "knife", {  }], 
 				["other", "woodenbox", Vector3(0, 0.5, -90), Vector3(0, 0, 0)], 
 				["other", "woodenbox", Vector3(100, 0.5, -28), Vector3(0, 0, 0)], 
+				["other", "chair", Vector3(83.147, .9, -15.5), Vector3(0, deg_to_rad(-17.5), 0)], 
 				["pickup",Vector3(100, 1.3, -28), Vector3(0, 0, 0), "wateringcan2", {  }], 
 				["pickup",Vector3(100, .5, -20), Vector3(0, 0, 0), "hoe", {  }], 
 				["pickup",Vector3(0, 1.3, -90), Vector3(0, 0, 0), "totem", {  }], 

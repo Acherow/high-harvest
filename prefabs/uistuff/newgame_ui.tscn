@@ -4,7 +4,7 @@
 font_size = 24
 
 [node name="newgame" type="ColorRect"]
-custom_minimum_size = Vector2(700, 80)
+custom_minimum_size = Vector2(670, 80)
 color = Color(0.717647, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]

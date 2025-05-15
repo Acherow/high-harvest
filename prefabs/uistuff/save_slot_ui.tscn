@@ -10,7 +10,7 @@ font_size = 24
 font_color = Color(1, 0.619608, 0.619608, 1)
 
 [node name="SaveSlot" type="ColorRect"]
-custom_minimum_size = Vector2(700, 80)
+custom_minimum_size = Vector2(670, 80)
 mouse_filter = 1
 color = Color(0.827451, 0, 0, 1)
 script = ExtResource("1_axugp")

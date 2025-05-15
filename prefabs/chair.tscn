@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://t7kpivbyg8jt" path="res://models/textures/wood.png" id="1_ysen0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhpva"]
-size = Vector3(1.61682, 0.287598, 1.52344)
+size = Vector3(0.81543, 0.147766, 0.764648)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q80tq"]
-size = Vector3(0.230621, 1.29559, 0.251526)
+size = Vector3(0.11055, 0.648283, 0.113907)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf83m"]
-size = Vector3(0.182411, 1.66541, 1.4248)
+size = Vector3(0.0965766, 0.83478, 0.72168)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejggh"]
 albedo_texture = ExtResource("1_ysen0")
@@ -48,30 +48,30 @@ shadow_mesh = SubResource("ArrayMesh_2d2f4")
 [node name="chair" type="RigidBody3D" groups=["heavy", "pickup", "serialize"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0982575, -0.152782, -0.0838564)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.072, -0.084)
 shape = SubResource("BoxShape3D_xhpva")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.468057, -0.935771, 0.491751)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.279079, -0.465415, 0.196992)
 shape = SubResource("BoxShape3D_q80tq")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.468057, -0.935771, -0.685066)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.279, -0.465, 0.197)
 shape = SubResource("BoxShape3D_q80tq")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.664257, -0.935771, 0.491751)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.279079, -0.465415, -0.389292)
 shape = SubResource("BoxShape3D_q80tq")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.664258, -0.935771, -0.685066)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.279, -0.465, -0.389284)
 shape = SubResource("BoxShape3D_q80tq")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0982574, 0.807973, 0.569193)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.393, 0.237)
 shape = SubResource("BoxShape3D_kf83m")
 
 [node name="chair" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0982575, 0, -0.0980776)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, -0.098)
 mesh = SubResource("ArrayMesh_mp6td")
 skeleton = NodePath("")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=4 uid="uid://b4oecj68xoyd7"]
+[gd_scene load_steps=166 format=4 uid="uid://b4oecj68xoyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cwi170efjq44q" path="res://prefabs/player.tscn" id="1_fkk1i"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="2_g20cd"]
@@ -13,9 +13,6 @@
 [ext_resource type="Script" path="res://scripts/leverbox.gd" id="9_x2x2u"]
 [ext_resource type="AudioStream" uid="uid://cie0xs3bnvmc7" path="res://sounds/metalstep/lever.mp3" id="11_k60om"]
 [ext_resource type="Script" path="res://scripts/AStarNode.gd" id="14_28elw"]
-[ext_resource type="PackedScene" uid="uid://blc6f5ikcawjh" path="res://prefabs/watering_can2.tscn" id="14_g2a11"]
-[ext_resource type="PackedScene" uid="uid://b3qjnlhaqq2d8" path="res://prefabs/woodenbox.tscn" id="14_kwry3"]
-[ext_resource type="PackedScene" uid="uid://dicw8cnxbw1yq" path="res://prefabs/hoe.tscn" id="16_sadjf"]
 [ext_resource type="AudioStream" uid="uid://d4k4n7wii28gp" path="res://sounds/ambience cellar.mp3" id="17_kmux3"]
 [ext_resource type="PackedScene" uid="uid://bxedaoudy375b" path="res://prefabs/medusa.tscn" id="18_f78f3"]
 
@@ -16018,15 +16015,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 81)
 script = ExtResource("14_28elw")
 neighbors = [NodePath("../@Node3D@35709"), NodePath("../@Node3D@35646")]
 
-[node name="watering can2" parent="." instance=ExtResource("14_g2a11")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 1.3, -28)
-
-[node name="woodenbox" parent="." instance=ExtResource("14_kwry3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0.5, -28)
-
-[node name="hoe" parent="." instance=ExtResource("16_sadjf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0.5, -20)
-
 [node name="ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_kmux3")
 volume_db = 2.0
@@ -16034,7 +16022,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="medusa" parent="." instance=ExtResource("18_f78f3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6097, 0.284849, -21.5608)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.1097, 0.284849, -47.0608)
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]

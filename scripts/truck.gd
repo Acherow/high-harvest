@@ -15,6 +15,7 @@ extends RigidBody3D
 @onready var frlight = $"front right light"
 
 @onready var loadarea : Area3D = $loadarea
+@onready var run : AudioStreamPlayer3D = $run
 
 var accelinput : float
 
@@ -51,6 +52,9 @@ func _physics_process(delta):
 	
 	if(leftseat.seated):
 		accelinput = Input.get_axis("ui_down", "ui_up")
+		run.volume_db = lerp(run.volume_db, (abs(accelinput) * 15)-15,delta)
+		if(!run.playing):
+			run.play()
 		var steerinput = Input.get_axis("ui_left", "ui_right")
 		if(steerinput < -0.1):
 			fl_tire_cast.rotation_degrees.y = 25
@@ -69,6 +73,8 @@ func _physics_process(delta):
 			wheel_fr.rotation_degrees.y = 0
 	else:
 		accelinput = 0
+		if(run.playing):
+			run.stop()
 	
 	getsuspension(bl_tire_cast,wheel_bl)
 	getsuspension(fl_tire_cast,wheel_fl)

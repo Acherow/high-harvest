@@ -36,8 +36,8 @@ func _physics_process(delta):
 	if(curdir != Vector3.ZERO):# && global_basis.y.dot(Vector3.UP) > 0.1):
 		linear_damp = 0 if linear_velocity.length() < .1 else 1
 		sleeping = false
-		head.apply_force(curdir * movespeed, (basis.z*.5))
-		#apply_force(curdir * movespeed, (basis.z*.2))
+		#head.apply_force(curdir * movespeed, (basis.z*.5))
+		apply_force(curdir * movespeed, (basis.z*.2))
 
 func grabbed(pl):
 	eaten = true

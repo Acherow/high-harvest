@@ -1,7 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvy82pls5kkcr"]
+[gd_scene load_steps=6 format=3 uid="uid://bvy82pls5kkcr"]
 
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_d6edb"]
-[ext_resource type="Theme" uid="uid://cbj0gkm83nlep" path="res://ui.tres" id="2_ouoiv"]
+[ext_resource type="Texture2D" uid="uid://dtid7kl6t47lc" path="res://sprites/pausemenu.png" id="2_1i5dk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6r3j"]
+
+[sub_resource type="Theme" id="Theme_i0a1n"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.38, 0.323, 0, 1)
+Button/font_sizes/font_size = 39
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxEmpty_s6r3j")
+Button/styles/pressed = null
 
 [sub_resource type="LabelSettings" id="LabelSettings_741qt"]
 font_size = 36
@@ -28,46 +40,55 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.509804)
 
+[node name="TextureRect" type="TextureRect" parent="ps"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 576.0
+offset_right = 408.0
+offset_bottom = 1026.0
+texture = ExtResource("2_1i5dk")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="ps"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0406667
-anchor_top = 0.540074
-anchor_right = 0.197
-anchor_bottom = 0.937741
+anchor_left = 0.0463958
+anchor_top = 0.546556
+anchor_right = 0.1845
+anchor_bottom = 0.944222
 offset_left = 0.919998
 offset_top = -0.280029
 offset_right = 0.759979
 offset_bottom = 0.23999
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 2
+rotation = -0.0174533
+theme_override_constants/separation = 20
+alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="resumebutton" type="Button" parent="ps/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-theme = ExtResource("2_ouoiv")
+theme = SubResource("Theme_i0a1n")
 text = "RESUME"
 
 [node name="quickloadbutton" type="Button" parent="ps/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-theme = ExtResource("2_ouoiv")
+theme = SubResource("Theme_i0a1n")
 text = "QUICK LOAD"
 
 [node name="savebutton" type="Button" parent="ps/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-theme = ExtResource("2_ouoiv")
+theme = SubResource("Theme_i0a1n")
 text = "SAVE
 "
 
 [node name="quitbutton" type="Button" parent="ps/VBoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-theme = ExtResource("2_ouoiv")
+theme = SubResource("Theme_i0a1n")
 text = "QUIT"
 
 [node name="Label" type="Label" parent="."]
