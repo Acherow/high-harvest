@@ -325,7 +325,7 @@ bind/6/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.841942, 0)
 [node name="medusa" type="CharacterBody3D"]
 script = ExtResource("1_rlr1d")
 
-[node name="tailend4" type="RigidBody3D" parent="." groups=["heavy"]]
+[node name="tailend4" type="RigidBody3D" parent="." groups=["heavy", "pickup"]]
 transform = Transform3D(-1, -7.71268e-18, 0, 0, 0, 1, -7.71268e-18, 1, 0, 0, 0.198436, 2.1957)
 axis_lock_angular_z = true
 linear_damp = 5.0
@@ -341,7 +341,7 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("../../Skeleton3D")
 
-[node name="tailend3" type="RigidBody3D" parent="." groups=["heavy"]]
+[node name="tailend3" type="RigidBody3D" parent="." groups=["heavy", "pickup"]]
 transform = Transform3D(1, 0, 8.27181e-25, 0, 1, 0, -8.27181e-25, 0, 1, -9.16246e-18, 0.198436, 4.38368)
 axis_lock_angular_z = true
 angular_damp = 5.0
@@ -358,7 +358,7 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("../../Skeleton3D")
 
-[node name="tailend2" type="RigidBody3D" parent="." groups=["heavy"]]
+[node name="tailend2" type="RigidBody3D" parent="." groups=["heavy", "pickup"]]
 transform = Transform3D(1, 0, 8.27181e-25, 0, 1, 0, -8.27181e-25, 0, 1, -1.83249e-17, 0.198436, 6.57165)
 axis_lock_angular_z = true
 angular_damp = 5.0
@@ -375,7 +375,7 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("../../Skeleton3D")
 
-[node name="tailend" type="RigidBody3D" parent="." groups=["heavy"]]
+[node name="tailend" type="RigidBody3D" parent="." groups=["heavy", "pickup"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74874e-17, 0.198436, 8.75962)
 axis_lock_angular_z = true
 angular_damp = 5.0
@@ -409,6 +409,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("4_s4c56")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/noise"]
@@ -451,7 +452,7 @@ bones/4/name = "Bone.006"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, -7.71268e-18, 0, 7.71268e-18, 1, 0, 0, 0, 1, 0, 1.18797, 0)
 bones/4/enabled = true
-bones/4/position = Vector3(-7.71262e-18, 2.18797, 0)
+bones/4/position = Vector3(-7.71259e-18, 2.18797, 0)
 bones/4/rotation = Quaternion(0, 0, 3.85634e-18, 1)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "Bone.004"
