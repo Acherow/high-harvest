@@ -232,6 +232,7 @@ var purchasables : Dictionary = {
 	"lawngnome" = 5.0,
 	"candle" = 5.0,
 	"milkbottle" = 1.0,
+	"baitcan" = 5.0,
 }
 
 var sellvalues : Dictionary = {

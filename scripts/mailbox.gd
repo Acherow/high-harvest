@@ -15,7 +15,7 @@ var curquests : Array[Quest]
 func _ready():
 	%"day manager".day.connect(spawnflyer)
 	deserializequests()
-	spawnnewspaper()
+	#spawnnewspaper()
 
 func _on_timer_timeout():
 	if(InfoChecker.visibletoplayer(global_position)):
