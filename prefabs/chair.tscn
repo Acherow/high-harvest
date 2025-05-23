@@ -46,6 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cos7h")
 
 [node name="chair" type="RigidBody3D" groups=["heavy", "pickup", "serialize"]]
+metadata/objaddress = "chair"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.072, -0.084)

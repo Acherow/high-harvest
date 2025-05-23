@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://dijpq44waghio"]
+[gd_scene load_steps=20 format=4 uid="uid://dijpq44waghio"]
 
 [ext_resource type="Texture2D" uid="uid://cuhtuuqpg3q0d" path="res://models/textures/mudangel/face1.png" id="1_6rmm0"]
 [ext_resource type="Script" path="res://scripts/mudangel.gd" id="1_770ul"]
 [ext_resource type="Texture2D" uid="uid://cuqwvirm8k6pk" path="res://models/textures/mudangel/face2.png" id="2_tod8a"]
 [ext_resource type="Texture2D" uid="uid://dmaiwwlwt41sb" path="res://models/textures/mudangel/body.png" id="3_efgdk"]
 [ext_resource type="Texture2D" uid="uid://c4tbljdlg5s1o" path="res://models/textures/mudangel/iron.png" id="4_vqet4"]
+[ext_resource type="AudioStream" uid="uid://dbpq3ueqjcrrj" path="res://sounds/angelstep.mp3" id="6_vup80"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4r4l"]
 diffuse_mode = 3
@@ -497,5 +498,8 @@ shape = SubResource("CylinderShape3D_ufwn0")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_vup80")
 
 [connection signal="timeout" from="Timer" to="." method="findpath"]

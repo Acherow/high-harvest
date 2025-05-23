@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bxedaoudy375b"]
+[gd_scene load_steps=27 format=4 uid="uid://bxedaoudy375b"]
 
 [ext_resource type="Texture2D" uid="uid://bunuvxqvrks68" path="res://models/textures/cellarceiling.png" id="1_7fp5x"]
 [ext_resource type="Script" path="res://scripts/medusa.gd" id="1_rlr1d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b03cthsy76nwm" path="res://sprites/uinoise/1.png" id="4_s4c56"]
 [ext_resource type="Texture2D" uid="uid://4ka3tm8i6i2" path="res://sprites/uinoise/2.png" id="5_383yt"]
 [ext_resource type="Texture2D" uid="uid://ch7rxxj1umxwe" path="res://sprites/uinoise/3.png" id="6_e0xv7"]
+[ext_resource type="AudioStream" uid="uid://ded6tqqyemcfs" path="res://sounds/Static.mp3" id="7_1bvh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ops2t"]
 friction = 0.0
@@ -473,21 +474,21 @@ bones/2/name = "Bone.001"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, -3.30872e-24, 0, 3.30872e-24, 1, 0, 0, 0, 1, -8.27181e-25, 1.18797, 0)
 bones/2/enabled = true
-bones/2/position = Vector3(-1.92817e-17, 3.68798, 0)
+bones/2/position = Vector3(-1.92818e-17, 3.68798, 0)
 bones/2/rotation = Quaternion(0, 0, 4.1359e-25, 1)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, -8.27181e-25, 0, 8.27181e-25, 1, 0, 0, 0, 1, 3.30872e-24, 1.18797, 0)
 bones/3/enabled = true
-bones/3/position = Vector3(-1.92817e-17, 3.68797, 0)
+bones/3/position = Vector3(-1.92821e-17, 3.68802, 0)
 bones/3/rotation = Quaternion(0, 0, 0, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Bone.006"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, -7.71268e-18, 0, 7.71268e-18, 1, 0, 0, 0, 1, 0, 1.18797, 0)
 bones/4/enabled = true
-bones/4/position = Vector3(-2.3138e-17, 4.18797, 0)
+bones/4/position = Vector3(-2.31374e-17, 4.1879, 0)
 bones/4/rotation = Quaternion(0, 0, 3.85634e-18, 1)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "Bone.004"
@@ -572,3 +573,9 @@ skin = SubResource("Skin_vx3pl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197, 2)
 node_a = NodePath("..")
 node_b = NodePath("../tailend4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_1bvh3")
+volume_db = -7.0
+pitch_scale = 4.0
+parameters/looping = true

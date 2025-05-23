@@ -1017,6 +1017,7 @@ shape = SubResource("ConcavePolygonShape3D_5oiwx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+light_color = Color(1, 1, 0.517647, 1)
 shadow_enabled = true
 omni_range = 10.0
 
@@ -16036,6 +16037,9 @@ patrol = Array[Vector3]([Vector3(-84, 0, -47.5), Vector3(-48, 0, -47.5), Vector3
 [node name="shelf" parent="." instance=ExtResource("16_gohku")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 2, -22)
 
+[node name="shelf6" parent="." instance=ExtResource("16_gohku")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.5, 2, -22)
+
 [node name="shelf2" parent="." instance=ExtResource("16_gohku")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 2, -30)
 
@@ -16047,6 +16051,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 2
 
 [node name="shelf5" parent="." instance=ExtResource("16_gohku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 2, -75)
+
+[node name="shelf7" parent="." instance=ExtResource("16_gohku")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -82, 2, -18)
 
 [connection signal="body_entered" from="exit" to="exit" method="enter"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]

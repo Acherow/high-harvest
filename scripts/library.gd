@@ -301,6 +301,7 @@ const others : Dictionary = {
 	"wickerman1":preload("res://prefabs/wickerman.tscn"),
 	"mudangel":preload("res://prefabs/mudangel.tscn"),
 	"chair":preload("res://prefabs/chair.tscn"),
+	"barrel":preload("res://prefabs/barrel.tscn"),
 }
 
 const scenes : Array = [
