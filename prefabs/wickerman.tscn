@@ -160,7 +160,7 @@ shadow_mesh = SubResource("ArrayMesh_t71fh")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqc0c"]
 margin = 0.1
 radius = 0.0563302
-height = 0.460281
+height = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1jnd2"]
 _surfaces = [{
@@ -544,7 +544,7 @@ mesh = SubResource("ArrayMesh_eyorf")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="r_hip/r_upperleg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00796644, -0.153547, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, -0.284, 0)
 shape = SubResource("CapsuleShape3D_hqc0c")
 
 [node name="r_knee" type="JoltGeneric6DOFJoint3D" parent="r_hip/r_upperleg"]
@@ -667,7 +667,7 @@ mesh = SubResource("ArrayMesh_eyorf")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="l_hip/l_upperleg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00799999, -0.154, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, -0.284, 0)
 shape = SubResource("CapsuleShape3D_hqc0c")
 
 [node name="l_knee" type="JoltGeneric6DOFJoint3D" parent="l_hip/l_upperleg"]

@@ -36,7 +36,7 @@ func _physics_process(delta):
 			poses.play(["pose1"].pick_random())
 		faceanim.play("faceoff")
 		
-	if(!visibl && !path.is_empty()):
+	if(!visibl && !path.is_empty() && global_position.distance_to(player.global_position) < 20):
 		axis_lock_linear_x = false
 		axis_lock_linear_z = false
 		if(global_position.distance_to(path[0]) < .2):

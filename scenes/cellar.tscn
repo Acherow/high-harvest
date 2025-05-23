@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=4 uid="uid://b4oecj68xoyd7"]
+[gd_scene load_steps=170 format=4 uid="uid://b4oecj68xoyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cwi170efjq44q" path="res://prefabs/player.tscn" id="1_fkk1i"]
 [ext_resource type="Script" path="res://scripts/dayManager.gd" id="2_g20cd"]
@@ -383,7 +383,7 @@ size = Vector3(24, 4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruvo3"]
 size = Vector3(12, 4, 8)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o64v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo0gc"]
 diffuse_mode = 3
 specular_mode = 2
 albedo_texture = ExtResource("3_oolp2")
@@ -391,7 +391,19 @@ uv1_scale = Vector3(46, 23, 23)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xq2re"]
-material = SubResource("StandardMaterial3D_6o64v")
+material = SubResource("StandardMaterial3D_xo0gc")
+size = Vector2(200, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwx0o"]
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.408329, 0.408329, 0.408329, 1)
+albedo_texture = ExtResource("3_oolp2")
+uv1_scale = Vector3(46, 23, 23)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m0p30"]
+material = SubResource("StandardMaterial3D_iwx0o")
 size = Vector2(200, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p583b"]
@@ -1017,7 +1029,7 @@ shape = SubResource("ConcavePolygonShape3D_5oiwx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
-light_color = Color(1, 1, 0.517647, 1)
+light_color = Color(1, 1, 0.776471, 1)
 shadow_enabled = true
 omni_range = 10.0
 
@@ -1424,7 +1436,7 @@ metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 7, 4, -56)
-mesh = SubResource("PlaneMesh_xq2re")
+mesh = SubResource("PlaneMesh_m0p30")
 skeleton = NodePath("../room1")
 metadata/_edit_lock_ = true
 

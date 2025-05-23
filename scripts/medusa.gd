@@ -26,7 +26,7 @@ func _physics_process(delta):
 	#move_and_slide()
 	var targetbasis = global_basis.looking_at(linear_velocity,Vector3.UP,false)
 	apply_torque(Library.calc_angular_velocity(global_basis,targetbasis)*10)
-	return
+	#return
 	raycast.target_position = raycast.to_local(player.global_position) + Vector3.UP
 	if(seen() && !died):
 		noise.modulate.a = .5-(fps/40)

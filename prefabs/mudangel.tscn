@@ -470,10 +470,10 @@ skin = SubResource("Skin_iasun")
 [node name="viewbox" type="Marker3D" parent="."]
 
 [node name="RayCast3D" type="RayCast3D" parent="viewbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.1, 0)
 
 [node name="RayCast3D2" type="RayCast3D" parent="viewbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 0)
 
 [node name="RayCast3D3" type="RayCast3D" parent="viewbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2, 0)

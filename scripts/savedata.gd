@@ -31,6 +31,8 @@ func load_data():
 		gamedata = file.get_var()
 	else:
 		gamedata = {
+			"sensitivity" : .002,
+			"volume" : 1,
 			"debtpaid":false,
 			"playtime":0.0,
 			"day": 0,
@@ -71,8 +73,8 @@ func load_data():
 				],
 			"objects1": [
 				["pickup",Vector3(0.7, 0.68, -5.82), Vector3(0, 0, 0), "lock", {  }], 
-				["pickup",Vector3(33.824, 0.68, -43.294), Vector3(0, -90, 0), "lock", {  }], 
-				["pickup",Vector3(-37.93, 0.68, -36.726), Vector3(0, -90, 0), "lock", {  }], 
+				["pickup",Vector3(33.824, 0.68, -43.294), Vector3(0, deg_to_rad(-90), 0), "lock", {  }], 
+				["pickup",Vector3(-37.93, 0.68, -36.726), Vector3(0, deg_to_rad(90), 0), "lock", {  }], 
 				["pickup",Vector3(-2, 0.5, -5.6), Vector3(deg_to_rad(75), 0, 0), "shotgun", {  }], 
 				["other", "wickerman1", Vector3(3.3, 1.5, -18.5), Vector3(0, 0, 0)], 
 				["other", "wickerman1", Vector3(12.8, 1.5, -27), Vector3(0, 0, 0)], 

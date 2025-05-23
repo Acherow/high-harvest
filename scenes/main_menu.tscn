@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://xihg4pj7a381"]
+[gd_scene load_steps=68 format=4 uid="uid://xihg4pj7a381"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ld3qd"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dwkdhq1jjkyxi" path="res://models/textures/whitewood.png" id="10_8rm7b"]
 [ext_resource type="Script" path="res://scripts/3Dviewport.gd" id="10_gcorl"]
 [ext_resource type="Script" path="res://scripts/mybutton.gd" id="11_jsdpj"]
+[ext_resource type="Texture2D" uid="uid://dk327jstoxyaq" path="res://sprites/grabber.png" id="11_lsk4x"]
 [ext_resource type="Texture2D" uid="uid://dkmqa2o6mbd7" path="res://logo.png" id="11_y0co1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owlut"]
@@ -431,6 +432,42 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yte7u")
 
+[sub_resource type="QuadMesh" id="QuadMesh_jjggc"]
+resource_local_to_scene = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lfclb"]
+viewport_path = NodePath("options/viewportcont2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgtdn"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = SubResource("ViewportTexture_lfclb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vvrks"]
+font_size = 68
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fikl0"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 10.0
+expand_margin_right = 3.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl1ks"]
+bg_color = Color(1, 1, 1, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tuyd"]
+size = Vector3(1, 1, 0.1)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_qbiuq"]
 _surfaces = [{
 "aabb": AABB(-0.192376, -0.0585649, -0.0150299, 0.384407, 0.37727, 0.087773),
@@ -779,6 +816,104 @@ shape = SubResource("BoxShape3D_hx5bg")
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -1, 0, 2.4)
 mesh = SubResource("ArrayMesh_hybgj")
 skeleton = NodePath("")
+
+[node name="viewportcont2" type="MeshInstance3D" parent="options"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691382, 0.0376518)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_jjggc")
+skeleton = NodePath("../../mainmenu")
+surface_material_override/0 = SubResource("StandardMaterial3D_sgtdn")
+script = ExtResource("10_gcorl")
+
+[node name="SubViewport" type="SubViewport" parent="options/viewportcont2"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1024, 1024)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="options/viewportcont2/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -450.0
+offset_right = 500.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 1, 0)
+
+[node name="Panel" type="Panel" parent="options/viewportcont2/SubViewport/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4q08f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options/viewportcont2/SubViewport/ColorRect/Panel"]
+custom_minimum_size = Vector2(500, 800)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -450.0
+offset_right = 273.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_vvrks")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("11_lsk4x")
+theme_override_icons/grabber_highlight = ExtResource("11_lsk4x")
+theme_override_icons/grabber_disabled = ExtResource("11_lsk4x")
+theme_override_styles/slider = SubResource("StyleBoxFlat_fikl0")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bl1ks")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bl1ks")
+value = 10.0
+
+[node name="HSeparator" type="Control" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+text = "SENSITIVITY"
+label_settings = SubResource("LabelSettings_vvrks")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("11_lsk4x")
+theme_override_icons/grabber_highlight = ExtResource("11_lsk4x")
+theme_override_icons/grabber_disabled = ExtResource("11_lsk4x")
+theme_override_styles/slider = SubResource("StyleBoxFlat_fikl0")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bl1ks")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bl1ks")
+
+[node name="Area3D" type="Area3D" parent="options/viewportcont2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="options/viewportcont2/Area3D"]
+shape = SubResource("BoxShape3D_8tuyd")
 
 [node name="back" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -1, 0, 1.6)
