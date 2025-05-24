@@ -9,7 +9,7 @@ const FULL = preload("res://sprites/itemicons/milkbottlefull.png")
 
 var data : InventoryObject
 
-var full : bool = true
+var full : bool = false
 
 func _ready():
 	super()

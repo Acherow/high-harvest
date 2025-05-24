@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://bl2e7pdtg4jkv"]
+
+[ext_resource type="Texture2D" uid="uid://dfpghj2hhn88i" path="res://sprites/itemicons/painting3.png" id="1_jfcst"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_ndm4v"]
+
+[resource]
+script = ExtResource("2_ndm4v")
+name = "Corn painting"
+weight = 1.0
+icon = ExtResource("1_jfcst")
+description = "A painting of corn."
+objaddress = "painting3"
+customproperties = {}

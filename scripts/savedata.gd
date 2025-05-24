@@ -3,6 +3,7 @@ extends Node
 const SAVEFILE = "user://saves/SAVEFILE%s.save"
 
 var gamedata = {}
+var settings = {}
 
 var curfile = 0
 
@@ -10,6 +11,17 @@ var cansave : int = 0
 
 func _ready():
 	load_data()
+	if(settings.is_empty()):
+		if(FileAccess.file_exists("user://saves/settings.set")):
+			var file = FileAccess.open("user://saves/settings.set", FileAccess.READ)
+			settings = file.get_var()
+		else:
+			settings = {
+				"sensitivity" : .002,
+				"volume" : .5,
+			}
+			var file = FileAccess.open("user://saves/settings.set", FileAccess.WRITE)
+			file.store_var(settings)
 
 func datacount():
 	var testfile = 0
@@ -31,8 +43,6 @@ func load_data():
 		gamedata = file.get_var()
 	else:
 		gamedata = {
-			"sensitivity" : .002,
-			"volume" : 1,
 			"debtpaid":false,
 			"playtime":0.0,
 			"day": 0,
@@ -44,7 +54,7 @@ func load_data():
 			"raintime":1400,
 			"israining":false,
 			"crouched":false,
-			"player": [Vector3(-45,0.5,180), Vector3(0,0,0), 50,50,[["note",{ "text":"DEED OF LAND AGREEMENT\n\nThrough this document we pronounce ██████████ the owner of ██████ farm, located on ████████, ████████, in exchange for $%.2f to be paid in labor at the farm." % Library.debt }]], ["farmersguide", {}],[]],
+			"player": [Vector3(-45,0.5,160), Vector3(0,0,0), 50,50,[["note",{ "text":"DEED OF LAND AGREEMENT\n\nThrough this document we pronounce ██████████ the owner of ██████ farm, located on ████████, ████████, in exchange for $%.2f to be paid in labor at the farm." % Library.debt }]], ["farmersguide", {}],[]],
 			"objects0": [
 				["pickup",Vector3(-28.1, 2.5, -25.3), Vector3(0, deg_to_rad(90), 0), "calendar", {  }], 
 				["pickup",Vector3(-28.05, 2.75, -25.3), Vector3(0, deg_to_rad(90), 0), "nail", {  }], 
@@ -64,7 +74,7 @@ func load_data():
 				["pickup",Vector3(-20.2, 0.9, -22.2), Vector3(0, 0, 0), "box", {  }], 
 				["pickup",Vector3(-20.2, 1.1, -22.2), Vector3(0, 0, 0), "boxlid", {  }], 
 				["other", "table", Vector3(-20.9, 1.4, -22.6), Vector3(0, 0, 0)], 
-				["other", "truck", Vector3(-50, .5, 175), Vector3(0, 0, 0), {"seated":true, "lights":true}], 
+				["other", "truck", Vector3(-50, .5, 155), Vector3(0, 0, 0), {"seated":true, "lights":true}], 
 				["other", "closet", Vector3(-22.75, .5, -22.2), Vector3(0, deg_to_rad(-90), 0)], 
 				["other", "bedframe", Vector3(-27.4, 1.2, -22.6), Vector3(0, deg_to_rad(-180), 0)], 
 				["other", "mattress", Vector3(-27.4, 1.7, -22.6), Vector3(0, deg_to_rad(-180), 0)], 
@@ -128,6 +138,16 @@ func load_data():
 				["other", "mudangel", Vector3(58, 0, -72), Vector3(0, 0, 0)], 
 				["other", "mudangel", Vector3(58, 0, -90), Vector3(0, 0, 0)], 
 				["other", "mudangel", Vector3(72, 0, -60), Vector3(0, 0, 0)], 
+				["pickup",Vector3(-20, 2, -21.95), Vector3(0, 0, 0), "painting1", {  }], 
+				["pickup",Vector3(-20, 2.47, -21.9), Vector3(0, 0, 0), "nail", {  }], 
+				["pickup",Vector3(20, 2, -37.95), Vector3(0, 0, 0), "painting2", {  }], 
+				["pickup",Vector3(20, 2.47, -37.9), Vector3(0, 0, 0), "nail", {  }], 
+				["pickup",Vector3(60, 2, -34.05), Vector3(0, deg_to_rad(180), 0), "painting2", {  }], 
+				["pickup",Vector3(60, 2.47, -34.1), Vector3(0, deg_to_rad(180), 0), "nail", {  }], 
+				["pickup",Vector3(46.025, 2, -83.9), Vector3(0, deg_to_rad(90), 0), "painting3", {  }], 
+				["pickup",Vector3(46.075, 2.47, -83.9), Vector3(0, deg_to_rad(90), 0), "nail", {  }], 
+				["pickup",Vector3(-41.975, 2, -83.9), Vector3(0, deg_to_rad(90), 0), "painting3", {  }], 
+				["pickup",Vector3(-41.925, 2.47, -83.9), Vector3(0, deg_to_rad(90), 0), "nail", {  }], 
 			],
 			"stocks": {
 					"carrot":1,
@@ -170,6 +190,10 @@ func resetsales():
 	"potato":0,
 	"pumpkin":0,
 	}
+
+func savesettings():
+	var file = FileAccess.open("user://saves/settings.set", FileAccess.WRITE)
+	file.store_var(settings)
 
 func save_data():
 	if(curfile != -1 && cansave == 0):

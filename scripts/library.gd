@@ -101,7 +101,10 @@ var objs : Dictionary = {
 	"dicedsquid":load("res://prefabs/dicedsquidmeat.tscn"),
 	"rat":load("res://prefabs/rat.tscn"),
 	"milkbottle":load("res://prefabs/milkbottle.tscn"),
-}
+	"painting1":preload("res://prefabs/painting1.tscn"),
+	"painting2":preload("res://prefabs/painting2.tscn"),
+	"painting3":preload("res://prefabs/painting3.tscn"),
+	}
 
 var invobjs : Dictionary = {
 	"bankstatement":load("res://invobjs/bankstatement.tres"),
@@ -199,6 +202,9 @@ var invobjs : Dictionary = {
 	"dicedsquid":load("res://invobjs/dicedsquid.tres"),
 	"rat":load("res://invobjs/rat.tres"),
 	"milkbottle":load("res://invobjs/milkbottle.tres"),
+	"painting1":preload("res://invobjs/painting1.tres"),
+	"painting2":preload("res://invobjs/painting2.tres"),
+	"painting3":preload("res://invobjs/painting3.tres"),
 }
 
 var purchasables : Dictionary = {

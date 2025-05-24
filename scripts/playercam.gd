@@ -23,6 +23,7 @@ var held = null
 var camfrozen : bool = false
 
 func _ready():
+	MouseSensitivity = Savedata.settings["sensitivity"]
 	cast.add_exception(body)
 	forceupdaterotation()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -880,7 +880,7 @@ label_settings = SubResource("LabelSettings_vvrks")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+[node name="volumeslider" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("11_lsk4x")
 theme_override_icons/grabber_highlight = ExtResource("11_lsk4x")
@@ -888,7 +888,8 @@ theme_override_icons/grabber_disabled = ExtResource("11_lsk4x")
 theme_override_styles/slider = SubResource("StyleBoxFlat_fikl0")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bl1ks")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bl1ks")
-value = 10.0
+max_value = 1.0
+step = 0.01
 
 [node name="HSeparator" type="Control" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -901,7 +902,7 @@ label_settings = SubResource("LabelSettings_vvrks")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider2" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
+[node name="sensitivityslider" type="HSlider" parent="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("11_lsk4x")
 theme_override_icons/grabber_highlight = ExtResource("11_lsk4x")
@@ -909,6 +910,10 @@ theme_override_icons/grabber_disabled = ExtResource("11_lsk4x")
 theme_override_styles/slider = SubResource("StyleBoxFlat_fikl0")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bl1ks")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bl1ks")
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.002
 
 [node name="Area3D" type="Area3D" parent="options/viewportcont2"]
 
@@ -1012,5 +1017,7 @@ texture = ExtResource("11_y0co1")
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/startbtn" to="." method="lookatsaves"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/optionsbtn" to="." method="lookatoptions"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/quitbtn" to="." method="quit"]
+[connection signal="value_changed" from="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/volumeslider" to="." method="_on_volumeslider_value_changed"]
+[connection signal="value_changed" from="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/sensitivityslider" to="." method="_on_sensitivityslider_value_changed"]
 [connection signal="pressed" from="back/viewportcont3/SubViewport/backbtn" to="." method="backtomain"]
 [connection signal="pressed" from="back2/viewportcont3/SubViewport/backbtn" to="." method="backtomain"]

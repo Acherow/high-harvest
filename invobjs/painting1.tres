@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryObject" load_steps=3 format=3 uid="uid://dwno2tr2k0qnw"]
+
+[ext_resource type="Texture2D" uid="uid://bj44oenvmt170" path="res://sprites/itemicons/painting1.png" id="1_i07m2"]
+[ext_resource type="Script" path="res://scripts/InventoryObject.gd" id="2_byeey"]
+
+[resource]
+script = ExtResource("2_byeey")
+name = "Miserable painting"
+weight = 1.0
+icon = ExtResource("1_i07m2")
+description = "A painting of misery."
+objaddress = "painting1"
+customproperties = {}

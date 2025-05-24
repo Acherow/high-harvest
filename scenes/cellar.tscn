@@ -21,7 +21,8 @@
 background_mode = 1
 background_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+ambient_light_color = Color(0.393086, 0.393086, 0.393085, 1)
+ambient_light_energy = 0.01
 ssao_enabled = true
 ssao_radius = 2.5
 

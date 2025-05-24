@@ -7,9 +7,15 @@ var camangle : float = 0.0
 const NEWGAME = preload("res://prefabs/uistuff/newgame_ui.tscn")
 const SAVESLOT = preload("res://prefabs/uistuff/save_slot_ui.tscn")
 @onready var savecontainer = $saves/viewportcont2/SubViewport/ColorRect/VBoxContainer
+@onready var volumeslider = $options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/volumeslider
+@onready var sensitivityslider = $options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/sensitivityslider
 
 var saveslots = []
 func _ready():
+	volumeslider.value = Savedata.settings["volume"]
+	_on_volumeslider_value_changed(Savedata.settings["volume"])
+	sensitivityslider.value = Savedata.settings["sensitivity"]
+	_on_sensitivityslider_value_changed(Savedata.settings["sensitivity"])
 	for n in Savedata.datacount():
 		var sl = SAVESLOT.instantiate()
 		sl.file = n
@@ -53,3 +59,12 @@ func lookatoptions():
 
 func quit():
 	get_tree().quit()
+
+func _on_sensitivityslider_value_changed(value):
+	Savedata.settings["sensitivity"] = value
+	Savedata.savesettings()
+
+func _on_volumeslider_value_changed(value):
+	Savedata.settings["volume"] = value
+	Savedata.savesettings()
+	AudioServer.set_bus_volume_db(0,linear_to_db(value))
