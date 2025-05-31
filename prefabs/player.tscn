@@ -127,7 +127,7 @@ debug_shape_custom_color = Color(0, 0.694118, 1, 0.054902)
 [node name="grabpos" type="Marker3D" parent="cam"]
 
 [node name="heldpos" type="Marker3D" parent="cam"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.5, -0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="cam"]
 layer = -1
