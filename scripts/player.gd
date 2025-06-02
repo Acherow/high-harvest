@@ -240,7 +240,9 @@ func reload():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Savedata.load_data()
-	get_tree().reload_current_scene()
+	var scn = Library.scenes[Savedata.gamedata["playerscene"]]
+	get_tree().change_scene_to_file(scn)
+	#get_tree().reload_current_scene()
 
 func isonfloor():
 	return groundcheck.is_colliding() && (cam.grabbed == null || groundcheck.get_collider(0) != cam.grabbed)
