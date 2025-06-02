@@ -7,6 +7,8 @@ extends Node3D
 func enter(body):
 	if(body is Player):
 		ObjectManager.serializeall()
+		#Savedata.gamedata["player"][5] = null
+		#Savedata.gamedata["player"][6] = null
 		Savedata.gamedata["playerscene"] = targetscene
 		Savedata.gamedata["player"][0] = targetposition
 		Savedata.gamedata["player"][1] = targetrotation

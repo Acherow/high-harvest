@@ -79,6 +79,7 @@ albedo_texture = ExtResource("2_i2155")
 size = Vector3(1, 1, 0.05)
 
 [node name="painting" type="RigidBody3D" groups=["pickup"]]
+metadata/obj = ExtResource("3_h0mii")
 
 [node name="model" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

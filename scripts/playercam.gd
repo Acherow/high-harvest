@@ -193,6 +193,7 @@ func dropobj(ob : InventoryObject):
 	o.global_position = global_position - global_basis.z
 
 func _physics_process(delta):
+	#print(cast.get_collider())
 	grabpos.position.z = -grabbeddistance
 	if(grabbed != null):
 		if(global_position.distance_to(grabbed.global_position) > 7):

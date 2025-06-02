@@ -40,6 +40,8 @@ var damage : float = 0
 var ragdolled : bool = false
 @onready var ragdolltime: Timer = $ragdolltime
 
+var uncrouchqueued : bool = false
+
 func _ready():
 	gameover.visible = false
 	shadow.call_deferred("reparent",get_tree().current_scene)
@@ -62,6 +64,8 @@ func _input(event):
 
 var gravvel : float = .1
 func _physics_process(delta):
+	if(uncrouchqueued && !ceilingcheck.is_colliding()):
+		crouchheight(false)
 	if(crouched && cam.position.y > .9):
 		shape.shape.height = lerp(shape.shape.height, 1.5, .1)
 		shape.position.y = lerp(shape.position.y, .75, .1)
@@ -184,7 +188,9 @@ func _process(delta: float) -> void:
 var crouched : bool = false
 func crouchheight(down : bool = true):
 	if(!down && ceilingcheck.is_colliding()):
+		uncrouchqueued = true
 		return
+	uncrouchqueued = false
 	crouched = down
 	Savedata.gamedata["crouched"] = crouched
 	#shape.shape.height = 1.5 if down else 2

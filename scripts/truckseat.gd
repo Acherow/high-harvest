@@ -33,6 +33,7 @@ func _input(event):
 			remove_collision_exception_with(seated.cam.held)
 			truck.remove_collision_exception_with(seated.cam.held)
 		seated.frozen = false
+		seated.uncrouchqueued = true
 		seated = null
 
 func info():

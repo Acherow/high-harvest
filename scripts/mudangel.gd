@@ -30,6 +30,7 @@ func _process(delta):
 
 var visibl
 func _physics_process(delta):
+	#return
 	if(visibl != seen()):
 		visibl = seen()
 		if(visibl):
@@ -37,8 +38,9 @@ func _physics_process(delta):
 		faceanim.play("faceoff")
 		
 	if(!visibl && !path.is_empty() && global_position.distance_to(player.global_position) < 20):
-		axis_lock_linear_x = false
-		axis_lock_linear_z = false
+		#axis_lock_linear_x = false
+		#axis_lock_linear_z = false
+		
 		if(global_position.distance_to(path[0]) < .2):
 			path.remove_at(0)
 		else:
@@ -49,18 +51,17 @@ func _physics_process(delta):
 			velocity = (global_position.direction_to(path[0])).normalized() * 15
 			velocity.y = 0
 			global_basis = global_basis.looking_at((velocity + getprojected(player.global_position-global_position, Vector3.UP))/2)
-		
+			move_and_slide()
 		#global_basis = global_basis.looking_at(getprojected(player.global_position-global_position, Vector3.UP))
 	else:
-		axis_lock_linear_x = true
-		axis_lock_linear_z = true
+		#axis_lock_linear_x = true
+		#axis_lock_linear_z = true
 		velocity = Vector3.ZERO
 		#audio.stop()
 	
 	if(!visibl && global_position.distance_to(player.global_position) < 1):
 		player.ragdoll(1)
 	
-	move_and_slide()
 
 func seen() -> bool:
 	return InfoChecker.visibletoplayer(global_position) && \

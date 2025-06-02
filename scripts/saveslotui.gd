@@ -18,6 +18,7 @@ func refresh():
 	label.text = "SAVE " + str(file+1)
 	var data = Savedata.loadonce(file)
 	if(data != null):
+		#return
 		label2.text = "%s\n$%.2f" % [Library.timetransition(data["playtime"]),data["money"]]
 
 func deletesave():

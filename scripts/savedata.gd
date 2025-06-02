@@ -12,15 +12,15 @@ var cansave : int = 0
 func _ready():
 	load_data()
 	if(settings.is_empty()):
-		if(FileAccess.file_exists("user://saves/settings.set")):
-			var file = FileAccess.open("user://saves/settings.set", FileAccess.READ)
+		if(FileAccess.file_exists("user://settings.set")):
+			var file = FileAccess.open("user://settings.set", FileAccess.READ)
 			settings = file.get_var()
 		else:
 			settings = {
 				"sensitivity" : .002,
 				"volume" : .5,
 			}
-			var file = FileAccess.open("user://saves/settings.set", FileAccess.WRITE)
+			var file = FileAccess.open("user://settings.set", FileAccess.WRITE)
 			file.store_var(settings)
 
 func datacount():
@@ -192,7 +192,7 @@ func resetsales():
 	}
 
 func savesettings():
-	var file = FileAccess.open("user://saves/settings.set", FileAccess.WRITE)
+	var file = FileAccess.open("user://settings.set", FileAccess.WRITE)
 	file.store_var(settings)
 
 func save_data():

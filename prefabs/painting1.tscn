@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://dwno2tr2k0qnw" path="res://invobjs/painting1.tres" id="3_ul6xx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kuj4g"]
-load_path = "res://.godot/imported/painting_painting2.png-0edde0cb9ec4700a226825beb0d0ce89.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkhcj"]
 resource_name = "Material"
@@ -80,6 +79,7 @@ albedo_texture = ExtResource("2_x5jtq")
 size = Vector3(1, 1, 0.05)
 
 [node name="painting" type="RigidBody3D" groups=["pickup"]]
+metadata/obj = ExtResource("3_ul6xx")
 
 [node name="model" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

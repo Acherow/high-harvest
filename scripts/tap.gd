@@ -22,5 +22,3 @@ func _on_area_3d_body_exited(body):
 func _on_timer_timeout():
 	if(curobj && curobj.has_method("water") && on):
 		curobj.water()
-	elif !on:
-		$Timer.stop()
