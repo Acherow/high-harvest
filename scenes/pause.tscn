@@ -1,19 +1,133 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvy82pls5kkcr"]
+[gd_scene load_steps=17 format=3 uid="uid://bvy82pls5kkcr"]
 
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_d6edb"]
 [ext_resource type="Texture2D" uid="uid://dtid7kl6t47lc" path="res://sprites/pausemenu.png" id="2_1i5dk"]
+[ext_resource type="Texture2D" uid="uid://bmqpbyjrxln7t" path="res://sprites/optionsmeny.png" id="3_7qy38"]
+[ext_resource type="Texture2D" uid="uid://dk327jstoxyaq" path="res://sprites/grabber.png" id="4_n8w7q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6r3j"]
 
 [sub_resource type="Theme" id="Theme_i0a1n"]
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0.38, 0.323, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 39
 Button/styles/disabled = null
 Button/styles/focus = null
 Button/styles/hover = null
 Button/styles/normal = SubResource("StyleBoxEmpty_s6r3j")
 Button/styles/pressed = null
+
+[sub_resource type="LabelSettings" id="LabelSettings_yo4ta"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p621t"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 10.0
+expand_margin_right = 3.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcmsa"]
+bg_color = Color(1, 1, 1, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_2b0gk"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_el8uj"]
+resource_name = "pause"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(58, 1100), Vector2(58, 511), Vector2(58, 526)]
+}
+
+[sub_resource type="Animation" id="Animation_y2dg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(58, 526)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(425, 1189)]
+}
+
+[sub_resource type="Animation" id="Animation_jfjcp"]
+resource_name = "optionson"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(425, 1126), Vector2(425, 595), Vector2(425, 614)]
+}
+
+[sub_resource type="Animation" id="Animation_yh855"]
+resource_name = "optionsoff"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(425, 614), Vector2(425, 595), Vector2(425, 1126)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4k1i6"]
+_data = {
+"RESET": SubResource("Animation_y2dg3"),
+"optionsoff": SubResource("Animation_yh855"),
+"optionson": SubResource("Animation_jfjcp"),
+"pause": SubResource("Animation_el8uj")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_741qt"]
 font_size = 36
@@ -40,25 +154,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.509804)
 
-[node name="TextureRect" type="TextureRect" parent="ps"]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 576.0
-offset_right = 408.0
-offset_bottom = 1026.0
-texture = ExtResource("2_1i5dk")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ps"]
+[node name="menu" type="TextureRect" parent="ps"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0463958
-anchor_top = 0.546556
-anchor_right = 0.1845
-anchor_bottom = 0.944222
-offset_left = 0.919998
-offset_top = -0.280029
-offset_right = 0.759979
-offset_bottom = 0.23999
+anchor_left = 0.03
+anchor_top = 0.487
+anchor_right = 0.212
+anchor_bottom = 0.95
+offset_left = 0.399998
+offset_top = 0.039978
+offset_right = 0.959961
+texture = ExtResource("2_1i5dk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ps/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045875
+anchor_top = 0.029
+anchor_right = 0.828
+anchor_bottom = 0.969
+offset_left = 14.9437
+offset_top = 4.5
+offset_right = 0.199982
+offset_bottom = 4.49997
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0174533
@@ -66,30 +184,116 @@ theme_override_constants/separation = 20
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="resumebutton" type="Button" parent="ps/VBoxContainer"]
+[node name="resumebutton" type="Button" parent="ps/menu/VBoxContainer"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 theme = SubResource("Theme_i0a1n")
 text = "RESUME"
 
-[node name="quickloadbutton" type="Button" parent="ps/VBoxContainer"]
+[node name="optionsbutton" type="Button" parent="ps/menu/VBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+theme = SubResource("Theme_i0a1n")
+text = "OPTIONS"
+
+[node name="quickloadbutton" type="Button" parent="ps/menu/VBoxContainer"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 theme = SubResource("Theme_i0a1n")
 text = "QUICK LOAD"
 
-[node name="savebutton" type="Button" parent="ps/VBoxContainer"]
+[node name="savebutton" type="Button" parent="ps/menu/VBoxContainer"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 theme = SubResource("Theme_i0a1n")
-text = "SAVE
+text = "QUICK SAVE
 "
 
-[node name="quitbutton" type="Button" parent="ps/VBoxContainer"]
+[node name="quitbutton" type="Button" parent="ps/menu/VBoxContainer"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 theme = SubResource("Theme_i0a1n")
 text = "QUIT"
+
+[node name="options" type="TextureRect" parent="ps"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 2.04307
+anchor_right = 0.534
+anchor_bottom = 2.41307
+offset_left = 0.679962
+offset_top = -1017.52
+offset_right = -0.280029
+offset_bottom = -1017.12
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7qy38")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ps/options"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -177.0
+offset_right = 273.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ps/options/VBoxContainer"]
+layout_mode = 2
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_yo4ta")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volumeslider" type="HSlider" parent="ps/options/VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_n8w7q")
+theme_override_icons/grabber_highlight = ExtResource("4_n8w7q")
+theme_override_icons/grabber_disabled = ExtResource("4_n8w7q")
+theme_override_styles/slider = SubResource("StyleBoxFlat_p621t")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bcmsa")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcmsa")
+max_value = 1.0
+step = 0.01
+
+[node name="HSeparator" type="Control" parent="ps/options/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ps/options/VBoxContainer"]
+layout_mode = 2
+text = "SENSITIVITY"
+label_settings = SubResource("LabelSettings_2b0gk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sensitivityslider" type="HSlider" parent="ps/options/VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_n8w7q")
+theme_override_icons/grabber_highlight = ExtResource("4_n8w7q")
+theme_override_icons/grabber_disabled = ExtResource("4_n8w7q")
+theme_override_styles/slider = SubResource("StyleBoxFlat_p621t")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_bcmsa")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcmsa")
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.002
+
+[node name="anim" type="AnimationPlayer" parent="ps"]
+libraries = {
+"": SubResource("AnimationLibrary_4k1i6")
+}
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -100,7 +304,10 @@ offset_bottom = 45.0
 text = "Hold..."
 label_settings = SubResource("LabelSettings_741qt")
 
-[connection signal="pressed" from="ps/VBoxContainer/resumebutton" to="." method="unpausegame"]
-[connection signal="pressed" from="ps/VBoxContainer/quickloadbutton" to="." method="quickload"]
-[connection signal="pressed" from="ps/VBoxContainer/savebutton" to="." method="save"]
-[connection signal="pressed" from="ps/VBoxContainer/quitbutton" to="." method="quitgame"]
+[connection signal="pressed" from="ps/menu/VBoxContainer/resumebutton" to="." method="unpausegame"]
+[connection signal="pressed" from="ps/menu/VBoxContainer/optionsbutton" to="." method="options"]
+[connection signal="pressed" from="ps/menu/VBoxContainer/quickloadbutton" to="." method="quickload"]
+[connection signal="pressed" from="ps/menu/VBoxContainer/savebutton" to="." method="save"]
+[connection signal="pressed" from="ps/menu/VBoxContainer/quitbutton" to="." method="quitgame"]
+[connection signal="value_changed" from="ps/options/VBoxContainer/volumeslider" to="." method="_on_volumeslider_value_changed"]
+[connection signal="value_changed" from="ps/options/VBoxContainer/sensitivityslider" to="." method="_on_sensitivityslider_value_changed"]

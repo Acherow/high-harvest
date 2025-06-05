@@ -210,6 +210,8 @@ func _physics_process(delta):
 			grabpos.rotate(basis.x,MouseEvent.y * clamp(2-(grabbed.mass*.1), 0.01,1))
 
 func _process(delta):
+	if(MouseSensitivity != Savedata.settings["sensitivity"]):
+		MouseSensitivity = Savedata.settings["sensitivity"]
 	if(is_instance_valid(held) && held.has_method("info")):
 		heldinfobox.visible = true
 		heldinfolabel.text = held.info()
