@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://xihg4pj7a381"]
+[gd_scene load_steps=69 format=4 uid="uid://xihg4pj7a381"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ld3qd"]
 [ext_resource type="Texture2D" uid="uid://bnnr1ajrh2xdk" path="res://models/textures/noise32.png" id="3_m54fw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/mybutton.gd" id="11_jsdpj"]
 [ext_resource type="Texture2D" uid="uid://dk327jstoxyaq" path="res://sprites/grabber.png" id="11_lsk4x"]
 [ext_resource type="Texture2D" uid="uid://dkmqa2o6mbd7" path="res://logo.png" id="11_y0co1"]
+[ext_resource type="AudioStream" uid="uid://b4iad8bo8ejyf" path="res://sounds/Menu Button Sound.mp3" id="13_js5aw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owlut"]
 shading_mode = 0
@@ -1014,10 +1015,17 @@ pixel_size = 0.005
 texture_filter = 2
 texture = ExtResource("11_y0co1")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["buttonsound"]]
+stream = ExtResource("13_js5aw")
+
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/startbtn" to="." method="lookatsaves"]
+[connection signal="pressed" from="mainmenu/viewportcont/SubViewport/startbtn" to="AudioStreamPlayer" method="play"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/optionsbtn" to="." method="lookatoptions"]
+[connection signal="pressed" from="mainmenu/viewportcont/SubViewport/optionsbtn" to="AudioStreamPlayer" method="play"]
 [connection signal="pressed" from="mainmenu/viewportcont/SubViewport/quitbtn" to="." method="quit"]
 [connection signal="value_changed" from="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/volumeslider" to="." method="_on_volumeslider_value_changed"]
 [connection signal="value_changed" from="options/viewportcont2/SubViewport/ColorRect/Panel/VBoxContainer/sensitivityslider" to="." method="_on_sensitivityslider_value_changed"]
 [connection signal="pressed" from="back/viewportcont3/SubViewport/backbtn" to="." method="backtomain"]
+[connection signal="pressed" from="back/viewportcont3/SubViewport/backbtn" to="AudioStreamPlayer" method="play"]
 [connection signal="pressed" from="back2/viewportcont3/SubViewport/backbtn" to="." method="backtomain"]
+[connection signal="pressed" from="back2/viewportcont3/SubViewport/backbtn" to="AudioStreamPlayer" method="play"]

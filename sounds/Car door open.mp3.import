@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ltj8d1ygw76y"
+path="res://.godot/imported/Car door open.mp3-85591297fa902fd13181cea4ad3ee888.mp3str"
+
+[deps]
+
+source_file="res://sounds/Car door open.mp3"
+dest_files=["res://.godot/imported/Car door open.mp3-85591297fa902fd13181cea4ad3ee888.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j1ms0xkrx7ms"
+path="res://.godot/imported/Car door close.mp3-af34a40069fd2a721fa289b1beaa5510.mp3str"
+
+[deps]
+
+source_file="res://sounds/Car door close.mp3"
+dest_files=["res://.godot/imported/Car door close.mp3-af34a40069fd2a721fa289b1beaa5510.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

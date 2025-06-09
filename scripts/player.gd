@@ -17,6 +17,7 @@ class_name Player
 
 @onready var footstep: AudioStreamPlayer = $groundcheck/footstep
 @onready var steptimer = $groundcheck/steptimer
+@onready var jumpsound: AudioStreamPlayer = $groundcheck/jumpsound
 
 @export var stepsounds : Dictionary
 
@@ -109,6 +110,8 @@ func _physics_process(delta):
 	if(!frozen && !ragdolled):
 		# handle jump
 		if Input.is_action_just_pressed("jump") && (isonfloor() || !coyote_time.is_stopped() || underwater):
+			if(!underwater):
+				jumpsound.play()
 			curjumpvel = JUMP_VELOCITY
 			coyote_time.stop()
 		
@@ -123,8 +126,8 @@ func _physics_process(delta):
 		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		if(input_dir != Vector2.ZERO && steptimer.is_stopped()):
 			steptimer.start()
-		elif(input_dir == Vector2.ZERO && !steptimer.is_stopped()):
-			steptimer.stop()
+		#elif(input_dir == Vector2.ZERO && !steptimer.is_stopped()):
+			#steptimer.stop()
 		
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if(crouched):
@@ -166,6 +169,9 @@ func _physics_process(delta):
 	else:
 		global_position = shadow.global_position
 		global_basis = shadow.global_basis
+	if !wasonfloor && isonfloor():
+		jumpsound.play()
+	
 	if wasonfloor && !isonfloor():
 		coyote_time.start()
 	for col_idx in get_slide_collision_count():
