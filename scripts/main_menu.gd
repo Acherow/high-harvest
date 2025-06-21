@@ -3,6 +3,7 @@ extends Node3D
 var camangle : float = 0.0
 
 @onready var cam = $Camera3D
+@onready var selectsound = $AudioStreamPlayer2
 
 const NEWGAME = preload("res://prefabs/uistuff/newgame_ui.tscn")
 const SAVESLOT = preload("res://prefabs/uistuff/save_slot_ui.tscn")
@@ -21,11 +22,13 @@ func _ready():
 		sl.file = n
 		savecontainer.add_child(sl)
 		sl.clicked.connect(loadgame)
+		sl.mouse_entered.connect(selectbutton)
 		saveslots.append(sl)
 	var ng = NEWGAME.instantiate()
 	ng.gui_input.connect(newgame)
 	ng.mouse_exited.connect(func(): ng.color = Color("b70000"))
 	ng.mouse_entered.connect(func(): ng.color = Color("d45800"))
+	ng.mouse_entered.connect(selectbutton)
 	savecontainer.add_child(ng)
 
 func updateslots():
@@ -68,3 +71,6 @@ func _on_volumeslider_value_changed(value):
 	Savedata.settings["volume"] = value
 	Savedata.savesettings()
 	AudioServer.set_bus_volume_db(0,linear_to_db(value))
+
+func selectbutton():
+	selectsound.play()
